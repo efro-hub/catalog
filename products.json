@@ -1,0 +1,16 @@
+[
+  {
+    "id": 2,
+    "name": "беленься",
+    "price": "123",
+    "description": "2 часа ночи попытка 8",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADER9rG5YK6Et9.jpg"
+  },
+  {
+    "id": 1,
+    "name": "123",
+    "price": "4000",
+    "description": "",
+    "image": ""
+  }
+]
