@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <title>Каталог товаров</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 16px;
+
+            background: var(--tg-theme-bg-color, #111111);
+            color: var(--tg-theme-text-color, #ffffff);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            color: var(--tg-theme-hint-color, #999999);
+            font-size: 14px;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .product {
+            overflow: hidden;
+
+            background:
+                var(
+                    --tg-theme-secondary-bg-color,
+                    #1c1c1c
+                );
+
+            border-radius: 16px;
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .product-info {
+            padding: 11px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+
+            margin-bottom: 6px;
+        }
+
+        .product-price {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .product-description {
+            margin-top: 6px;
+
+            color:
+                var(
+                    --tg-theme-hint-color,
+                    #999999
+                );
+
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .empty {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color:
+                var(
+                    --tg-theme-hint-color,
+                    #999999
+                );
+        }
+
+        @media (max-width: 360px) {
+            .catalog {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Каталог товаров</h1>
+
+        <p>
+            Выберите интересующий товар
+        </p>
+    </div>
+
+
+    <div
+        id="catalog"
+        class="catalog"
+    >
+
+        <!--
+            ТУТ ПОКА ТЕСТОВЫЕ ТОВАРЫ.
+
+            Когда подключим бота,
+            они будут загружаться автоматически.
+        -->
+
+
+        <div class="product">
+
+            <img
+                class="product-image"
+                src="https://placehold.co/600x600/222/fff?text=Товар"
+                alt="Товар"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Тестовый товар
+                </div>
+
+                <div class="product-price">
+                    500 ₽
+                </div>
+
+                <div class="product-description">
+                    Здесь будет описание товара.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img
+                class="product-image"
+                src="https://placehold.co/600x600/222/fff?text=Товар"
+                alt="Товар"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Второй товар
+                </div>
+
+                <div class="product-price">
+                    900 ₽
+                </div>
+
+                <div class="product-description">
+                    Описание второго товара.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const tg =
+            window.Telegram.WebApp;
+
+        tg.ready();
+
+        tg.expand();
+
+    </script>
+
+</body>
+</html>
