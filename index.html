@@ -1,1126 +1,1078 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    >
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <meta
-        http-equiv="Cache-Control"
-        content="no-cache, no-store, must-revalidate"
-    >
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+<title>IXwear</title>
 
-    <title>IXwear</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+<style>
 
-    <style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
+    background: #080808;
+    color: #fff;
+}
 
-            background: #080808;
-            color: #fff;
-        }
+body {
+    overflow-x: hidden;
+    font-family: "Cormorant Garamond", serif;
+}
 
-        body {
-            overflow-x: hidden;
-            font-family: "Cormorant Garamond", serif;
-        }
 
+/* =====================================================
+   HEADER
+   ===================================================== */
 
-        /* =====================================================
-           HEADER
-           ===================================================== */
+.header {
+    width: 100%;
+    height: 92px;
 
-        .header {
-            width: 100%;
-            height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #171717 0%,
+            #0d0d0d 55%,
+            #080808 100%
+        );
 
-            position: relative;
+    border-bottom: 1px solid #242424;
+    border-radius: 0 0 24px 24px;
+}
 
-            background:
-                radial-gradient(
-                    ellipse at center,
-                    #171717 0%,
-                    #0d0d0d 55%,
-                    #080808 100%
-                );
 
-            border-bottom: 1px solid #242424;
+/* =====================================================
+   LOGO
+   ===================================================== */
 
-            border-radius:
-                0 0 24px 24px;
-        }
+.logo {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+    line-height: 1;
 
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.9);
+}
 
-        /* =====================================================
-           LOGO
-           ===================================================== */
+.logo-ix {
+    font-family: "Cinzel", serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: #f1f1f1;
+}
 
-        .logo {
-            display: flex;
+.logo-wear {
+    margin-left: 4px;
 
-            align-items: baseline;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 1px;
 
-            white-space: nowrap;
+    color: #bdbdbd;
+}
 
-            line-height: 1;
 
-            text-shadow:
-                0 2px 8px rgba(0,0,0,.9);
-        }
+/* =====================================================
+   MAIN
+   ===================================================== */
 
-        .logo-ix {
-            font-family: "Cinzel", serif;
+main {
+    width: 100%;
+    max-width: 1100px;
 
-            font-size: 40px;
+    margin: 0 auto;
 
-            font-weight: 600;
+    padding: 32px 30px 70px;
+}
 
-            letter-spacing: -2px;
 
-            color: #f1f1f1;
-        }
+/* =====================================================
+   TITLE
+   ===================================================== */
 
-        .logo-wear {
-            margin-left: 4px;
+.catalog-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+.title-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
 
-            font-size: 28px;
+.title-decoration {
+    width: 68px;
+    height: 20px;
+    position: relative;
+}
 
-            font-weight: 500;
+.title-decoration::before {
+    content: "❧";
 
-            letter-spacing: 1px;
+    position: absolute;
+    left: 0;
+    top: -8px;
 
-            color: #bdbdbd;
-        }
+    font-size: 24px;
+    color: #737373;
 
+    transform: rotate(180deg);
+}
 
-        /* =====================================================
-           MAIN
-           ===================================================== */
+.title-decoration::after {
+    content: "◇";
 
-        main {
-            width: 100%;
+    position: absolute;
+    right: 0;
+    top: -5px;
 
-            max-width: 1100px;
+    font-size: 14px;
+    color: #555;
+}
 
-            margin: 0 auto;
+.title-decoration.right {
+    transform: scaleX(-1);
+}
 
-            padding:
-                32px 30px 70px;
-        }
+.catalog-title h1 {
+    margin: 0;
 
+    font-family: "Cinzel", serif;
+    font-size: 29px;
+    font-weight: 500;
 
-        /* =====================================================
-           COLLECTION TITLE
-           ===================================================== */
+    letter-spacing: 5px;
 
-        .catalog-title {
-            text-align: center;
+    color: #e8e8e8;
+}
 
-            margin-bottom: 48px;
-        }
+.catalog-subtitle {
+    margin-top: 9px;
 
-        .title-line {
-            display: flex;
+    font-size: 21px;
+    letter-spacing: 1px;
 
-            align-items: center;
+    color: #999;
+}
 
-            justify-content: center;
 
-            gap: 18px;
-        }
+/* =====================================================
+   PRODUCTS
+   ===================================================== */
 
-        .title-decoration {
-            width: 68px;
-            height: 20px;
+#products {
+    display: grid;
 
-            position: relative;
-        }
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-        .title-decoration::before {
-            content: "❧";
+    column-gap: 55px;
+    row-gap: 70px;
+}
 
-            position: absolute;
+.product {
+    min-width: 0;
+    text-align: center;
 
-            left: 0;
-            top: -8px;
+    animation:
+        productAppear .55s ease both;
+}
 
-            font-size: 24px;
+@keyframes productAppear {
 
-            color: #737373;
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
 
-            transform:
-                rotate(180deg);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .title-decoration::after {
-            content: "◇";
 
-            position: absolute;
+/* =====================================================
+   ART FRAME
+   ===================================================== */
 
-            right: 0;
-            top: -5px;
+.frame {
+    position: relative;
 
-            font-size: 14px;
+    width: 100%;
 
-            color: #555;
-        }
+    aspect-ratio: .78 / 1;
 
-        .title-decoration.right {
-            transform:
-                scaleX(-1);
-        }
+    overflow: visible;
 
-        .catalog-title h1 {
-            margin: 0;
+    isolation: isolate;
+}
 
-            font-family:
-                "Cinzel",
-                serif;
 
-            font-size: 29px;
+/* =====================================================
+   REAL PRODUCT WINDOW
+   ===================================================== */
 
-            font-weight: 500;
+.image-area {
 
-            letter-spacing: 5px;
+    position: absolute;
 
-            color: #e8e8e8;
-        }
+    /*
+       ЭТО РАЗМЕР ОТВЕРСТИЯ
+    */
 
-        .catalog-subtitle {
-            margin-top: 9px;
+    top: 13%;
+    left: 13%;
+    right: 13%;
+    bottom: 12%;
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+    z-index: 1;
 
-            font-size: 21px;
+    overflow: hidden;
 
-            letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            color: #999;
-        }
+    background:
+        radial-gradient(
+            ellipse at center,
+            #191919 0%,
+            #0b0b0b 65%,
+            #020202 100%
+        );
 
+    /*
+       ВНУТРЕННЯЯ ТЕНЬ
+    */
 
-        /* =====================================================
-           PRODUCTS GRID
-           ===================================================== */
+    box-shadow:
+        inset 0 0 18px rgba(0,0,0,.95),
+        inset 0 0 4px rgba(255,255,255,.15);
+}
 
-        #products {
-            display: grid;
 
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+/* =====================================================
+   PRODUCT PHOTO
+   ===================================================== */
 
-            column-gap: 55px;
+.product img.product-image {
 
-            row-gap: 70px;
-        }
+    width: 100%;
+    height: 100%;
 
+    object-fit: contain;
 
-        /* =====================================================
-           PRODUCT
-           ===================================================== */
+    display: block;
 
-        .product {
-            min-width: 0;
+    position: relative;
 
-            text-align: center;
+    z-index: 2;
+}
 
-            animation:
-                productAppear .55s ease both;
-        }
 
-        @keyframes productAppear {
+/* =====================================================
+   DECORATIVE FRAME
+   ===================================================== */
 
-            from {
-                opacity: 0;
+.frame::before {
 
-                transform:
-                    translateY(18px);
-            }
+    content: "";
 
-            to {
-                opacity: 1;
+    position: absolute;
 
-                transform:
-                    translateY(0);
-            }
-        }
+    inset: 0;
 
+    z-index: 5;
 
-        /* =====================================================
-           ART OBJECT FRAME
-           ===================================================== */
+    pointer-events: none;
 
-        .frame {
-            position: relative;
+    /*
+       ОСНОВНАЯ ШИРОКАЯ РАМКА
+    */
 
-            width: 100%;
+    border: 15px solid #d8d8d8;
 
-            aspect-ratio:
-                0.78 / 1;
+    /*
+       СЛОЖНЫЙ СТАРИННЫЙ ОБЪЕМ
+    */
 
-            background: transparent;
+    box-shadow:
 
-            overflow: visible;
+        inset 0 0 0 2px #777,
 
-            border: none;
+        inset 0 0 0 5px #f4f4f4,
 
-            box-shadow: none;
+        inset 0 0 0 8px #a4a4a4,
 
-            isolation: isolate;
-        }
+        inset 0 0 0 11px #eeeeee,
 
+        inset 0 0 20px rgba(0,0,0,.65),
 
-        /* =====================================================
-           PRODUCT IMAGE
-           ===================================================== */
+        0 7px 15px rgba(0,0,0,.65);
 
-        .image-area {
-            position: absolute;
+}
 
-            top: 15%;
-            left: 15%;
-            right: 15%;
-            bottom: 13%;
 
-            background:
-                radial-gradient(
-                    ellipse at center,
-                    #121212 0%,
-                    #080808 62%,
-                    #020202 100%
-                );
+/* =====================================================
+   INNER FRAME LINE
+   ===================================================== */
 
-            overflow: hidden;
+.frame::after {
 
-            z-index: 2;
+    content: "";
 
-            display: flex;
+    position: absolute;
 
-            align-items: center;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 9%;
 
-            justify-content: center;
-        }
+    z-index: 6;
 
-        .image-area::before {
-            content: "";
+    pointer-events: none;
 
-            position: absolute;
+    border: 2px solid #777;
 
-            inset: 0;
+    box-shadow:
 
-            background:
-                radial-gradient(
-                    ellipse at center,
-                    rgba(255,255,255,.025),
-                    transparent 68%
-                );
+        inset 0 0 0 2px #eeeeee,
 
-            pointer-events: none;
-        }
+        inset 0 0 8px rgba(0,0,0,.75),
 
-        .product img.product-image {
-            width: 100%;
+        0 0 0 2px rgba(255,255,255,.08);
 
-            height: 100%;
+}
 
-            object-fit: contain;
 
-            display: block;
+/* =====================================================
+   ORNAMENT CORNERS
+   ===================================================== */
 
-            position: relative;
+.frame-brand {
 
-            z-index: 2;
-        }
+    position: absolute;
 
+    left: 50%;
+    bottom: -18px;
 
-        /* =====================================================
-           YOUR REAL FRAME FROM URL
-           ===================================================== */
+    transform: translateX(-50%);
 
-        .art-frame {
-            position: absolute;
+    z-index: 20;
 
-            inset: 0;
+    display: flex;
 
-            width: 100%;
+    align-items: baseline;
+    justify-content: center;
 
-            height: 100%;
+    white-space: nowrap;
 
-            object-fit: fill;
+    padding: 5px 17px 6px;
 
-            z-index: 10;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #eeeeee 45%,
+            #cfcfcf 100%
+        );
 
-            pointer-events: none;
+    color: #080808;
 
-            user-select: none;
+    border: 1px solid #999;
 
-            -webkit-user-drag: none;
+    border-radius: 3px;
 
-            filter:
-                drop-shadow(
-                    0 7px 9px rgba(0,0,0,.45)
-                );
-        }
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.7);
+}
 
 
-        /* =====================================================
-           IXWEAR PLAQUE
-           ===================================================== */
+/* =====================================================
+   DECORATIVE CORNER DETAILS
+   ===================================================== */
 
-        .frame-brand {
-            position: absolute;
+.frame > .corner {
+    position: absolute;
 
-            left: 50%;
+    z-index: 15;
 
-            bottom: -18px;
+    width: 45px;
+    height: 45px;
 
-            transform:
-                translateX(-50%);
+    pointer-events: none;
+}
 
-            z-index: 20;
+.corner::before,
+.corner::after {
+    content: "";
 
-            display: flex;
+    position: absolute;
 
-            align-items: baseline;
+    border-color: #d9d9d9;
+    border-style: solid;
+}
 
-            justify-content: center;
+.corner-tl {
+    top: -3px;
+    left: -3px;
+}
 
-            white-space: nowrap;
+.corner-tr {
+    top: -3px;
+    right: -3px;
+    transform: scaleX(-1);
+}
 
-            padding:
-                5px 17px 6px;
+.corner-bl {
+    bottom: -3px;
+    left: -3px;
+    transform: scaleY(-1);
+}
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #ffffff 0%,
-                    #eeeeee 45%,
-                    #cfcfcf 100%
-                );
+.corner-br {
+    bottom: -3px;
+    right: -3px;
+    transform: scale(-1);
+}
 
-            color: #080808;
+.corner::before {
+    width: 28px;
+    height: 28px;
 
-            border:
-                1px solid #999;
+    border-width: 3px 0 0 3px;
 
-            border-radius: 3px;
+    transform: rotate(45deg);
 
-            box-shadow:
-                0 4px 10px rgba(0,0,0,.7);
-        }
+    top: 7px;
+    left: 7px;
 
-        .brand-ix {
-            font-family:
-                "Cinzel",
-                serif;
+    box-shadow:
+        0 0 3px rgba(255,255,255,.45);
+}
 
-            font-size: 17px;
+.corner::after {
+    width: 17px;
+    height: 17px;
 
-            font-weight: 700;
+    border-width: 0 3px 3px 0;
 
-            letter-spacing: -1px;
-        }
+    transform: rotate(45deg);
 
-        .brand-wear {
-            margin-left: 3px;
+    top: 11px;
+    left: 11px;
+}
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
 
-            font-size: 17px;
+/* =====================================================
+   BRAND
+   ===================================================== */
 
-            font-weight: 600;
+.brand-ix {
+    font-family: "Cinzel", serif;
 
-            letter-spacing: 1px;
-        }
+    font-size: 17px;
+    font-weight: 700;
 
+    letter-spacing: -1px;
+}
 
-        /* =====================================================
-           PRODUCT INFO
-           ===================================================== */
+.brand-wear {
+    margin-left: 3px;
 
-        .info {
-            padding-top: 35px;
+    font-family: "Cormorant Garamond", serif;
 
-            text-align: center;
-        }
+    font-size: 17px;
+    font-weight: 600;
 
-        .name {
-            font-family:
-                "Cormorant Garamond",
-                serif;
+    letter-spacing: 1px;
+}
 
-            font-size: 24px;
 
-            line-height: 1.15;
+/* =====================================================
+   INFO
+   ===================================================== */
 
-            color: #eee;
+.info {
+    padding-top: 35px;
+    text-align: center;
+}
 
-            font-weight: 500;
-        }
+.name {
+    font-family: "Cormorant Garamond", serif;
 
-        .price {
-            margin-top: 6px;
+    font-size: 24px;
+    line-height: 1.15;
 
-            font-family:
-                "Cinzel",
-                serif;
+    color: #eee;
+    font-weight: 500;
+}
 
-            font-size: 21px;
+.price {
+    margin-top: 6px;
 
-            letter-spacing: 2px;
+    font-family: "Cinzel", serif;
 
-            color: #fff;
+    font-size: 21px;
+    letter-spacing: 2px;
 
-            font-weight: 500;
-        }
+    color: #fff;
+    font-weight: 500;
+}
 
-        .description {
-            margin-top: 6px;
+.description {
+    margin-top: 6px;
 
-            color: #777;
+    color: #777;
 
-            font-size: 15px;
-        }
+    font-size: 15px;
+}
 
 
-        /* =====================================================
-           STATES
-           ===================================================== */
+/* =====================================================
+   STATES
+   ===================================================== */
 
-        .loading,
-        .empty,
-        .error {
-            grid-column:
-                1 / -1;
+.loading,
+.empty,
+.error {
 
-            text-align: center;
+    grid-column: 1 / -1;
 
-            padding:
-                70px 10px;
+    text-align: center;
 
-            font-size: 21px;
+    padding: 70px 10px;
 
-            color: #777;
-        }
+    font-size: 21px;
 
-        .error {
-            color: #c77;
-        }
+    color: #777;
+}
 
+.error {
+    color: #c77;
+}
 
-        /* =====================================================
-           MOBILE
-           ===================================================== */
 
-        @media (max-width: 600px) {
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
-            .header {
-                height: 92px;
+@media (max-width: 600px) {
 
-                border-radius:
-                    0 0 22px 22px;
-            }
+    .header {
+        height: 92px;
+        border-radius: 0 0 22px 22px;
+    }
 
-            .logo-ix {
-                font-size: 37px;
-            }
+    .logo-ix {
+        font-size: 37px;
+    }
 
-            .logo-wear {
-                font-size: 26px;
-            }
+    .logo-wear {
+        font-size: 26px;
+    }
 
+    main {
+        padding: 29px 15px 55px;
+    }
 
-            main {
-                padding:
-                    29px 15px 55px;
-            }
+    .catalog-title {
+        margin-bottom: 42px;
+    }
 
+    .catalog-title h1 {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
 
-            .catalog-title {
-                margin-bottom: 42px;
-            }
+    .catalog-subtitle {
+        font-size: 18px;
+    }
 
-            .catalog-title h1 {
-                font-size: 20px;
+    .title-decoration {
+        width: 43px;
+    }
 
-                letter-spacing: 3px;
-            }
+    #products {
+        column-gap: 25px;
+        row-gap: 60px;
+    }
 
-            .catalog-subtitle {
-                font-size: 18px;
-            }
+    .frame::before {
+        border-width: 10px;
 
-            .title-decoration {
-                width: 43px;
-            }
+        box-shadow:
+            inset 0 0 0 2px #777,
+            inset 0 0 0 4px #f4f4f4,
+            inset 0 0 0 6px #a4a4a4,
+            inset 0 0 0 8px #eeeeee,
+            inset 0 0 14px rgba(0,0,0,.7),
+            0 5px 9px rgba(0,0,0,.65);
+    }
 
+    .frame::after {
+        top: 10%;
+        left: 10%;
+        right: 10%;
+        bottom: 9%;
+    }
 
-            /* PRODUCT GRID */
+    .corner {
+        transform: scale(.7);
+    }
 
-            #products {
-                column-gap: 25px;
+    .corner-tr {
+        transform: scaleX(-1) scale(.7);
+    }
 
-                row-gap: 60px;
-            }
+    .corner-bl {
+        transform: scaleY(-1) scale(.7);
+    }
 
+    .corner-br {
+        transform: scale(-1) scale(.7);
+    }
 
-            /* FRAME */
+    .frame-brand {
+        bottom: -14px;
 
-            .frame {
-                aspect-ratio:
-                    0.78 / 1;
+        padding:
+            3px 10px 4px;
+    }
 
-                box-shadow: none;
-            }
+    .brand-ix {
+        font-size: 12px;
+    }
 
+    .brand-wear {
+        font-size: 12px;
+        margin-left: 2px;
+    }
 
-            /* IMAGE */
+    .info {
+        padding-top: 29px;
+    }
 
-            .image-area {
-                top: 15%;
+    .name {
+        font-size: 17px;
+    }
 
-                left: 15%;
+    .price {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
 
-                right: 15%;
+    .description {
+        font-size: 12px;
+    }
+}
 
-                bottom: 13%;
-            }
 
+@media (max-width: 380px) {
 
-            /* ART FRAME */
+    main {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
 
-            .art-frame {
-                filter:
-                    drop-shadow(
-                        0 5px 7px rgba(0,0,0,.5)
-                    );
-            }
+    .logo-ix {
+        font-size: 34px;
+    }
 
+    .logo-wear {
+        font-size: 24px;
+    }
 
-            /* BRAND */
+    #products {
+        column-gap: 19px;
+    }
 
-            .frame-brand {
-                bottom: -14px;
+    .name {
+        font-size: 15px;
+    }
 
-                padding:
-                    3px 10px 4px;
-            }
+    .price {
+        font-size: 14px;
+    }
+}
 
-            .brand-ix {
-                font-size: 12px;
-            }
-
-            .brand-wear {
-                font-size: 12px;
-
-                margin-left: 2px;
-            }
-
-
-            /* INFO */
-
-            .info {
-                padding-top: 29px;
-            }
-
-            .name {
-                font-size: 17px;
-            }
-
-            .price {
-                font-size: 15px;
-
-                letter-spacing: 1px;
-            }
-
-            .description {
-                font-size: 12px;
-            }
-        }
-
-
-        /* =====================================================
-           VERY SMALL PHONES
-           ===================================================== */
-
-        @media (max-width: 380px) {
-
-            main {
-                padding-left: 11px;
-
-                padding-right: 11px;
-            }
-
-            .logo-ix {
-                font-size: 34px;
-            }
-
-            .logo-wear {
-                font-size: 24px;
-            }
-
-            #products {
-                column-gap: 19px;
-            }
-
-            .name {
-                font-size: 15px;
-            }
-
-            .price {
-                font-size: 14px;
-            }
-
-            .frame-brand {
-                bottom: -13px;
-            }
-        }
-
-    </style>
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+<header class="header">
 
-    <header class="header">
+    <div class="logo">
 
-        <div class="logo">
+        <span class="logo-ix">
+            IX
+        </span>
 
-            <span class="logo-ix">
-                IX
-            </span>
+        <span class="logo-wear">
+            wear
+        </span>
 
-            <span class="logo-wear">
-                wear
-            </span>
+    </div>
 
-        </div>
-
-    </header>
+</header>
 
 
-    <!-- =====================================================
-         MAIN
-         ===================================================== -->
+<main>
 
-    <main>
+    <section class="catalog-title">
 
-        <section class="catalog-title">
+        <div class="title-line">
 
-            <div class="title-line">
+            <span class="title-decoration"></span>
 
-                <span class="title-decoration"></span>
+            <h1>
+                COLLECTION
+            </h1>
 
-                <h1>
-                    COLLECTION
-                </h1>
-
-                <span
-                    class="title-decoration right"
-                ></span>
-
-            </div>
-
-            <div class="catalog-subtitle">
-                CHOOSE YOUR STYLE
-            </div>
-
-        </section>
-
-
-        <div id="products">
-
-            <div class="loading">
-                Loading collection...
-            </div>
+            <span class="title-decoration right"></span>
 
         </div>
 
-    </main>
+        <div class="catalog-subtitle">
+            CHOOSE YOUR STYLE
+        </div>
+
+    </section>
 
 
-    <script>
+    <div id="products">
 
-        /* =====================================================
-           TELEGRAM
-           ===================================================== */
+        <div class="loading">
+            Loading collection...
+        </div>
 
-        const tg =
-            window.Telegram.WebApp;
+    </div>
 
-        tg.ready();
-
-        tg.expand();
+</main>
 
 
-        /* =====================================================
-           CONTAINER
-           ===================================================== */
+<script>
 
-        const container =
-            document.getElementById(
-                "products"
+const tg = window.Telegram.WebApp;
+
+tg.ready();
+tg.expand();
+
+
+const container =
+    document.getElementById("products");
+
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        String(text);
+
+    return div.innerHTML;
+}
+
+
+function brandHTML() {
+
+    return `
+
+        <span class="brand-ix">
+            IX
+        </span>
+
+        <span class="brand-wear">
+            wear
+        </span>
+
+    `;
+}
+
+
+async function loadProducts() {
+
+    try {
+
+        const cacheBuster =
+            Date.now() +
+            "_" +
+            Math.random()
+                .toString(36)
+                .substring(2);
+
+
+        const response =
+            await fetch(
+                "products.json?cache=" +
+                cacheBuster,
+                {
+                    method: "GET",
+
+                    cache: "no-store",
+
+                    headers: {
+                        "Cache-Control":
+                            "no-cache",
+
+                        "Pragma":
+                            "no-cache"
+                    }
+                }
             );
 
 
-        /* =====================================================
-           ESCAPE HTML
-           ===================================================== */
+        if (!response.ok) {
 
-        function escapeHtml(text) {
+            throw new Error(
+                "HTTP " +
+                response.status
+            );
 
-            const div =
-                document.createElement(
-                    "div"
-                );
-
-            div.textContent =
-                String(text);
-
-            return div.innerHTML;
         }
 
 
-        /* =====================================================
-           IXWEAR BRAND
-           ===================================================== */
+        const products =
+            await response.json();
 
-        function brandHTML() {
 
-            return `
-                <span class="brand-ix">
-                    IX
-                </span>
+        if (!Array.isArray(products)) {
 
-                <span class="brand-wear">
-                    wear
-                </span>
+            throw new Error(
+                "products.json имеет неправильный формат"
+            );
+
+        }
+
+
+        if (products.length === 0) {
+
+            container.innerHTML = `
+
+                <div class="empty">
+                    Collection is empty
+                </div>
+
             `;
+
+            return;
         }
 
 
-        /* =====================================================
-           LOAD PRODUCTS
-           ===================================================== */
-
-        async function loadProducts() {
-
-            try {
-
-                const cacheBuster =
-                    Date.now() +
-                    "_" +
-                    Math.random()
-                        .toString(36)
-                        .substring(2);
+        let html = "";
 
 
-                const response =
-                    await fetch(
-                        "products.json?cache=" +
-                        cacheBuster,
-                        {
-                            method: "GET",
+        products.forEach(
+            (product, index) => {
 
-                            cache: "no-store",
-
-                            headers: {
-                                "Cache-Control":
-                                    "no-cache",
-
-                                "Pragma":
-                                    "no-cache"
-                            }
-                        }
+                const name =
+                    escapeHtml(
+                        product.name || ""
                     );
 
 
-                if (!response.ok) {
-
-                    throw new Error(
-                        "HTTP " +
-                        response.status
+                const price =
+                    escapeHtml(
+                        product.price || ""
                     );
-                }
 
 
-                const products =
-                    await response.json();
-
-
-                if (
-                    !Array.isArray(
-                        products
-                    )
-                ) {
-
-                    throw new Error(
-                        "products.json имеет неправильный формат"
+                const description =
+                    escapeHtml(
+                        product.description || ""
                     );
-                }
 
 
-                if (
-                    products.length === 0
-                ) {
+                const imageUrl =
+                    product.image
+                        ? product.image +
+                          (
+                              product.image.includes("?")
+                              ? "&"
+                              : "?"
+                          ) +
+                          "v=" +
+                          Date.now()
+                        : "";
 
-                    container.innerHTML = `
 
-                        <div class="empty">
-                            Collection is empty
+                html += `
+
+                    <article
+                        class="product"
+                        style="
+                            animation-delay:
+                            ${index * 0.06}s;
+                        "
+                    >
+
+                        <div class="frame">
+
+
+                            <div class="image-area">
+
+                                ${
+                                    imageUrl
+                                    ? `
+
+                                        <img
+                                            class="product-image"
+
+                                            src="${imageUrl}"
+
+                                            alt="${name}"
+
+                                            loading="lazy"
+
+                                            onerror="
+                                                this.style.display='none';
+                                            "
+                                        >
+
+                                    `
+                                    : ""
+                                }
+
+                            </div>
+
+
+                            <!-- DECORATIVE CORNERS -->
+
+                            <span class="corner corner-tl"></span>
+
+                            <span class="corner corner-tr"></span>
+
+                            <span class="corner corner-bl"></span>
+
+                            <span class="corner corner-br"></span>
+
+
+                            <!-- IXWEAR -->
+
+                            <div class="frame-brand">
+
+                                ${brandHTML()}
+
+                            </div>
+
+
                         </div>
 
-                    `;
 
-                    return;
-                }
+                        <div class="info">
 
-
-                let html = "";
-
-
-                /* =================================================
-                   CREATE PRODUCTS
-                   ================================================= */
-
-                products.forEach(
-                    (product, index) => {
-
-                        const name =
-                            escapeHtml(
-                                product.name || ""
-                            );
+                            <div class="name">
+                                ${name}
+                            </div>
 
 
-                        const price =
-                            escapeHtml(
-                                product.price || ""
-                            );
+                            <div class="price">
+                                ${price}
+                            </div>
 
 
-                        const description =
-                            escapeHtml(
-                                product.description || ""
-                            );
+                            ${
+                                description
+                                ? `
 
-
-                        const imageUrl =
-                            product.image
-                                ? product.image +
-                                  (
-                                      product.image.includes("?")
-                                      ? "&"
-                                      : "?"
-                                  ) +
-                                  "v=" +
-                                  Date.now()
-                                : "";
-
-
-                        html += `
-
-                            <article
-                                class="product"
-                                style="
-                                    animation-delay:
-                                    ${index * 0.06}s;
-                                "
-                            >
-
-                                <div class="frame">
-
-
-                                    <!-- PRODUCT PHOTO -->
-
-                                    <div class="image-area">
-
-                                        ${
-                                            imageUrl
-                                            ? `
-
-                                                <img
-                                                    class="product-image"
-
-                                                    src="${imageUrl}"
-
-                                                    alt="${name}"
-
-                                                    loading="lazy"
-
-                                                    onerror="
-                                                        this.style.display='none';
-                                                    "
-                                                >
-
-                                            `
-                                            : ""
-                                        }
-
+                                    <div class="description">
+                                        ${description}
                                     </div>
 
+                                `
+                                : ""
+                            }
 
-                                    <!-- =================================
-                                         YOUR FRAME IMAGE
-                                         ================================= -->
-
-                                    <img
-                                        class="art-frame"
-
-                                        src="https://img.magnific.com/free-psd/ornate-white-picture-frame-elegant-design-baroque-style-home-decor-blank-template_632498-29751.jpg?semt=ais_hybrid"
-
-                                        alt=""
-
-                                        draggable="false"
-                                    >
+                        </div>
 
 
-                                    <!-- IXWEAR -->
-
-                                    <div class="frame-brand">
-
-                                        ${brandHTML()}
-
-                                    </div>
-
-
-                                </div>
-
-
-                                <!-- PRODUCT INFORMATION -->
-
-                                <div class="info">
-
-                                    <div class="name">
-
-                                        ${name}
-
-                                    </div>
-
-
-                                    <div class="price">
-
-                                        ${price}
-
-                                    </div>
-
-
-                                    ${
-                                        description
-                                        ? `
-
-                                            <div class="description">
-
-                                                ${description}
-
-                                            </div>
-
-                                        `
-                                        : ""
-                                    }
-
-                                </div>
-
-
-                            </article>
-
-                        `;
-                    }
-                );
-
-
-                container.innerHTML =
-                    html;
-
-
-            } catch (error) {
-
-                console.error(
-                    "Ошибка загрузки каталога:",
-                    error
-                );
-
-
-                container.innerHTML = `
-
-                    <div class="error">
-
-                        Could not load collection.
-
-                        <br><br>
-
-                        ${escapeHtml(
-                            error.message
-                        )}
-
-                    </div>
+                    </article>
 
                 `;
-
             }
-
-        }
-
-
-        /* =====================================================
-           START
-           ===================================================== */
-
-        loadProducts();
-
-
-        /* =====================================================
-           AUTO UPDATE
-           ===================================================== */
-
-        setInterval(
-            loadProducts,
-            3000
         );
 
-    </script>
+
+        container.innerHTML =
+            html;
+
+
+    } catch (error) {
+
+        console.error(
+            "Ошибка загрузки каталога:",
+            error
+        );
+
+
+        container.innerHTML = `
+
+            <div class="error">
+
+                Could not load collection.
+
+                <br><br>
+
+                ${escapeHtml(
+                    error.message
+                )}
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+loadProducts();
+
+
+setInterval(
+    loadProducts,
+    3000
+);
+
+</script>
 
 </body>
 </html>
