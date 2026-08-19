@@ -1,5 +1,12 @@
 [
   {
+    "id": 11,
+    "name": "типок с то",
+    "price": "222",
+    "description": "",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADwhlrG03rKUh-.jpg"
+  },
+  {
     "id": 10,
     "name": "так и быть 2 нормальных типа",
     "price": "2",
