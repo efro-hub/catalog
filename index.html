@@ -3,10 +3,16 @@
 <head>
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
 
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+>
+
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 
@@ -17,10 +23,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 * {
     box-sizing: border-box;
@@ -40,13 +52,16 @@ body {
 
 body {
     overflow-x: hidden;
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
 }
 
 
 /* =====================================================
    HEADER
-   ===================================================== */
+===================================================== */
 
 .header {
     width: 100%;
@@ -65,18 +80,23 @@ body {
         );
 
     border-bottom: 1px solid #242424;
-    border-radius: 0 0 24px 24px;
+
+    border-radius:
+        0 0 24px 24px;
 }
 
 
 /* =====================================================
    LOGO
-   ===================================================== */
+===================================================== */
 
 .logo {
     display: flex;
+
     align-items: baseline;
+
     white-space: nowrap;
+
     line-height: 1;
 
     text-shadow:
@@ -84,19 +104,30 @@ body {
 }
 
 .logo-ix {
-    font-family: "Cinzel", serif;
+    font-family:
+        "Cinzel",
+        serif;
+
     font-size: 40px;
+
     font-weight: 600;
+
     letter-spacing: -2px;
+
     color: #f1f1f1;
 }
 
 .logo-wear {
     margin-left: 4px;
 
-    font-family: "Cormorant Garamond", serif;
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size: 28px;
+
     font-weight: 500;
+
     letter-spacing: 1px;
 
     color: #bdbdbd;
@@ -105,37 +136,44 @@ body {
 
 /* =====================================================
    MAIN
-   ===================================================== */
+===================================================== */
 
 main {
     width: 100%;
+
     max-width: 1100px;
 
     margin: 0 auto;
 
-    padding: 32px 30px 70px;
+    padding:
+        32px 30px 70px;
 }
 
 
 /* =====================================================
    TITLE
-   ===================================================== */
+===================================================== */
 
 .catalog-title {
     text-align: center;
+
     margin-bottom: 48px;
 }
 
 .title-line {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 18px;
 }
 
 .title-decoration {
     width: 68px;
     height: 20px;
+
     position: relative;
 }
 
@@ -143,35 +181,45 @@ main {
     content: "❧";
 
     position: absolute;
+
     left: 0;
     top: -8px;
 
     font-size: 24px;
+
     color: #737373;
 
-    transform: rotate(180deg);
+    transform:
+        rotate(180deg);
 }
 
 .title-decoration::after {
     content: "◇";
 
     position: absolute;
+
     right: 0;
     top: -5px;
 
     font-size: 14px;
+
     color: #555;
 }
 
 .title-decoration.right {
-    transform: scaleX(-1);
+    transform:
+        scaleX(-1);
 }
 
 .catalog-title h1 {
     margin: 0;
 
-    font-family: "Cinzel", serif;
+    font-family:
+        "Cinzel",
+        serif;
+
     font-size: 29px;
+
     font-weight: 500;
 
     letter-spacing: 5px;
@@ -183,6 +231,7 @@ main {
     margin-top: 9px;
 
     font-size: 21px;
+
     letter-spacing: 1px;
 
     color: #999;
@@ -191,7 +240,7 @@ main {
 
 /* =====================================================
    PRODUCTS
-   ===================================================== */
+===================================================== */
 
 #products {
     display: grid;
@@ -200,11 +249,13 @@ main {
         repeat(2, minmax(0, 1fr));
 
     column-gap: 55px;
+
     row-gap: 70px;
 }
 
 .product {
     min-width: 0;
+
     text-align: center;
 
     animation:
@@ -215,83 +266,181 @@ main {
 
     from {
         opacity: 0;
-        transform: translateY(18px);
+
+        transform:
+            translateY(18px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 
 /* =====================================================
-   ART FRAME
-   ===================================================== */
+   BAROQUE FRAME
+===================================================== */
 
 .frame {
+
     position: relative;
 
     width: 100%;
 
-    aspect-ratio: .78 / 1;
+    aspect-ratio:
+        .78 / 1;
+
+    background:
+        #fdfdfd;
+
+    border:
+        14px solid #e5e4e0;
+
+    border-radius:
+        2px;
+
+    padding:
+        12%;
 
     overflow: visible;
 
     isolation: isolate;
+
+    box-shadow:
+
+        0 0 0 2px #ffffff,
+
+        0 0 0 6px #dcdbd7,
+
+        inset 0 0 25px rgba(0,0,0,.25),
+
+        inset 0 0 0 6px #e2dfda,
+
+        inset 0 0 0 12px #ffffff,
+
+        inset 0 0 40px rgba(0,0,0,.15),
+
+        0 18px 35px rgba(0,0,0,.75),
+
+        0 8px 16px rgba(0,0,0,.5);
 }
 
 
 /* =====================================================
-   REAL PRODUCT WINDOW
-   ===================================================== */
+   DEEP FRAME RELIEF
+===================================================== */
 
-.image-area {
+.frame::before {
+
+    content: "";
 
     position: absolute;
 
-    /*
-       ЭТО РАЗМЕР ОТВЕРСТИЯ
-    */
+    inset: -8px;
 
-    top: 13%;
-    left: 13%;
-    right: 13%;
-    bottom: 12%;
+    z-index: 8;
 
-    z-index: 1;
+    pointer-events: none;
 
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #191919 0%,
-            #0b0b0b 65%,
-            #020202 100%
-        );
-
-    /*
-       ВНУТРЕННЯЯ ТЕНЬ
-    */
+    border:
+        4px solid #ffffff;
 
     box-shadow:
-        inset 0 0 18px rgba(0,0,0,.95),
-        inset 0 0 4px rgba(255,255,255,.15);
+
+        inset
+        0 0 0 3px #cfcfcb,
+
+        inset
+        0 0 0 7px #f8f8f6,
+
+        inset
+        0 0 14px rgba(0,0,0,.22),
+
+        0 0 0 2px #d2d1cc;
+}
+
+
+/* =====================================================
+   INNER FRAME
+===================================================== */
+
+.frame-inner {
+
+    position: absolute;
+
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+
+    z-index: 3;
+
+    background:
+        #fff;
+
+    border:
+        4px double #b5b3ad;
+
+    padding:
+        10px;
+
+    box-shadow:
+
+        inset
+        0 0 15px rgba(0,0,0,.15),
+
+        0 0 0 4px #fff,
+
+        0 0 10px rgba(0,0,0,.1);
 }
 
 
 /* =====================================================
    PRODUCT PHOTO
-   ===================================================== */
+===================================================== */
+
+.image-area {
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #171717 0%,
+            #0b0b0b 65%,
+            #020202 100%
+        );
+
+    border:
+        1px solid #000;
+
+    box-shadow:
+        inset 0 0 30px rgba(0,0,0,.8);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
 
 .product img.product-image {
 
     width: 100%;
+
     height: 100%;
 
     object-fit: contain;
@@ -305,256 +454,195 @@ main {
 
 
 /* =====================================================
-   DECORATIVE FRAME
-   ===================================================== */
+   INNER CORNER ORNAMENTS
+===================================================== */
 
-.frame::before {
+.corner-decor {
+
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    border:
+        2px solid #b5b3ad;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.corner-decor::before {
 
     content: "";
 
     position: absolute;
 
-    inset: 0;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
 
-    z-index: 5;
+    border:
+        1px dashed #c2c0b8;
+}
 
-    pointer-events: none;
 
-    /*
-       ОСНОВНАЯ ШИРОКАЯ РАМКА
-    */
+/* TOP LEFT */
 
-    border: 15px solid #d8d8d8;
+.c-tl {
+    top: -6px;
+    left: -6px;
 
-    /*
-       СЛОЖНЫЙ СТАРИННЫЙ ОБЪЕМ
-    */
+    border-right: none;
+    border-bottom: none;
+}
 
-    box-shadow:
 
-        inset 0 0 0 2px #777,
+/* TOP RIGHT */
 
-        inset 0 0 0 5px #f4f4f4,
+.c-tr {
+    top: -6px;
+    right: -6px;
 
-        inset 0 0 0 8px #a4a4a4,
+    border-left: none;
+    border-bottom: none;
+}
 
-        inset 0 0 0 11px #eeeeee,
 
-        inset 0 0 20px rgba(0,0,0,.65),
+/* BOTTOM LEFT */
 
-        0 7px 15px rgba(0,0,0,.65);
+.c-bl {
+    bottom: -6px;
+    left: -6px;
 
+    border-right: none;
+    border-top: none;
+}
+
+
+/* BOTTOM RIGHT */
+
+.c-br {
+    bottom: -6px;
+    right: -6px;
+
+    border-left: none;
+    border-top: none;
 }
 
 
 /* =====================================================
-   INNER FRAME LINE
-   ===================================================== */
-
-.frame::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 9%;
-
-    z-index: 6;
-
-    pointer-events: none;
-
-    border: 2px solid #777;
-
-    box-shadow:
-
-        inset 0 0 0 2px #eeeeee,
-
-        inset 0 0 8px rgba(0,0,0,.75),
-
-        0 0 0 2px rgba(255,255,255,.08);
-
-}
-
-
-/* =====================================================
-   ORNAMENT CORNERS
-   ===================================================== */
+   IXWEAR ENGRAVING
+===================================================== */
 
 .frame-brand {
 
     position: absolute;
 
-    left: 50%;
-    bottom: -18px;
+    top: 5px;
 
-    transform: translateX(-50%);
+    left: 50%;
+
+    transform:
+        translateX(-50%);
 
     z-index: 20;
 
-    display: flex;
+    font-family:
+        "Times New Roman",
+        serif;
 
-    align-items: baseline;
-    justify-content: center;
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #a3a19a;
 
     white-space: nowrap;
 
-    padding: 5px 17px 6px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff 0%,
-            #eeeeee 45%,
-            #cfcfcf 100%
-        );
-
-    color: #080808;
-
-    border: 1px solid #999;
-
-    border-radius: 3px;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,.7);
+    text-shadow:
+        1px 1px 0 #fff,
+        -1px -1px 1px rgba(0,0,0,.15);
 }
 
 
 /* =====================================================
-   DECORATIVE CORNER DETAILS
-   ===================================================== */
+   BOTTOM ORNAMENT
+===================================================== */
 
-.frame > .corner {
-    position: absolute;
-
-    z-index: 15;
-
-    width: 45px;
-    height: 45px;
-
-    pointer-events: none;
-}
-
-.corner::before,
-.corner::after {
-    content: "";
+.frame-ornament {
 
     position: absolute;
 
-    border-color: #d9d9d9;
-    border-style: solid;
-}
+    bottom: 4px;
 
-.corner-tl {
-    top: -3px;
-    left: -3px;
-}
+    left: 50%;
 
-.corner-tr {
-    top: -3px;
-    right: -3px;
-    transform: scaleX(-1);
-}
+    transform:
+        translateX(-50%);
 
-.corner-bl {
-    bottom: -3px;
-    left: -3px;
-    transform: scaleY(-1);
-}
+    z-index: 20;
 
-.corner-br {
-    bottom: -3px;
-    right: -3px;
-    transform: scale(-1);
-}
+    font-size: 9px;
 
-.corner::before {
-    width: 28px;
-    height: 28px;
+    letter-spacing: 5px;
 
-    border-width: 3px 0 0 3px;
+    color: #b5b3ad;
 
-    transform: rotate(45deg);
+    text-shadow:
+        1px 1px 0 #fff;
 
-    top: 7px;
-    left: 7px;
-
-    box-shadow:
-        0 0 3px rgba(255,255,255,.45);
-}
-
-.corner::after {
-    width: 17px;
-    height: 17px;
-
-    border-width: 0 3px 3px 0;
-
-    transform: rotate(45deg);
-
-    top: 11px;
-    left: 11px;
+    white-space: nowrap;
 }
 
 
 /* =====================================================
-   BRAND
-   ===================================================== */
-
-.brand-ix {
-    font-family: "Cinzel", serif;
-
-    font-size: 17px;
-    font-weight: 700;
-
-    letter-spacing: -1px;
-}
-
-.brand-wear {
-    margin-left: 3px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   INFO
-   ===================================================== */
+   PRODUCT INFO
+===================================================== */
 
 .info {
     padding-top: 35px;
+
     text-align: center;
 }
 
 .name {
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-size: 24px;
+
     line-height: 1.15;
 
     color: #eee;
+
     font-weight: 500;
 }
 
 .price {
+
     margin-top: 6px;
 
-    font-family: "Cinzel", serif;
+    font-family:
+        "Cinzel",
+        serif;
 
     font-size: 21px;
+
     letter-spacing: 2px;
 
     color: #fff;
+
     font-weight: 500;
 }
 
 .description {
+
     margin-top: 6px;
 
     color: #777;
@@ -565,17 +653,19 @@ main {
 
 /* =====================================================
    STATES
-   ===================================================== */
+===================================================== */
 
 .loading,
 .empty,
 .error {
 
-    grid-column: 1 / -1;
+    grid-column:
+        1 / -1;
 
     text-align: center;
 
-    padding: 70px 10px;
+    padding:
+        70px 10px;
 
     font-size: 21px;
 
@@ -589,14 +679,17 @@ main {
 
 /* =====================================================
    MOBILE
-   ===================================================== */
+===================================================== */
 
 @media (max-width: 600px) {
 
     .header {
         height: 92px;
-        border-radius: 0 0 22px 22px;
+
+        border-radius:
+            0 0 22px 22px;
     }
+
 
     .logo-ix {
         font-size: 37px;
@@ -606,95 +699,180 @@ main {
         font-size: 26px;
     }
 
+
     main {
-        padding: 29px 15px 55px;
+        padding:
+            29px 15px 55px;
     }
+
 
     .catalog-title {
         margin-bottom: 42px;
     }
 
+
     .catalog-title h1 {
+
         font-size: 20px;
+
         letter-spacing: 3px;
     }
+
 
     .catalog-subtitle {
         font-size: 18px;
     }
 
+
     .title-decoration {
         width: 43px;
     }
 
+
     #products {
+
         column-gap: 25px;
+
         row-gap: 60px;
     }
 
-    .frame::before {
-        border-width: 10px;
+
+    /* ============================
+       MOBILE FRAME
+    ============================ */
+
+    .frame {
+
+        border-width: 9px;
+
+        padding: 12%;
 
         box-shadow:
-            inset 0 0 0 2px #777,
-            inset 0 0 0 4px #f4f4f4,
-            inset 0 0 0 6px #a4a4a4,
-            inset 0 0 0 8px #eeeeee,
-            inset 0 0 14px rgba(0,0,0,.7),
-            0 5px 9px rgba(0,0,0,.65);
+
+            0 0 0 2px #fff,
+
+            0 0 0 5px #dcdbd7,
+
+            inset 0 0 15px rgba(0,0,0,.25),
+
+            inset 0 0 0 5px #e2dfda,
+
+            inset 0 0 0 9px #fff,
+
+            inset 0 0 25px rgba(0,0,0,.15),
+
+            0 10px 22px rgba(0,0,0,.75);
     }
 
-    .frame::after {
+
+    .frame::before {
+
+        inset: -6px;
+
+        border-width: 3px;
+
+        box-shadow:
+
+            inset 0 0 0 2px #cfcfcb,
+
+            inset 0 0 0 5px #f8f8f6,
+
+            inset 0 0 10px rgba(0,0,0,.22),
+
+            0 0 0 2px #d2d1cc;
+    }
+
+
+    .frame-inner {
+
         top: 10%;
         left: 10%;
         right: 10%;
-        bottom: 9%;
+        bottom: 10%;
+
+        border-width: 3px;
+
+        padding: 7px;
     }
 
-    .corner {
-        transform: scale(.7);
+
+    .corner-decor {
+
+        width: 24px;
+        height: 24px;
+
+        border-width: 1px;
     }
 
-    .corner-tr {
-        transform: scaleX(-1) scale(.7);
+
+    .corner-decor::before {
+
+        border-width: 1px;
+
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
     }
 
-    .corner-bl {
-        transform: scaleY(-1) scale(.7);
+
+    .c-tl {
+        top: -4px;
+        left: -4px;
     }
 
-    .corner-br {
-        transform: scale(-1) scale(.7);
+    .c-tr {
+        top: -4px;
+        right: -4px;
     }
+
+    .c-bl {
+        bottom: -4px;
+        left: -4px;
+    }
+
+    .c-br {
+        bottom: -4px;
+        right: -4px;
+    }
+
 
     .frame-brand {
-        bottom: -14px;
 
-        padding:
-            3px 10px 4px;
+        top: 3px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
     }
 
-    .brand-ix {
-        font-size: 12px;
+
+    .frame-ornament {
+
+        bottom: 2px;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
     }
 
-    .brand-wear {
-        font-size: 12px;
-        margin-left: 2px;
-    }
 
     .info {
         padding-top: 29px;
     }
 
+
     .name {
         font-size: 17px;
     }
 
+
     .price {
         font-size: 15px;
+
         letter-spacing: 1px;
     }
+
 
     .description {
         font-size: 12px;
@@ -702,12 +880,17 @@ main {
 }
 
 
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
 @media (max-width: 380px) {
 
     main {
         padding-left: 11px;
         padding-right: 11px;
     }
+
 
     .logo-ix {
         font-size: 34px;
@@ -717,13 +900,16 @@ main {
         font-size: 24px;
     }
 
+
     #products {
         column-gap: 19px;
     }
 
+
     .name {
         font-size: 15px;
     }
+
 
     .price {
         font-size: 14px;
@@ -736,6 +922,10 @@ main {
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
@@ -754,6 +944,10 @@ main {
 </header>
 
 
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <main>
 
     <section class="catalog-title">
@@ -766,7 +960,9 @@ main {
                 COLLECTION
             </h1>
 
-            <span class="title-decoration right"></span>
+            <span
+                class="title-decoration right"
+            ></span>
 
         </div>
 
@@ -790,20 +986,38 @@ main {
 
 <script>
 
-const tg = window.Telegram.WebApp;
+/* =====================================================
+   TELEGRAM
+===================================================== */
+
+const tg =
+    window.Telegram.WebApp;
 
 tg.ready();
+
 tg.expand();
 
 
-const container =
-    document.getElementById("products");
+/* =====================================================
+   CONTAINER
+===================================================== */
 
+const container =
+    document.getElementById(
+        "products"
+    );
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
 function escapeHtml(text) {
 
     const div =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     div.textContent =
         String(text);
@@ -812,21 +1026,9 @@ function escapeHtml(text) {
 }
 
 
-function brandHTML() {
-
-    return `
-
-        <span class="brand-ix">
-            IX
-        </span>
-
-        <span class="brand-wear">
-            wear
-        </span>
-
-    `;
-}
-
+/* =====================================================
+   LOAD PRODUCTS
+===================================================== */
 
 async function loadProducts() {
 
@@ -866,7 +1068,6 @@ async function loadProducts() {
                 "HTTP " +
                 response.status
             );
-
         }
 
 
@@ -874,16 +1075,21 @@ async function loadProducts() {
             await response.json();
 
 
-        if (!Array.isArray(products)) {
+        if (
+            !Array.isArray(
+                products
+            )
+        ) {
 
             throw new Error(
                 "products.json имеет неправильный формат"
             );
-
         }
 
 
-        if (products.length === 0) {
+        if (
+            products.length === 0
+        ) {
 
             container.innerHTML = `
 
@@ -899,6 +1105,10 @@ async function loadProducts() {
 
         let html = "";
 
+
+        /* =================================================
+           CREATE PRODUCTS
+        ================================================= */
 
         products.forEach(
             (product, index) => {
@@ -947,65 +1157,105 @@ async function loadProducts() {
                         <div class="frame">
 
 
-                            <div class="image-area">
+                            <!-- =================================
+                                 INNER FRAME
+                            ================================= -->
 
-                                ${
-                                    imageUrl
-                                    ? `
+                            <div class="frame-inner">
 
-                                        <img
-                                            class="product-image"
 
-                                            src="${imageUrl}"
+                                <!-- =============================
+                                     CORNERS
+                                ============================== -->
 
-                                            alt="${name}"
+                                <div
+                                    class="corner-decor c-tl"
+                                ></div>
 
-                                            loading="lazy"
+                                <div
+                                    class="corner-decor c-tr"
+                                ></div>
 
-                                            onerror="
-                                                this.style.display='none';
-                                            "
-                                        >
+                                <div
+                                    class="corner-decor c-bl"
+                                ></div>
 
-                                    `
-                                    : ""
-                                }
+                                <div
+                                    class="corner-decor c-br"
+                                ></div>
+
+
+                                <!-- =============================
+                                     PRODUCT PHOTO
+                                ============================== -->
+
+                                <div class="image-area">
+
+                                    ${
+                                        imageUrl
+                                        ? `
+
+                                            <img
+                                                class="product-image"
+
+                                                src="${imageUrl}"
+
+                                                alt="${name}"
+
+                                                loading="lazy"
+
+                                                onerror="
+                                                    this.style.display='none';
+                                                "
+                                            >
+
+                                        `
+                                        : ""
+                                    }
+
+                                </div>
 
                             </div>
 
 
-                            <!-- DECORATIVE CORNERS -->
-
-                            <span class="corner corner-tl"></span>
-
-                            <span class="corner corner-tr"></span>
-
-                            <span class="corner corner-bl"></span>
-
-                            <span class="corner corner-br"></span>
-
-
-                            <!-- IXWEAR -->
+                            <!-- ================================
+                                 IXWEAR
+                            ================================= -->
 
                             <div class="frame-brand">
+                                IXwear
+                            </div>
 
-                                ${brandHTML()}
 
+                            <!-- ================================
+                                 BOTTOM ORNAMENT
+                            ================================= -->
+
+                            <div class="frame-ornament">
+                                ❖ ❖ ❖
                             </div>
 
 
                         </div>
 
 
+                        <!-- =====================================
+                             PRODUCT INFORMATION
+                        ====================================== -->
+
                         <div class="info">
 
                             <div class="name">
+
                                 ${name}
+
                             </div>
 
 
                             <div class="price">
+
                                 ${price}
+
                             </div>
 
 
@@ -1014,7 +1264,9 @@ async function loadProducts() {
                                 ? `
 
                                     <div class="description">
+
                                         ${description}
+
                                     </div>
 
                                 `
@@ -1058,14 +1310,20 @@ async function loadProducts() {
             </div>
 
         `;
-
     }
-
 }
 
 
+/* =====================================================
+   START
+===================================================== */
+
 loadProducts();
 
+
+/* =====================================================
+   AUTO UPDATE
+===================================================== */
 
 setInterval(
     loadProducts,
