@@ -1,12 +1,5 @@
 [
   {
-    "id": 5,
-    "name": "рома",
-    "price": "123",
-    "description": "",
-    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADJxlrG03rKUh-.jpg"
-  },
-  {
     "id": 4,
     "name": "а",
     "price": "222",
