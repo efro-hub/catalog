@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "скрин",
+    "price": "300",
+    "description": "оченььььь длинное описание товара кароче да ебать малый лох",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADXRlrG03rKUh-.jpg"
+  }
+]
