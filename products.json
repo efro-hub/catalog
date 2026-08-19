@@ -1,5 +1,12 @@
 [
   {
+    "id": 8,
+    "name": "малый лох",
+    "price": "0",
+    "description": "лох ебучий",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADiBlrG03rKUh-.jpg"
+  },
+  {
     "id": 7,
     "name": "наебал на нфт нихуя себе",
     "price": "4000000",
