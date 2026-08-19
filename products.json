@@ -1,5 +1,12 @@
 [
   {
+    "id": 13,
+    "name": "Додик",
+    "price": "0",
+    "description": "пробитая жопа",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADARprG03rKUh-.jpg"
+  },
+  {
     "id": 12,
     "name": "рома",
     "price": "123",
