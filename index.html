@@ -275,18 +275,19 @@ main {
 
 
 /* =====================================================
-   PRODUCT PHOTO AREA
+   PHOTO AREA
    ===================================================== */
 
 .image-area {
+
     position: absolute;
 
-    top: 11%;
-    left: 11%;
-    right: 11%;
-    bottom: 10%;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 9%;
 
-    z-index: 1;
+    z-index: 2;
 
     overflow: hidden;
 
@@ -306,7 +307,9 @@ main {
 
     box-shadow:
         inset 0 0 30px rgba(0,0,0,.8),
-        inset 0 0 8px rgba(255,255,255,.08);
+
+        inset 0 0 8px
+        rgba(255,255,255,.08);
 }
 
 
@@ -325,12 +328,12 @@ main {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
 }
 
 
 /* =====================================================
-   BAROQUE FRAME
+   OUTER BAROQUE FRAME
    ===================================================== */
 
 .frame::before {
@@ -345,7 +348,7 @@ main {
 
     pointer-events: none;
 
-    background: #fdfdfd;
+    background: transparent;
 
     border: 8px solid #e5e4e0;
 
@@ -356,8 +359,6 @@ main {
         0 0 0 2px #fff,
 
         0 0 0 4px #dcdbd7,
-
-        inset 0 0 15px rgba(0,0,0,.20),
 
         inset 0 0 0 4px #e2dfda,
 
@@ -394,17 +395,16 @@ main {
 
     box-shadow:
 
-        inset 0 0 8px rgba(0,0,0,.15),
-
-        0 0 0 2px #fff;
+        inset 0 0 8px rgba(0,0,0,.15);
 }
 
 
 /* =====================================================
-   DECORATIVE CORNERS
+   CORNERS
    ===================================================== */
 
 .corner {
+
     position: absolute;
 
     width: 30px;
@@ -418,6 +418,7 @@ main {
 }
 
 .corner::before {
+
     content: "";
 
     position: absolute;
@@ -430,7 +431,9 @@ main {
     border: 1px dashed #c2c0b8;
 }
 
+
 .corner-tl {
+
     top: 3%;
     left: 3%;
 
@@ -438,7 +441,9 @@ main {
     border-bottom: none;
 }
 
+
 .corner-tr {
+
     top: 3%;
     right: 3%;
 
@@ -446,7 +451,9 @@ main {
     border-bottom: none;
 }
 
+
 .corner-bl {
+
     bottom: 3%;
     left: 3%;
 
@@ -454,7 +461,9 @@ main {
     border-top: none;
 }
 
+
 .corner-br {
+
     bottom: 3%;
     right: 3%;
 
@@ -508,6 +517,7 @@ main {
         0 4px 10px rgba(0,0,0,.7);
 }
 
+
 .brand-ix {
 
     font-family: "Cinzel", serif;
@@ -518,6 +528,7 @@ main {
 
     letter-spacing: -1px;
 }
+
 
 .brand-wear {
 
@@ -540,6 +551,7 @@ main {
    ===================================================== */
 
 .info {
+
     padding-top: 34px;
 
     text-align: center;
@@ -596,7 +608,7 @@ main {
 }
 
 
-/* PRICE: */
+/* PRICE LABEL */
 
 .price::before {
 
@@ -617,7 +629,7 @@ main {
 
 
 /* =====================================================
-   PRICE MARKER
+   HAND-DRAWN WHITE MARKER AROUND PRICE
    ===================================================== */
 
 .price-value {
@@ -632,8 +644,6 @@ main {
     color: #fff;
 }
 
-
-/* Main marker outline */
 
 .price-value::before {
 
@@ -661,8 +671,6 @@ main {
     pointer-events: none;
 }
 
-
-/* Secondary imperfect marker line */
 
 .price-value::after {
 
@@ -749,6 +757,7 @@ main {
         font-size: 37px;
     }
 
+
     .logo-wear {
         font-size: 26px;
     }
@@ -762,6 +771,7 @@ main {
 
 
     .catalog-title {
+
         margin-bottom: 42px;
     }
 
@@ -775,11 +785,13 @@ main {
 
 
     .catalog-subtitle {
+
         font-size: 18px;
     }
 
 
     .title-decoration {
+
         width: 43px;
     }
 
@@ -792,7 +804,7 @@ main {
     }
 
 
-    /* FRAME */
+    /* MOBILE FRAME */
 
     .frame::before {
 
@@ -803,8 +815,6 @@ main {
             0 0 0 1px #fff,
 
             0 0 0 3px #dcdbd7,
-
-            inset 0 0 9px rgba(0,0,0,.2),
 
             inset 0 0 0 3px #e2dfda,
 
@@ -834,7 +844,7 @@ main {
     }
 
 
-    /* BRAND */
+    /* MOBILE BRAND */
 
     .frame-brand {
 
@@ -846,6 +856,7 @@ main {
 
 
     .brand-ix {
+
         font-size: 12px;
     }
 
@@ -858,14 +869,13 @@ main {
     }
 
 
-    /* INFO */
+    /* MOBILE INFO */
 
     .info {
+
         padding-top: 29px;
     }
 
-
-    /* NAME */
 
     .name {
 
@@ -874,8 +884,6 @@ main {
         margin-top: -4px;
     }
 
-
-    /* PRICE */
 
     .price {
 
@@ -923,11 +931,13 @@ main {
 
 
     .logo-ix {
+
         font-size: 34px;
     }
 
 
     .logo-wear {
+
         font-size: 24px;
     }
 
@@ -939,11 +949,13 @@ main {
 
 
     .name {
+
         font-size: 18px;
     }
 
 
     .price {
+
         font-size: 13px;
     }
 }
@@ -1029,7 +1041,7 @@ tg.expand();
 
 
 /* =====================================================
-   PRODUCTS CONTAINER
+   CONTAINER
    ===================================================== */
 
 const container =
@@ -1200,15 +1212,10 @@ async function loadProducts() {
                         "
                     >
 
-
-                        <!-- ============================
-                             FRAME
-                             ============================ -->
-
                         <div class="frame">
 
 
-                            <!-- PRODUCT IMAGE -->
+                            <!-- PRODUCT PHOTO -->
 
                             <div class="image-area">
 
@@ -1237,7 +1244,7 @@ async function loadProducts() {
                             </div>
 
 
-                            <!-- CORNERS -->
+                            <!-- DECORATIVE CORNERS -->
 
                             <span
                                 class="corner corner-tl">
@@ -1268,21 +1275,15 @@ async function loadProducts() {
                         </div>
 
 
-                        <!-- ============================
-                             PRODUCT INFO
-                             ============================ -->
+                        <!-- PRODUCT INFORMATION -->
 
                         <div class="info">
 
-
-                            <!-- NAME -->
 
                             <div class="name">
                                 ${name}
                             </div>
 
-
-                            <!-- PRICE -->
 
                             <div class="price">
 
@@ -1292,8 +1293,6 @@ async function loadProducts() {
 
                             </div>
 
-
-                            <!-- DESCRIPTION -->
 
                             ${
                                 description
