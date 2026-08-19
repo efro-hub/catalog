@@ -2,280 +2,1125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        http-equiv="Cache-Control"
+        content="no-cache, no-store, must-revalidate"
+    >
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
     <title>IXwear</title>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <style>
+
         * {
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            min-height: 100%;
+
+            background: #080808;
+            color: #fff;
         }
 
         body {
-            background: #f5f3ef;
-            color: #171717;
-            font-family: Georgia, "Times New Roman", serif;
-            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: "Cormorant Garamond", serif;
         }
 
-        /* HEADER */
 
-        header {
-            text-align: center;
-            padding: 28px 15px 18px;
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        .header {
+            width: 100%;
+            height: 92px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #171717 0%,
+                    #0d0d0d 55%,
+                    #080808 100%
+                );
+
+            border-bottom: 1px solid #242424;
+
+            border-radius:
+                0 0 24px 24px;
         }
+
+
+        /* =====================================================
+           LOGO
+           ===================================================== */
 
         .logo {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 31px;
-            letter-spacing: 7px;
-            font-weight: 400;
+            display: flex;
+
+            align-items: baseline;
+
+            white-space: nowrap;
+
+            line-height: 1;
+
+            text-shadow:
+                0 2px 8px rgba(0,0,0,.9);
         }
+
+        .logo-ix {
+            font-family: "Cinzel", serif;
+
+            font-size: 40px;
+
+            font-weight: 600;
+
+            letter-spacing: -2px;
+
+            color: #f1f1f1;
+        }
+
+        .logo-wear {
+            margin-left: 4px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 28px;
+
+            font-weight: 500;
+
+            letter-spacing: 1px;
+
+            color: #bdbdbd;
+        }
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        main {
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding:
+                32px 30px 70px;
+        }
+
+
+        /* =====================================================
+           COLLECTION TITLE
+           ===================================================== */
 
         .catalog-title {
-            margin-top: 7px;
-            font-size: 12px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            opacity: 0.55;
+            text-align: center;
+
+            margin-bottom: 48px;
         }
 
-        /* CATALOG */
+        .title-line {
+            display: flex;
 
-        .catalog {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 10px 14px 40px;
+            align-items: center;
 
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+
             gap: 18px;
         }
 
-        /* PRODUCT */
+        .title-decoration {
+            width: 68px;
+            height: 20px;
+
+            position: relative;
+        }
+
+        .title-decoration::before {
+            content: "❧";
+
+            position: absolute;
+
+            left: 0;
+            top: -8px;
+
+            font-size: 24px;
+
+            color: #737373;
+
+            transform:
+                rotate(180deg);
+        }
+
+        .title-decoration::after {
+            content: "◇";
+
+            position: absolute;
+
+            right: 0;
+            top: -5px;
+
+            font-size: 14px;
+
+            color: #555;
+        }
+
+        .title-decoration.right {
+            transform:
+                scaleX(-1);
+        }
+
+        .catalog-title h1 {
+            margin: 0;
+
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size: 29px;
+
+            font-weight: 500;
+
+            letter-spacing: 5px;
+
+            color: #e8e8e8;
+        }
+
+        .catalog-subtitle {
+            margin-top: 9px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 21px;
+
+            letter-spacing: 1px;
+
+            color: #999;
+        }
+
+
+        /* =====================================================
+           PRODUCTS GRID
+           ===================================================== */
+
+        #products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            column-gap: 55px;
+
+            row-gap: 70px;
+        }
+
+
+        /* =====================================================
+           PRODUCT
+           ===================================================== */
 
         .product {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1 / 1.12;
-            overflow: hidden;
+            min-width: 0;
+
+            text-align: center;
+
+            animation:
+                productAppear .55s ease both;
         }
 
-        /* PHOTO */
+        @keyframes productAppear {
 
-        .product-photo {
-            position: absolute;
+            from {
+                opacity: 0;
 
-            /*
-             * Размер отверстия внутри рамки.
-             * Если нужно увеличить/уменьшить фото —
-             * меняй эти значения.
-             */
+                transform:
+                    translateY(18px);
+            }
 
-            width: 67%;
-            height: 67%;
+            to {
+                opacity: 1;
 
-            left: 16.5%;
-            top: 16.5%;
-
-            object-fit: cover;
-
-            z-index: 1;
+                transform:
+                    translateY(0);
+            }
         }
 
-        /* FRAME */
+
+        /* =====================================================
+           ART OBJECT FRAME
+           ===================================================== */
 
         .frame {
-            position: absolute;
-            inset: 0;
+            position: relative;
 
             width: 100%;
-            height: 100%;
 
-            object-fit: fill;
+            aspect-ratio:
+                0.78 / 1;
 
-            z-index: 3;
+            background: transparent;
+
+            overflow: visible;
+
+            border: none;
+
+            box-shadow: none;
+
+            isolation: isolate;
+        }
+
+
+        /* =====================================================
+           PRODUCT IMAGE
+           ===================================================== */
+
+        .image-area {
+            position: absolute;
+
+            top: 15%;
+            left: 15%;
+            right: 15%;
+            bottom: 13%;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #121212 0%,
+                    #080808 62%,
+                    #020202 100%
+                );
+
+            overflow: hidden;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .image-area::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(255,255,255,.025),
+                    transparent 68%
+                );
 
             pointer-events: none;
         }
 
-        /* IXWEAR UNDER FRAME */
+        .product img.product-image {
+            width: 100%;
 
-        .brand {
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           YOUR REAL FRAME FROM URL
+           ===================================================== */
+
+        .art-frame {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: fill;
+
+            z-index: 10;
+
+            pointer-events: none;
+
+            user-select: none;
+
+            -webkit-user-drag: none;
+
+            filter:
+                drop-shadow(
+                    0 7px 9px rgba(0,0,0,.45)
+                );
+        }
+
+
+        /* =====================================================
+           IXWEAR PLAQUE
+           ===================================================== */
+
+        .frame-brand {
             position: absolute;
 
             left: 50%;
-            bottom: 7%;
 
-            transform: translateX(-50%);
+            bottom: -18px;
 
-            z-index: 4;
+            transform:
+                translateX(-50%);
 
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 12px;
-            letter-spacing: 4px;
+            z-index: 20;
+
+            display: flex;
+
+            align-items: baseline;
+
+            justify-content: center;
+
             white-space: nowrap;
 
-            color: #151515;
+            padding:
+                5px 17px 6px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #eeeeee 45%,
+                    #cfcfcf 100%
+                );
+
+            color: #080808;
+
+            border:
+                1px solid #999;
+
+            border-radius: 3px;
+
+            box-shadow:
+                0 4px 10px rgba(0,0,0,.7);
         }
 
-        /* PRICE */
+        .brand-ix {
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            letter-spacing: -1px;
+        }
+
+        .brand-wear {
+            margin-left: 3px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           PRODUCT INFO
+           ===================================================== */
+
+        .info {
+            padding-top: 35px;
+
+            text-align: center;
+        }
+
+        .name {
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 24px;
+
+            line-height: 1.15;
+
+            color: #eee;
+
+            font-weight: 500;
+        }
 
         .price {
-            text-align: center;
-            margin-top: -2px;
+            margin-top: 6px;
 
-            font-family: Arial, sans-serif;
-            font-size: 12px;
+            font-family:
+                "Cinzel",
+                serif;
+
+            font-size: 21px;
+
             letter-spacing: 2px;
-            opacity: 0.7;
+
+            color: #fff;
+
+            font-weight: 500;
         }
 
-        /* EMPTY */
+        .description {
+            margin-top: 6px;
 
-        .empty {
-            grid-column: 1 / -1;
+            color: #777;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           STATES
+           ===================================================== */
+
+        .loading,
+        .empty,
+        .error {
+            grid-column:
+                1 / -1;
+
             text-align: center;
-            padding: 80px 20px;
 
-            font-size: 13px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.45;
+            padding:
+                70px 10px;
+
+            font-size: 21px;
+
+            color: #777;
         }
 
-        /* MOBILE */
+        .error {
+            color: #c77;
+        }
 
-        @media (max-width: 500px) {
 
-            header {
-                padding-top: 22px;
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .header {
+                height: 92px;
+
+                border-radius:
+                    0 0 22px 22px;
             }
 
-            .logo {
-                font-size: 27px;
-                letter-spacing: 6px;
+            .logo-ix {
+                font-size: 37px;
             }
+
+            .logo-wear {
+                font-size: 26px;
+            }
+
+
+            main {
+                padding:
+                    29px 15px 55px;
+            }
+
 
             .catalog-title {
-                font-size: 10px;
-                letter-spacing: 4px;
+                margin-bottom: 42px;
             }
 
-            .catalog {
-                padding-left: 8px;
-                padding-right: 8px;
-                gap: 10px;
-            }
+            .catalog-title h1 {
+                font-size: 20px;
 
-            .brand {
-                font-size: 9px;
                 letter-spacing: 3px;
             }
 
+            .catalog-subtitle {
+                font-size: 18px;
+            }
+
+            .title-decoration {
+                width: 43px;
+            }
+
+
+            /* PRODUCT GRID */
+
+            #products {
+                column-gap: 25px;
+
+                row-gap: 60px;
+            }
+
+
+            /* FRAME */
+
+            .frame {
+                aspect-ratio:
+                    0.78 / 1;
+
+                box-shadow: none;
+            }
+
+
+            /* IMAGE */
+
+            .image-area {
+                top: 15%;
+
+                left: 15%;
+
+                right: 15%;
+
+                bottom: 13%;
+            }
+
+
+            /* ART FRAME */
+
+            .art-frame {
+                filter:
+                    drop-shadow(
+                        0 5px 7px rgba(0,0,0,.5)
+                    );
+            }
+
+
+            /* BRAND */
+
+            .frame-brand {
+                bottom: -14px;
+
+                padding:
+                    3px 10px 4px;
+            }
+
+            .brand-ix {
+                font-size: 12px;
+            }
+
+            .brand-wear {
+                font-size: 12px;
+
+                margin-left: 2px;
+            }
+
+
+            /* INFO */
+
+            .info {
+                padding-top: 29px;
+            }
+
+            .name {
+                font-size: 17px;
+            }
+
             .price {
-                font-size: 10px;
+                font-size: 15px;
+
+                letter-spacing: 1px;
+            }
+
+            .description {
+                font-size: 12px;
             }
         }
+
+
+        /* =====================================================
+           VERY SMALL PHONES
+           ===================================================== */
+
+        @media (max-width: 380px) {
+
+            main {
+                padding-left: 11px;
+
+                padding-right: 11px;
+            }
+
+            .logo-ix {
+                font-size: 34px;
+            }
+
+            .logo-wear {
+                font-size: 24px;
+            }
+
+            #products {
+                column-gap: 19px;
+            }
+
+            .name {
+                font-size: 15px;
+            }
+
+            .price {
+                font-size: 14px;
+            }
+
+            .frame-brand {
+                bottom: -13px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">IXwear</div>
-    <div class="catalog-title">Collection</div>
-</header>
 
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-<main class="catalog" id="catalog">
+    <header class="header">
 
-    <!--
-        ПРИМЕР ТОВАРА
+        <div class="logo">
 
-        Чтобы добавить свой товар,
-        скопируй весь блок .product-card
-    -->
+            <span class="logo-ix">
+                IX
+            </span>
 
-    <div class="product-card">
-
-        <div class="product">
-
-            <!-- ФОТО ТОВАРА -->
-            <img
-                class="product-photo"
-                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
-                alt="IXwear product"
-            >
-
-            <!-- ТВОЯ РАМКА -->
-            <img
-                class="frame"
-                src="https://img.magnific.com/free-psd/ornate-white-picture-frame-elegant-design-baroque-style-home-decor-blank-template_632498-29751.jpg?semt=ais_hybrid"
-                alt=""
-            >
-
-            <!-- IXwear -->
-            <div class="brand">IXwear</div>
+            <span class="logo-wear">
+                wear
+            </span>
 
         </div>
 
-        <div class="price">
-            $120
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main>
+
+        <section class="catalog-title">
+
+            <div class="title-line">
+
+                <span class="title-decoration"></span>
+
+                <h1>
+                    COLLECTION
+                </h1>
+
+                <span
+                    class="title-decoration right"
+                ></span>
+
+            </div>
+
+            <div class="catalog-subtitle">
+                CHOOSE YOUR STYLE
+            </div>
+
+        </section>
+
+
+        <div id="products">
+
+            <div class="loading">
+                Loading collection...
+            </div>
+
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- ВТОРОЙ ТОВАР -->
+    <script>
 
-    <div class="product-card">
+        /* =====================================================
+           TELEGRAM
+           ===================================================== */
 
-        <div class="product">
+        const tg =
+            window.Telegram.WebApp;
 
-            <img
-                class="product-photo"
-                src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=80"
-                alt="IXwear product"
-            >
+        tg.ready();
 
-            <img
-                class="frame"
-                src="https://img.magnific.com/free-psd/ornate-white-picture-frame-elegant-design-baroque-style-home-decor-blank-template_632498-29751.jpg?semt=ais_hybrid"
-                alt=""
-            >
-
-            <div class="brand">IXwear</div>
-
-        </div>
-
-        <div class="price">
-            $150
-        </div>
-
-    </div>
-
-</main>
+        tg.expand();
 
 
-<script>
-    // Telegram Mini App
-    const tg = window.Telegram.WebApp;
+        /* =====================================================
+           CONTAINER
+           ===================================================== */
 
-    tg.ready();
-    tg.expand();
+        const container =
+            document.getElementById(
+                "products"
+            );
 
-    // Подстраиваем фон под тему Telegram
-    if (tg.colorScheme === "dark") {
-        document.body.style.background = "#111111";
-        document.body.style.color = "#eeeeee";
-    }
-</script>
+
+        /* =====================================================
+           ESCAPE HTML
+           ===================================================== */
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.textContent =
+                String(text);
+
+            return div.innerHTML;
+        }
+
+
+        /* =====================================================
+           IXWEAR BRAND
+           ===================================================== */
+
+        function brandHTML() {
+
+            return `
+                <span class="brand-ix">
+                    IX
+                </span>
+
+                <span class="brand-wear">
+                    wear
+                </span>
+            `;
+        }
+
+
+        /* =====================================================
+           LOAD PRODUCTS
+           ===================================================== */
+
+        async function loadProducts() {
+
+            try {
+
+                const cacheBuster =
+                    Date.now() +
+                    "_" +
+                    Math.random()
+                        .toString(36)
+                        .substring(2);
+
+
+                const response =
+                    await fetch(
+                        "products.json?cache=" +
+                        cacheBuster,
+                        {
+                            method: "GET",
+
+                            cache: "no-store",
+
+                            headers: {
+                                "Cache-Control":
+                                    "no-cache",
+
+                                "Pragma":
+                                    "no-cache"
+                            }
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "HTTP " +
+                        response.status
+                    );
+                }
+
+
+                const products =
+                    await response.json();
+
+
+                if (
+                    !Array.isArray(
+                        products
+                    )
+                ) {
+
+                    throw new Error(
+                        "products.json имеет неправильный формат"
+                    );
+                }
+
+
+                if (
+                    products.length === 0
+                ) {
+
+                    container.innerHTML = `
+
+                        <div class="empty">
+                            Collection is empty
+                        </div>
+
+                    `;
+
+                    return;
+                }
+
+
+                let html = "";
+
+
+                /* =================================================
+                   CREATE PRODUCTS
+                   ================================================= */
+
+                products.forEach(
+                    (product, index) => {
+
+                        const name =
+                            escapeHtml(
+                                product.name || ""
+                            );
+
+
+                        const price =
+                            escapeHtml(
+                                product.price || ""
+                            );
+
+
+                        const description =
+                            escapeHtml(
+                                product.description || ""
+                            );
+
+
+                        const imageUrl =
+                            product.image
+                                ? product.image +
+                                  (
+                                      product.image.includes("?")
+                                      ? "&"
+                                      : "?"
+                                  ) +
+                                  "v=" +
+                                  Date.now()
+                                : "";
+
+
+                        html += `
+
+                            <article
+                                class="product"
+                                style="
+                                    animation-delay:
+                                    ${index * 0.06}s;
+                                "
+                            >
+
+                                <div class="frame">
+
+
+                                    <!-- PRODUCT PHOTO -->
+
+                                    <div class="image-area">
+
+                                        ${
+                                            imageUrl
+                                            ? `
+
+                                                <img
+                                                    class="product-image"
+
+                                                    src="${imageUrl}"
+
+                                                    alt="${name}"
+
+                                                    loading="lazy"
+
+                                                    onerror="
+                                                        this.style.display='none';
+                                                    "
+                                                >
+
+                                            `
+                                            : ""
+                                        }
+
+                                    </div>
+
+
+                                    <!-- =================================
+                                         YOUR FRAME IMAGE
+                                         ================================= -->
+
+                                    <img
+                                        class="art-frame"
+
+                                        src="https://img.magnific.com/free-psd/ornate-white-picture-frame-elegant-design-baroque-style-home-decor-blank-template_632498-29751.jpg?semt=ais_hybrid"
+
+                                        alt=""
+
+                                        draggable="false"
+                                    >
+
+
+                                    <!-- IXWEAR -->
+
+                                    <div class="frame-brand">
+
+                                        ${brandHTML()}
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- PRODUCT INFORMATION -->
+
+                                <div class="info">
+
+                                    <div class="name">
+
+                                        ${name}
+
+                                    </div>
+
+
+                                    <div class="price">
+
+                                        ${price}
+
+                                    </div>
+
+
+                                    ${
+                                        description
+                                        ? `
+
+                                            <div class="description">
+
+                                                ${description}
+
+                                            </div>
+
+                                        `
+                                        : ""
+                                    }
+
+                                </div>
+
+
+                            </article>
+
+                        `;
+                    }
+                );
+
+
+                container.innerHTML =
+                    html;
+
+
+            } catch (error) {
+
+                console.error(
+                    "Ошибка загрузки каталога:",
+                    error
+                );
+
+
+                container.innerHTML = `
+
+                    <div class="error">
+
+                        Could not load collection.
+
+                        <br><br>
+
+                        ${escapeHtml(
+                            error.message
+                        )}
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           START
+           ===================================================== */
+
+        loadProducts();
+
+
+        /* =====================================================
+           AUTO UPDATE
+           ===================================================== */
+
+        setInterval(
+            loadProducts,
+            3000
+        );
+
+    </script>
 
 </body>
 </html>
