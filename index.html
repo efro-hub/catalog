@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -63,8 +63,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            position: relative;
 
             background:
                 radial-gradient(
@@ -133,7 +131,7 @@
             margin: 0 auto;
 
             padding:
-                35px 30px 70px;
+                35px 30px 80px;
         }
 
 
@@ -144,7 +142,7 @@
         .catalog-title {
             text-align: center;
 
-            margin-bottom: 47px;
+            margin-bottom: 50px;
         }
 
         .title-line {
@@ -232,7 +230,7 @@
                 repeat(2, minmax(0, 1fr));
 
             column-gap: 55px;
-            row-gap: 70px;
+            row-gap: 80px;
         }
 
         .product {
@@ -245,6 +243,7 @@
         }
 
         @keyframes productAppear {
+
             from {
                 opacity: 0;
                 transform: translateY(18px);
@@ -254,166 +253,155 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
 
         /* =====================================================
-           FRAME
+           LUXURY ANTIQUE FRAME
            ===================================================== */
 
         .frame {
+
             position: relative;
 
             width: 100%;
 
-            aspect-ratio: 0.76 / 1;
+            aspect-ratio:
+                0.76 / 1;
 
-            background: #030303;
+            background:
+                #030303;
 
             overflow: visible;
 
-            /* Outer dark metal */
-            border: 13px solid #555;
+            isolation: isolate;
+
+            /* thick white carved frame */
+            border: 14px solid transparent;
+
+            border-image:
+                linear-gradient(
+                    135deg,
+
+                    #777 0%,
+                    #ffffff 8%,
+                    #d8d8d8 16%,
+                    #ffffff 25%,
+
+                    #9b9b9b 36%,
+                    #f8f8f8 47%,
+
+                    #b1b1b1 59%,
+                    #ffffff 71%,
+
+                    #a1a1a1 82%,
+                    #ffffff 93%,
+                    #777 100%
+                ) 1;
 
             box-shadow:
-                0 0 0 2px #111,
-                0 0 0 5px #777,
-                0 0 0 7px #252525,
-                0 15px 35px rgba(0,0,0,.85);
 
-            isolation: isolate;
+                0 0 0 2px #242424,
+
+                0 0 0 5px #dadada,
+
+                0 0 0 8px #5d5d5d,
+
+                0 0 0 10px #151515,
+
+                0 18px 38px
+                rgba(0,0,0,.9);
         }
 
 
         /* =====================================================
-           METALLIC FRAME LAYERS
+           CARVED INNER BORDER
            ===================================================== */
 
         .frame::before {
+
             content: "";
 
             position: absolute;
 
-            inset: -10px;
+            inset: -7px;
 
-            z-index: -1;
+            z-index: 4;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #343434 0%,
-                    #c9c9c9 7%,
-                    #777 15%,
-                    #eeeeee 25%,
-                    #555 37%,
-                    #d8d8d8 48%,
-                    #666 60%,
-                    #eeeeee 73%,
-                    #4a4a4a 87%,
-                    #bdbdbd 100%
-                );
+            pointer-events: none;
+
+            border:
+
+                3px solid #f4f4f4;
 
             box-shadow:
-                inset 0 0 0 2px #181818,
-                inset 0 0 0 5px #8b8b8b,
-                0 0 15px rgba(0,0,0,.8);
+
+                inset 0 0 0 2px #777,
+
+                inset 0 0 0 5px #ffffff,
+
+                inset 0 0 0 7px #9b9b9b,
+
+                0 0 5px rgba(0,0,0,.8);
         }
+
+
+        /* =====================================================
+           INNER GOLDLESS CARVED LINE
+           ===================================================== */
 
         .frame::after {
+
             content: "";
 
             position: absolute;
 
-            inset: -2px;
+            inset: 9px;
 
-            z-index: 3;
+            z-index: 6;
 
             pointer-events: none;
 
             border:
-                1px solid rgba(255,255,255,.55);
+
+                2px solid #d8d8d8;
 
             box-shadow:
-                inset 0 0 0 2px rgba(0,0,0,.75),
-                inset 0 0 0 4px rgba(255,255,255,.16);
+
+                inset 0 0 0 2px #454545,
+
+                inset 0 0 0 4px #eeeeee,
+
+                inset 0 0 0 6px #202020;
         }
 
 
         /* =====================================================
-           INNER FRAME
-           ===================================================== */
-
-        .frame-inner {
-            position: absolute;
-
-            inset: 8px;
-
-            z-index: 5;
-
-            border:
-                2px solid #bcbcbc;
-
-            pointer-events: none;
-
-            box-shadow:
-                inset 0 0 0 2px #292929,
-                inset 0 0 0 4px #777,
-                inset 0 0 0 6px #171717;
-        }
-
-        .frame-inner::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 7px;
-
-            border:
-                1px solid #dedede;
-
-            opacity: .75;
-        }
-
-
-        /* =====================================================
-           INNER ORNAMENT LINES
-           ===================================================== */
-
-        .frame-inner::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 12px;
-
-            border:
-                1px solid rgba(255,255,255,.17);
-        }
-
-
-        /* =====================================================
-           PRODUCT IMAGE
+           IMAGE AREA
            ===================================================== */
 
         .image-area {
+
             position: absolute;
 
-            top: 24px;
-            right: 24px;
-            bottom: 48px;
-            left: 24px;
+            top: 26px;
+            right: 27px;
+            bottom: 52px;
+            left: 27px;
 
             background:
                 radial-gradient(
                     ellipse at center,
-                    #111 0%,
-                    #070707 60%,
+
+                    #141414 0%,
+                    #080808 55%,
                     #020202 100%
                 );
 
             overflow: hidden;
 
-            z-index: 2;
+            z-index: 3;
 
             display: flex;
 
@@ -421,7 +409,28 @@
             justify-content: center;
         }
 
+        .image-area::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center,
+
+                    rgba(255,255,255,.035),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
         .image-area::after {
+
             content: "";
 
             position: absolute;
@@ -429,12 +438,13 @@
             inset: 0;
 
             border:
-                1px solid rgba(255,255,255,.06);
+                1px solid rgba(255,255,255,.12);
 
             pointer-events: none;
         }
 
         .product img {
+
             width: 100%;
             height: 100%;
 
@@ -444,200 +454,252 @@
 
             position: relative;
 
-            z-index: 2;
+            z-index: 3;
         }
 
 
         /* =====================================================
-           BAROQUE CORNER ORNAMENTS
+           BAROQUE CORNERS
            ===================================================== */
 
         .ornament {
+
             position: absolute;
 
-            width: 92px;
-            height: 92px;
+            width: 105px;
+            height: 105px;
 
-            z-index: 20;
+            z-index: 30;
 
             pointer-events: none;
         }
 
 
-        /* Main curved metal pieces */
+        /* =====================================================
+           MAIN BAROQUE CURL
+           ===================================================== */
 
         .ornament::before {
+
             content: "";
 
             position: absolute;
 
-            width: 74px;
-            height: 31px;
+            width: 82px;
+            height: 82px;
 
-            top: 27px;
             left: 8px;
+            top: 8px;
 
             border-radius:
-                90% 10% 90% 10%;
+
+                75% 15% 75% 15%;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #4a4a4a 0%,
-                    #e9e9e9 18%,
-                    #8b8b8b 35%,
-                    #ffffff 49%,
-                    #666 68%,
-                    #d8d8d8 84%,
-                    #555 100%
+
+                radial-gradient(
+                    ellipse at 30% 30%,
+
+                    #ffffff 0%,
+                    #eeeeee 18%,
+                    #aaaaaa 34%,
+                    #ffffff 45%,
+                    #cfcfcf 60%,
+                    #777777 78%,
+                    #eeeeee 100%
                 );
 
             transform:
+
                 rotate(45deg);
 
             box-shadow:
-                0 3px 7px rgba(0,0,0,.9),
-                inset 0 1px 1px rgba(255,255,255,.7);
-        }
 
+                0 5px 9px
+                rgba(0,0,0,.85),
 
-        .ornament::after {
-            content: "";
+                inset 3px 3px 4px
+                rgba(255,255,255,.85),
 
-            position: absolute;
-
-            width: 57px;
-            height: 22px;
-
-            top: 35px;
-            left: 17px;
-
-            border-radius: 70%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #555,
-                    #ededed 25%,
-                    #777 50%,
-                    #ffffff 72%,
-                    #555
-                );
-
-            transform:
-                rotate(-45deg);
-
-            box-shadow:
-                0 2px 5px rgba(0,0,0,.8);
+                inset -4px -4px 5px
+                rgba(0,0,0,.38);
         }
 
 
         /* =====================================================
-           ORNAMENT CENTER
+           BAROQUE SECOND CURL
+           ===================================================== */
+
+        .ornament::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 58px;
+            height: 58px;
+
+            left: 24px;
+            top: 24px;
+
+            border:
+
+                8px solid #d7d7d7;
+
+            border-left-color:
+                #ffffff;
+
+            border-top-color:
+                #8d8d8d;
+
+            border-radius:
+                50%;
+
+            box-shadow:
+
+                0 4px 7px
+                rgba(0,0,0,.7),
+
+                inset 2px 2px 3px
+                rgba(255,255,255,.9);
+        }
+
+
+        /* =====================================================
+           CENTRAL FLOWER
            ===================================================== */
 
         .ornament .flower {
+
             position: absolute;
 
-            width: 35px;
-            height: 35px;
+            width: 38px;
+            height: 38px;
 
-            left: 28px;
-            top: 27px;
+            left: 34px;
+            top: 34px;
+
+            z-index: 10;
 
             border-radius: 50%;
 
             background:
+
                 radial-gradient(
                     circle,
-                    #fff 0 10%,
-                    #aaa 11% 25%,
-                    #eee 26% 45%,
-                    #777 46% 65%,
-                    #ddd 66% 75%,
-                    #444 76% 100%
+
+                    #ffffff 0%,
+                    #d9d9d9 28%,
+                    #8b8b8b 45%,
+                    #f7f7f7 62%,
+                    #999999 78%,
+                    #ffffff 100%
                 );
 
             box-shadow:
-                0 3px 7px rgba(0,0,0,.9),
-                inset 0 1px 2px rgba(255,255,255,.8);
-        }
 
+                0 3px 7px
+                rgba(0,0,0,.8),
 
-        /* Petals */
-
-        .ornament .petal {
-            position: absolute;
-
-            width: 21px;
-            height: 34px;
-
-            left: 35px;
-            top: 3px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #555,
-                    #ededed 35%,
-                    #888 55%,
-                    #fff 75%,
-                    #555
-                );
-
-            border-radius:
-                75% 25% 75% 25%;
-
-            box-shadow:
-                0 2px 5px rgba(0,0,0,.75);
-        }
-
-        .ornament .petal:nth-child(2) {
-            transform: rotate(90deg);
-
-            top: 30px;
-            left: 55px;
-        }
-
-        .ornament .petal:nth-child(3) {
-            transform: rotate(180deg);
-
-            top: 55px;
-            left: 35px;
-        }
-
-        .ornament .petal:nth-child(4) {
-            transform: rotate(270deg);
-
-            top: 30px;
-            left: 8px;
+                inset 2px 2px 3px
+                rgba(255,255,255,.9);
         }
 
 
         /* =====================================================
-           EXTRA SMALL DOTS
+           FLOWER PETALS
+           ===================================================== */
+
+        .ornament .petal {
+
+            position: absolute;
+
+            width: 25px;
+            height: 40px;
+
+            left: 41px;
+            top: 5px;
+
+            z-index: 8;
+
+            border-radius:
+
+                80% 20% 80% 20%;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+
+                    #888 0%,
+                    #ffffff 28%,
+                    #d5d5d5 52%,
+                    #ffffff 72%,
+                    #777 100%
+                );
+
+            box-shadow:
+
+                0 3px 5px
+                rgba(0,0,0,.7);
+        }
+
+        .ornament .petal:nth-child(2) {
+
+            transform:
+                rotate(90deg);
+
+            top: 41px;
+            left: 61px;
+        }
+
+        .ornament .petal:nth-child(3) {
+
+            transform:
+                rotate(180deg);
+
+            top: 61px;
+            left: 41px;
+        }
+
+        .ornament .petal:nth-child(4) {
+
+            transform:
+                rotate(270deg);
+
+            top: 41px;
+            left: 5px;
+        }
+
+
+        /* =====================================================
+           SMALL CARVED DOT
            ===================================================== */
 
         .ornament .flower::after {
+
             content: "";
 
             position: absolute;
 
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
 
-            border-radius: 50%;
-
-            background: #fff;
-
-            top: 50%;
             left: 50%;
+            top: 50%;
 
             transform:
                 translate(-50%, -50%);
 
+            border-radius: 50%;
+
+            background:
+                #ffffff;
+
             box-shadow:
-                0 0 5px #fff;
+
+                0 0 6px
+                rgba(255,255,255,.8);
         }
 
 
@@ -646,78 +708,122 @@
            ===================================================== */
 
         .ornament.tl {
-            top: -38px;
-            left: -38px;
+
+            top: -48px;
+            left: -48px;
         }
 
         .ornament.tr {
-            top: -38px;
-            right: -38px;
 
-            transform: scaleX(-1);
+            top: -48px;
+            right: -48px;
+
+            transform:
+                scaleX(-1);
         }
 
         .ornament.bl {
-            bottom: -38px;
-            left: -38px;
 
-            transform: scaleY(-1);
+            bottom: -48px;
+            left: -48px;
+
+            transform:
+                scaleY(-1);
         }
 
         .ornament.br {
-            bottom: -38px;
-            right: -38px;
 
-            transform: scale(-1);
+            bottom: -48px;
+            right: -48px;
+
+            transform:
+                scale(-1);
         }
 
 
         /* =====================================================
-           IXWEAR METAL PLAQUE
+           EXTRA BAROQUE DECORATION
+           ===================================================== */
+
+        .ornament .petal::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 8px;
+            height: 8px;
+
+            right: -4px;
+            top: 4px;
+
+            border-radius: 50%;
+
+            background:
+                #f5f5f5;
+
+            box-shadow:
+                0 1px 3px
+                rgba(0,0,0,.7);
+        }
+
+
+        /* =====================================================
+           IXWEAR BLACK PLAQUE
            ===================================================== */
 
         .frame-brand {
+
             position: absolute;
 
             left: 50%;
-            bottom: -39px;
+            bottom: -43px;
 
             transform:
                 translateX(-50%);
 
-            width: 152px;
-            height: 50px;
+            width: 165px;
+            height: 54px;
 
             display: flex;
 
             align-items: center;
             justify-content: center;
 
-            z-index: 30;
+            z-index: 50;
 
             background:
+
                 linear-gradient(
                     180deg,
-                    #555 0%,
-                    #eeeeee 12%,
-                    #ffffff 29%,
-                    #999 50%,
-                    #eeeeee 68%,
-                    #666 88%,
-                    #222 100%
+
+                    #050505 0%,
+                    #171717 30%,
+                    #020202 55%,
+                    #111111 100%
                 );
 
-            border:
-                2px solid #222;
+            color:
+                #050505;
 
-            color: #080808;
+            border:
+                3px solid #eeeeee;
 
             box-shadow:
-                0 4px 9px rgba(0,0,0,.9),
-                inset 0 0 0 1px #f4f4f4;
+
+                0 5px 12px
+                rgba(0,0,0,.9),
+
+                inset 0 0 0 2px #555,
+
+                inset 0 0 0 4px #111;
         }
 
+
+        /* silver edge */
+
         .frame-brand::before {
+
             content: "";
 
             position: absolute;
@@ -725,32 +831,47 @@
             inset: 5px;
 
             border:
-                1px solid #555;
+                1px solid #aaa;
 
-            box-shadow:
-                inset 0 0 0 1px rgba(255,255,255,.55);
+            pointer-events: none;
         }
 
+
+        /* IXwear text */
+
         .brand-ix {
-            font-family: "Cinzel", serif;
+
+            font-family:
+                "Cinzel",
+                serif;
 
             font-size: 22px;
 
             font-weight: 700;
 
             letter-spacing: -1px;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 1px 2px #000;
         }
 
         .brand-wear {
-            margin-left: 3px;
 
-            font-family: "Cormorant Garamond", serif;
+            margin-left: 4px;
 
-            font-size: 19px;
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 21px;
 
             font-weight: 600;
 
             letter-spacing: 1px;
+
+            color: #ffffff;
         }
 
 
@@ -759,12 +880,14 @@
            ===================================================== */
 
         .info {
-            padding-top: 53px;
+
+            padding-top: 58px;
 
             text-align: center;
         }
 
         .name {
+
             font-family:
                 "Cormorant Garamond",
                 serif;
@@ -773,12 +896,13 @@
 
             line-height: 1.15;
 
-            color: #eee;
+            color: #eeeeee;
 
             font-weight: 500;
         }
 
         .price {
+
             margin-top: 6px;
 
             font-family:
@@ -789,12 +913,13 @@
 
             letter-spacing: 2px;
 
-            color: #fff;
+            color: #ffffff;
 
             font-weight: 500;
         }
 
         .description {
+
             margin-top: 6px;
 
             color: #777;
@@ -804,12 +929,13 @@
 
 
         /* =====================================================
-           STATES
+           LOADING / ERROR
            ===================================================== */
 
         .loading,
         .empty,
         .error {
+
             grid-column: 1 / -1;
 
             text-align: center;
@@ -849,11 +975,11 @@
 
             main {
                 padding:
-                    29px 15px 55px;
+                    29px 15px 60px;
             }
 
             .catalog-title {
-                margin-bottom: 40px;
+                margin-bottom: 42px;
             }
 
             .catalog-title h1 {
@@ -871,137 +997,159 @@
             }
 
 
-            /* PRODUCT GRID */
+            /* GRID */
 
             #products {
+
                 column-gap: 25px;
-                row-gap: 62px;
+
+                row-gap: 70px;
             }
 
 
             /* FRAME */
 
             .frame {
+
                 border-width: 8px;
 
-                aspect-ratio: .76 / 1;
+                aspect-ratio:
+                    .76 / 1;
 
                 box-shadow:
-                    0 0 0 2px #111,
-                    0 0 0 4px #777,
-                    0 0 0 6px #252525,
-                    0 10px 25px rgba(0,0,0,.9);
+
+                    0 0 0 2px #222,
+
+                    0 0 0 4px #d8d8d8,
+
+                    0 0 0 6px #555,
+
+                    0 0 0 8px #151515,
+
+                    0 12px 27px
+                    rgba(0,0,0,.9);
             }
 
             .frame::before {
-                inset: -7px;
+                inset: -5px;
             }
 
-            .frame-inner {
-                inset: 5px;
-            }
-
-            .frame-inner::after {
-                inset: 4px;
-            }
-
-            .frame-inner::before {
-                inset: 8px;
+            .frame::after {
+                inset: 6px;
             }
 
 
             /* IMAGE */
 
             .image-area {
-                top: 16px;
-                right: 16px;
-                bottom: 34px;
-                left: 16px;
+
+                top: 17px;
+                right: 17px;
+                bottom: 35px;
+                left: 17px;
             }
 
 
-            /* ORNAMENTS */
+            /* ORNAMENT */
 
             .ornament {
-                width: 62px;
-                height: 62px;
+
+                width: 68px;
+                height: 68px;
             }
 
             .ornament::before {
-                width: 50px;
-                height: 15px;
 
-                top: 20px;
-                left: 6px;
+                width: 53px;
+                height: 53px;
+
+                left: 7px;
+                top: 7px;
             }
 
             .ornament::after {
-                width: 39px;
-                height: 11px;
 
-                top: 25px;
-                left: 12px;
+                width: 40px;
+                height: 40px;
+
+                left: 17px;
+                top: 17px;
+
+                border-width: 6px;
             }
 
             .ornament .flower {
+
                 width: 25px;
                 height: 25px;
 
-                left: 19px;
-                top: 19px;
+                left: 21px;
+                top: 21px;
             }
 
             .ornament .petal {
-                width: 14px;
-                height: 23px;
 
-                left: 24px;
-                top: 2px;
+                width: 15px;
+                height: 24px;
+
+                left: 26px;
+                top: 3px;
             }
 
             .ornament .petal:nth-child(2) {
-                top: 21px;
-                left: 41px;
+
+                top: 26px;
+                left: 42px;
             }
 
             .ornament .petal:nth-child(3) {
-                top: 38px;
-                left: 24px;
+
+                top: 42px;
+                left: 26px;
             }
 
             .ornament .petal:nth-child(4) {
-                top: 21px;
-                left: 7px;
+
+                top: 26px;
+                left: 3px;
             }
 
+
+            /* POSITIONS */
+
             .ornament.tl {
-                top: -25px;
-                left: -25px;
+
+                top: -30px;
+                left: -30px;
             }
 
             .ornament.tr {
-                top: -25px;
-                right: -25px;
+
+                top: -30px;
+                right: -30px;
             }
 
             .ornament.bl {
-                bottom: -25px;
-                left: -25px;
+
+                bottom: -30px;
+                left: -30px;
             }
 
             .ornament.br {
-                bottom: -25px;
-                right: -25px;
+
+                bottom: -30px;
+                right: -30px;
             }
 
 
             /* PLAQUE */
 
             .frame-brand {
-                width: 94px;
-                height: 32px;
 
-                bottom: -23px;
+                width: 100px;
+                height: 34px;
+
+                bottom: -24px;
 
                 border-width: 1px;
             }
@@ -1015,14 +1163,14 @@
             }
 
             .brand-wear {
-                font-size: 14px;
+                font-size: 15px;
             }
 
 
             /* INFO */
 
             .info {
-                padding-top: 32px;
+                padding-top: 34px;
             }
 
             .name {
@@ -1137,7 +1285,8 @@
            TELEGRAM
            ===================================================== */
 
-        const tg = window.Telegram.WebApp;
+        const tg =
+            window.Telegram.WebApp;
 
         tg.ready();
         tg.expand();
@@ -1301,7 +1450,7 @@
                                     <div class="frame-inner"></div>
 
 
-                                    <!-- PRODUCT IMAGE -->
+                                    <!-- PRODUCT -->
 
                                     <div class="image-area">
 
@@ -1382,7 +1531,9 @@
                                     <!-- IXWEAR -->
 
                                     <div class="frame-brand">
+
                                         ${brandHTML()}
+
                                     </div>
 
                                 </div>
