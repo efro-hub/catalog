@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 3,
+    "name": "даун",
+    "price": "123",
+    "description": "не хочу спасибо",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADXxlrG03rKUh-.jpg"
+  }
+]
