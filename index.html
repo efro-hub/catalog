@@ -1,1565 +1,1142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
 
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+    <meta
+        http-equiv="Cache-Control"
+        content="no-cache, no-store, must-revalidate"
+    >
 
-<title>IXwear</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>IXwear</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-rel="stylesheet"
->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-/* =========================================================
-   BASE
-   ========================================================= */
+    <style>
 
-* {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
 
-    background: #090909;
-    color: #fff;
-}
+            background: #080808;
+            color: #fff;
+        }
 
-body {
-    overflow-x: hidden;
-    font-family: "Cormorant Garamond", serif;
-}
+        body {
+            overflow-x: hidden;
+            font-family: "Cormorant Garamond", serif;
+        }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+        /* =====================================================
+           HEADER
+           ===================================================== */
 
-.header {
-    width: 100%;
-    height: 95px;
+        .header {
+            width: 100%;
+            height: 92px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            #191919 0%,
-            #0d0d0d 55%,
-            #080808 100%
-        );
+            position: relative;
 
-    border-bottom: 1px solid #222;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #171717 0%,
+                    #0d0d0d 55%,
+                    #080808 100%
+                );
 
-    border-radius:
-        0 0 25px 25px;
-}
+            border-bottom: 1px solid #242424;
 
-.logo {
-    display: flex;
-    align-items: baseline;
+            border-radius:
+                0 0 24px 24px;
+        }
 
-    line-height: 1;
 
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.9);
-}
+        /* =====================================================
+           LOGO
+           ===================================================== */
 
-.logo-ix {
-    font-family: "Cinzel", serif;
+        .logo {
+            display: flex;
 
-    font-size: 42px;
-    font-weight: 600;
+            align-items: baseline;
 
-    letter-spacing: -2px;
+            white-space: nowrap;
 
-    color: #f3f3f3;
-}
+            line-height: 1;
 
-.logo-wear {
-    margin-left: 5px;
+            text-shadow:
+                0 2px 8px rgba(0,0,0,.9);
+        }
 
-    font-family: "Cormorant Garamond", serif;
+        .logo-ix {
+            font-family: "Cinzel", serif;
 
-    font-size: 30px;
-    font-weight: 500;
+            font-size: 40px;
 
-    letter-spacing: 1px;
+            font-weight: 600;
 
-    color: #bdbdbd;
-}
+            letter-spacing: -2px;
 
+            color: #f1f1f1;
+        }
 
-/* =========================================================
-   MAIN
-   ========================================================= */
+        .logo-wear {
+            margin-left: 4px;
 
-main {
-    width: 100%;
-    max-width: 1100px;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-    margin: 0 auto;
+            font-size: 28px;
 
-    padding:
-        35px 30px 80px;
-}
+            font-weight: 500;
 
+            letter-spacing: 1px;
 
-/* =========================================================
-   TITLE
-   ========================================================= */
+            color: #bdbdbd;
+        }
 
-.catalog-title {
-    text-align: center;
-    margin-bottom: 55px;
-}
 
-.title-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-}
+        /* =====================================================
+           MAIN
+           ===================================================== */
 
-.title-decoration {
-    width: 65px;
-    height: 20px;
-    position: relative;
-}
+        main {
+            width: 100%;
 
-.title-decoration::before {
-    content: "❧";
+            max-width: 1100px;
 
-    position: absolute;
+            margin: 0 auto;
 
-    left: 0;
-    top: -8px;
+            padding:
+                32px 30px 70px;
+        }
 
-    font-size: 24px;
 
-    color: #737373;
+        /* =====================================================
+           COLLECTION TITLE
+           ===================================================== */
 
-    transform: rotate(180deg);
-}
+        .catalog-title {
+            text-align: center;
 
-.title-decoration::after {
-    content: "◇";
+            margin-bottom: 48px;
+        }
 
-    position: absolute;
+        .title-line {
+            display: flex;
 
-    right: 0;
-    top: -5px;
+            align-items: center;
 
-    font-size: 14px;
+            justify-content: center;
 
-    color: #555;
-}
+            gap: 18px;
+        }
 
-.title-decoration.right {
-    transform: scaleX(-1);
-}
+        .title-decoration {
+            width: 68px;
+            height: 20px;
 
-.catalog-title h1 {
-    margin: 0;
+            position: relative;
+        }
 
-    font-family: "Cinzel", serif;
+        .title-decoration::before {
+            content: "❧";
 
-    font-size: 29px;
-    font-weight: 500;
+            position: absolute;
 
-    letter-spacing: 5px;
+            left: 0;
+            top: -8px;
 
-    color: #e9e9e9;
-}
+            font-size: 24px;
 
-.catalog-subtitle {
-    margin-top: 9px;
+            color: #737373;
 
-    font-size: 21px;
+            transform:
+                rotate(180deg);
+        }
 
-    letter-spacing: 1px;
+        .title-decoration::after {
+            content: "◇";
 
-    color: #999;
-}
+            position: absolute;
 
+            right: 0;
+            top: -5px;
 
-/* =========================================================
-   PRODUCTS
-   ========================================================= */
+            font-size: 14px;
 
-#products {
-    display: grid;
+            color: #555;
+        }
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        .title-decoration.right {
+            transform:
+                scaleX(-1);
+        }
 
-    column-gap: 55px;
-    row-gap: 80px;
-}
+        .catalog-title h1 {
+            margin: 0;
 
-.product {
-    min-width: 0;
+            font-family:
+                "Cinzel",
+                serif;
 
-    text-align: center;
+            font-size: 29px;
 
-    animation:
-        productAppear .6s ease both;
-}
+            font-weight: 500;
 
-@keyframes productAppear {
+            letter-spacing: 5px;
 
-    from {
-        opacity: 0;
-        transform:
-            translateY(20px)
-            scale(.97);
-    }
+            color: #e8e8e8;
+        }
 
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
+        .catalog-subtitle {
+            margin-top: 9px;
 
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-/* =========================================================
-   ART FRAME
-   ========================================================= */
+            font-size: 21px;
 
-.frame {
-    position: relative;
+            letter-spacing: 1px;
 
-    width: 100%;
+            color: #999;
+        }
 
-    aspect-ratio: .73 / 1;
 
-    background: #050505;
+        /* =====================================================
+           PRODUCTS GRID
+           ===================================================== */
 
-    isolation: isolate;
+        #products {
+            display: grid;
 
-    overflow: visible;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
 
-    /*
-       Главное отличие:
-       это НЕ прямоугольная border-рамка.
-       Создаём сложный силуэт через несколько слоёв.
-    */
+            column-gap: 55px;
 
-    filter:
-        drop-shadow(0 18px 18px rgba(0,0,0,.65));
-}
+            row-gap: 70px;
+        }
 
 
-/* =========================================================
-   MASSIVE OUTER BAROQUE SHAPE
-   ========================================================= */
+        /* =====================================================
+           PRODUCT
+           ===================================================== */
 
-.frame::before {
+        .product {
+            min-width: 0;
 
-    content: "";
+            text-align: center;
 
-    position: absolute;
+            animation:
+                productAppear .55s ease both;
+        }
 
-    z-index: -4;
+        @keyframes productAppear {
 
-    inset: -22px;
+            from {
+                opacity: 0;
 
-    background:
+                transform:
+                    translateY(18px);
+            }
 
-        /* верхняя корона */
-        radial-gradient(
-            ellipse at 50% 0%,
-            #ffffff 0%,
-            #e5e5e5 12%,
-            transparent 25%
-        ),
+            to {
+                opacity: 1;
 
-        /* левая верхняя лепнина */
-        radial-gradient(
-            ellipse at 0% 10%,
-            #ffffff 0%,
-            #bdbdbd 17%,
-            transparent 30%
-        ),
+                transform:
+                    translateY(0);
+            }
+        }
 
-        /* правая верхняя */
-        radial-gradient(
-            ellipse at 100% 10%,
-            #ffffff 0%,
-            #bdbdbd 17%,
-            transparent 30%
-        ),
 
-        /* нижняя лепнина */
-        radial-gradient(
-            ellipse at 50% 100%,
-            #eeeeee 0%,
-            #aaa 15%,
-            transparent 29%
-        ),
+        /* =====================================================
+           ART OBJECT FRAME
+           ===================================================== */
 
-        /* основное тело */
-        linear-gradient(
-            135deg,
-            #777 0%,
-            #ffffff 8%,
-            #d4d4d4 18%,
-            #fafafa 31%,
-            #b5b5b5 45%,
-            #ffffff 58%,
-            #c4c4c4 70%,
-            #ffffff 84%,
-            #777 100%
-        );
+        .frame {
+            position: relative;
 
-    clip-path: polygon(
+            width: 100%;
 
-        13% 3%,
-        23% 5%,
-        30% 1%,
-        38% 5%,
-        50% 0%,
-        62% 5%,
-        70% 1%,
-        77% 5%,
-        87% 3%,
+            aspect-ratio:
+                0.78 / 1;
 
-        94% 12%,
-        98% 20%,
-        94% 28%,
+            background: transparent;
 
-        98% 38%,
-        95% 50%,
-        98% 62%,
+            overflow: visible;
 
-        94% 72%,
-        98% 82%,
-        90% 89%,
+            border: none;
 
-        82% 95%,
-        72% 92%,
-        63% 98%,
-        50% 94%,
-        38% 98%,
-        28% 92%,
-        18% 95%,
-        10% 89%,
+            box-shadow: none;
 
-        2% 82%,
-        6% 72%,
-        2% 62%,
+            isolation: isolate;
+        }
 
-        5% 50%,
-        2% 38%,
-        6% 28%,
 
-        2% 20%,
-        6% 12%
-    );
+        /* =====================================================
+           PRODUCT IMAGE
+           ===================================================== */
 
-    box-shadow:
-        0 0 0 4px #444,
-        inset 0 0 20px rgba(0,0,0,.45);
-}
+        .image-area {
+            position: absolute;
 
+            top: 15%;
+            left: 15%;
+            right: 15%;
+            bottom: 13%;
 
-/* =========================================================
-   INNER DARK SHADOW
-   ========================================================= */
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    #121212 0%,
+                    #080808 62%,
+                    #020202 100%
+                );
 
-.frame::after {
+            overflow: hidden;
 
-    content: "";
+            z-index: 2;
 
-    position: absolute;
+            display: flex;
 
-    z-index: -3;
+            align-items: center;
 
-    inset: -8px;
+            justify-content: center;
+        }
 
-    background:
-        linear-gradient(
-            145deg,
-            #333,
-            #eeeeee 13%,
-            #777 25%,
-            #f8f8f8 40%,
-            #666 55%,
-            #eeeeee 70%,
-            #444 87%,
-            #d8d8d8
-        );
+        .image-area::before {
+            content: "";
 
-    clip-path: polygon(
+            position: absolute;
 
-        10% 4%,
-        25% 7%,
-        37% 3%,
-        50% 6%,
-        63% 3%,
-        75% 7%,
-        90% 4%,
+            inset: 0;
 
-        95% 20%,
-        92% 35%,
-        96% 50%,
-        92% 65%,
-        95% 80%,
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(255,255,255,.025),
+                    transparent 68%
+                );
 
-        88% 94%,
-        73% 91%,
-        62% 96%,
-        50% 92%,
-        38% 96%,
-        27% 91%,
-        12% 94%,
+            pointer-events: none;
+        }
 
-        5% 80%,
-        8% 65%,
-        4% 50%,
-        8% 35%,
-        5% 20%
-    );
+        .product img.product-image {
+            width: 100%;
 
-    box-shadow:
-        inset 0 0 15px rgba(0,0,0,.8);
-}
+            height: 100%;
 
+            object-fit: contain;
 
-/* =========================================================
-   PHOTO WINDOW
-   ========================================================= */
+            display: block;
 
-.image-area {
+            position: relative;
 
-    position: absolute;
+            z-index: 2;
+        }
 
-    top: 8%;
-    left: 9%;
-    right: 9%;
-    bottom: 9%;
 
-    z-index: 2;
+        /* =====================================================
+           YOUR REAL PNG FRAME
+           ===================================================== */
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            #161616 0%,
-            #080808 62%,
-            #020202 100%
-        );
+        .art-frame {
+            position: absolute;
 
-    overflow: hidden;
+            inset: 0;
 
-    /*
-       Фото тоже получает слегка художественный силуэт.
-    */
+            width: 100%;
 
-    clip-path: polygon(
+            height: 100%;
 
-        3% 4%,
-        15% 2%,
-        27% 4%,
-        40% 2%,
-        50% 4%,
-        60% 2%,
-        73% 4%,
-        85% 2%,
-        97% 4%,
+            object-fit: fill;
 
-        98% 20%,
-        96% 35%,
-        98% 50%,
-        96% 65%,
-        98% 80%,
+            z-index: 10;
 
-        97% 96%,
-        85% 98%,
-        73% 96%,
-        60% 98%,
-        50% 96%,
-        40% 98%,
-        27% 96%,
-        15% 98%,
-        3% 96%,
+            pointer-events: none;
 
-        2% 80%,
-        4% 65%,
-        2% 50%,
-        4% 35%,
-        2% 20%
-    );
+            user-select: none;
 
-    box-shadow:
-        inset 0 0 0 2px rgba(255,255,255,.2),
-        inset 0 0 25px rgba(0,0,0,.8);
-}
+            -webkit-user-drag: none;
 
-.image-area::after {
+            filter:
+                drop-shadow(
+                    0 7px 9px rgba(0,0,0,.45)
+                );
+        }
 
-    content: "";
 
-    position: absolute;
+        /* =====================================================
+           IXWEAR PLAQUE
+           ===================================================== */
 
-    inset: 0;
+        .frame-brand {
+            position: absolute;
 
-    pointer-events: none;
+            left: 50%;
 
-    box-shadow:
-        inset 0 0 25px rgba(0,0,0,.8),
-        inset 0 0 0 2px rgba(255,255,255,.2);
-}
+            bottom: -18px;
 
-.product img {
+            transform:
+                translateX(-50%);
 
-    width: 100%;
-    height: 100%;
+            z-index: 20;
 
-    object-fit: contain;
+            display: flex;
 
-    display: block;
+            align-items: baseline;
 
-    position: relative;
+            justify-content: center;
 
-    z-index: 2;
-}
+            white-space: nowrap;
 
+            padding:
+                5px 17px 6px;
 
-/* =========================================================
-   BAROQUE DECORATIVE ELEMENTS
-   ========================================================= */
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #eeeeee 45%,
+                    #cfcfcf 100%
+                );
 
-.art {
+            color: #080808;
 
-    position: absolute;
+            border:
+                1px solid #999;
 
-    z-index: 15;
+            border-radius: 3px;
 
-    pointer-events: none;
-}
+            box-shadow:
+                0 4px 10px rgba(0,0,0,.7);
+        }
 
+        .brand-ix {
+            font-family:
+                "Cinzel",
+                serif;
 
-/* =========================================================
-   TOP CROWN
-   ========================================================= */
+            font-size: 17px;
 
-.crown {
+            font-weight: 700;
 
-    position: absolute;
+            letter-spacing: -1px;
+        }
 
-    width: 125px;
-    height: 75px;
+        .brand-wear {
+            margin-left: 3px;
 
-    top: -40px;
-    left: 50%;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-    transform: translateX(-50%);
+            font-size: 17px;
 
-    z-index: 20;
+            font-weight: 600;
 
-    pointer-events: none;
-}
+            letter-spacing: 1px;
+        }
 
-.crown::before {
 
-    content: "❦";
+        /* =====================================================
+           PRODUCT INFO
+           ===================================================== */
 
-    position: absolute;
+        .info {
+            padding-top: 35px;
 
-    left: 50%;
-    top: -8px;
+            text-align: center;
+        }
 
-    transform:
-        translateX(-50%)
-        scaleX(1.5);
+        .name {
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-    font-family: Georgia, serif;
+            font-size: 24px;
 
-    font-size: 65px;
+            line-height: 1.15;
 
-    color: #eeeeee;
+            color: #eee;
 
-    text-shadow:
-        1px 2px 2px #777,
-        -1px -1px 1px #fff,
-        0 5px 8px rgba(0,0,0,.7);
-}
+            font-weight: 500;
+        }
 
-.crown::after {
+        .price {
+            margin-top: 6px;
 
-    content: "◆";
+            font-family:
+                "Cinzel",
+                serif;
 
-    position: absolute;
+            font-size: 21px;
 
-    left: 50%;
-    bottom: -2px;
+            letter-spacing: 2px;
 
-    transform: translateX(-50%);
+            color: #fff;
 
-    font-size: 20px;
+            font-weight: 500;
+        }
 
-    color: #999;
+        .description {
+            margin-top: 6px;
 
-    text-shadow:
-        0 2px 2px #444;
-}
+            color: #777;
 
+            font-size: 15px;
+        }
 
-/* =========================================================
-   CORNER FLOWERS
-   ========================================================= */
 
-.flower {
+        /* =====================================================
+           STATES
+           ===================================================== */
 
-    position: absolute;
+        .loading,
+        .empty,
+        .error {
+            grid-column:
+                1 / -1;
 
-    width: 82px;
-    height: 82px;
+            text-align: center;
 
-    z-index: 30;
+            padding:
+                70px 10px;
 
-    pointer-events: none;
-}
+            font-size: 21px;
 
+            color: #777;
+        }
 
-/* flower center */
+        .error {
+            color: #c77;
+        }
 
-.flower::after {
 
-    content: "";
+        /* =====================================================
+           MOBILE
+           ===================================================== */
 
-    position: absolute;
+        @media (max-width: 600px) {
 
-    width: 25px;
-    height: 25px;
+            .header {
+                height: 92px;
 
-    left: 50%;
-    top: 50%;
+                border-radius:
+                    0 0 22px 22px;
+            }
 
-    transform:
-        translate(-50%,-50%);
+            .logo-ix {
+                font-size: 37px;
+            }
 
-    border-radius: 50%;
+            .logo-wear {
+                font-size: 26px;
+            }
 
-    background:
-        radial-gradient(
-            circle,
-            #fff 0 18%,
-            #cfcfcf 20% 42%,
-            #777 44% 62%,
-            #eee 64% 78%,
-            #666 80%
-        );
 
-    box-shadow:
-        0 3px 7px rgba(0,0,0,.8);
-}
+            main {
+                padding:
+                    29px 15px 55px;
+            }
 
 
-/* petals */
+            .catalog-title {
+                margin-bottom: 42px;
+            }
 
-.flower span {
+            .catalog-title h1 {
+                font-size: 20px;
 
-    position: absolute;
+                letter-spacing: 3px;
+            }
 
-    width: 28px;
-    height: 42px;
+            .catalog-subtitle {
+                font-size: 18px;
+            }
 
-    left: 27px;
-    top: 0;
+            .title-decoration {
+                width: 43px;
+            }
 
-    border-radius:
-        70% 30% 70% 30%;
 
-    background:
-        linear-gradient(
-            90deg,
-            #777,
-            #fff 28%,
-            #c7c7c7 50%,
-            #fff 70%,
-            #777
-        );
+            /* =================================================
+               PRODUCT GRID
+               ================================================= */
 
-    box-shadow:
-        0 3px 5px rgba(0,0,0,.7);
-}
+            #products {
+                column-gap: 25px;
 
-.flower span:nth-child(2) {
-    transform: rotate(90deg);
-    top: 20px;
-    left: 40px;
-}
+                row-gap: 60px;
+            }
 
-.flower span:nth-child(3) {
-    transform: rotate(180deg);
-    top: 40px;
-}
 
-.flower span:nth-child(4) {
-    transform: rotate(270deg);
-    top: 20px;
-    left: 5px;
-}
+            /* =================================================
+               FRAME
+               ================================================= */
 
+            .frame {
+                aspect-ratio:
+                    0.78 / 1;
 
-/* =========================================================
-   FLOWER POSITIONS
-   ========================================================= */
+                box-shadow: none;
+            }
 
-.flower.tl {
-    top: -31px;
-    left: -31px;
-}
 
-.flower.tr {
-    top: -31px;
-    right: -31px;
-    transform: scaleX(-1);
-}
+            /* =================================================
+               IMAGE
+               ================================================= */
 
-.flower.bl {
-    bottom: -31px;
-    left: -31px;
-    transform: scaleY(-1);
-}
+            .image-area {
+                top: 15%;
 
-.flower.br {
-    bottom: -31px;
-    right: -31px;
-    transform: scale(-1);
-}
+                left: 15%;
 
+                right: 15%;
 
-/* =========================================================
-   SIDE CURLS
-   ========================================================= */
+                bottom: 13%;
+            }
 
-.curl {
 
-    position: absolute;
+            /* =================================================
+               ART FRAME
+               ================================================= */
 
-    width: 90px;
-    height: 90px;
+            .art-frame {
+                filter:
+                    drop-shadow(
+                        0 5px 7px rgba(0,0,0,.5)
+                    );
+            }
 
-    z-index: 12;
 
-    pointer-events: none;
+            /* =================================================
+               BRAND
+               ================================================= */
 
-    border:
-        8px solid #d9d9d9;
+            .frame-brand {
+                bottom: -14px;
 
-    border-left-color: transparent;
-    border-bottom-color: transparent;
+                padding:
+                    3px 10px 4px;
+            }
 
-    border-radius: 50%;
+            .brand-ix {
+                font-size: 12px;
+            }
 
-    box-shadow:
-        2px 2px 4px rgba(0,0,0,.65),
-        inset -1px -1px 2px #888;
-}
+            .brand-wear {
+                font-size: 12px;
 
-.curl.left {
-    left: -40px;
-    top: 37%;
+                margin-left: 2px;
+            }
 
-    transform:
-        rotate(-45deg);
-}
 
-.curl.right {
-    right: -40px;
-    top: 37%;
+            /* =================================================
+               INFO
+               ================================================= */
 
-    transform:
-        rotate(135deg);
-}
+            .info {
+                padding-top: 29px;
+            }
 
+            .name {
+                font-size: 17px;
+            }
 
-/* =========================================================
-   BOTTOM ORNAMENT
-   ========================================================= */
+            .price {
+                font-size: 15px;
 
-.bottom-ornament {
+                letter-spacing: 1px;
+            }
 
-    position: absolute;
+            .description {
+                font-size: 12px;
+            }
+        }
 
-    bottom: -43px;
 
-    left: 50%;
+        /* =====================================================
+           VERY SMALL PHONES
+           ===================================================== */
 
-    transform:
-        translateX(-50%);
+        @media (max-width: 380px) {
 
-    width: 160px;
-    height: 55px;
+            main {
+                padding-left: 11px;
 
-    z-index: 25;
+                padding-right: 11px;
+            }
 
-    pointer-events: none;
-}
+            .logo-ix {
+                font-size: 34px;
+            }
 
-.bottom-ornament::before {
+            .logo-wear {
+                font-size: 24px;
+            }
 
-    content: "❧   ❦   ❧";
+            #products {
+                column-gap: 19px;
+            }
 
-    position: absolute;
+            .name {
+                font-size: 15px;
+            }
 
-    width: 100%;
+            .price {
+                font-size: 14px;
+            }
 
-    text-align: center;
+            .frame-brand {
+                bottom: -13px;
+            }
+        }
 
-    font-family: Georgia, serif;
-
-    font-size: 37px;
-
-    color: #eeeeee;
-
-    text-shadow:
-        1px 2px 2px #666,
-        0 4px 6px rgba(0,0,0,.7);
-}
-
-
-/* =========================================================
-   IXWEAR PLAQUE
-   ========================================================= */
-
-.frame-brand {
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -30px;
-
-    transform:
-        translateX(-50%);
-
-    z-index: 40;
-
-    min-width: 120px;
-    height: 35px;
-
-    padding: 0 17px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff,
-            #dedede 30%,
-            #999 55%,
-            #f5f5f5 80%,
-            #888
-        );
-
-    border:
-        1px solid #555;
-
-    box-shadow:
-        0 4px 8px rgba(0,0,0,.8);
-
-    color: #111;
-
-    white-space: nowrap;
-}
-
-.brand-ix {
-
-    font-family: "Cinzel", serif;
-
-    font-size: 18px;
-    font-weight: 700;
-
-    letter-spacing: -1px;
-}
-
-.brand-wear {
-
-    margin-left: 3px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 17px;
-
-    font-weight: 600;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   PRODUCT INFO
-   ========================================================= */
-
-.info {
-
-    padding-top: 52px;
-
-    text-align: center;
-}
-
-.name {
-
-    font-size: 24px;
-
-    line-height: 1.15;
-
-    color: #eee;
-
-    font-weight: 500;
-}
-
-.price {
-
-    margin-top: 6px;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 21px;
-
-    letter-spacing: 2px;
-
-    color: #fff;
-}
-
-.description {
-
-    margin-top: 6px;
-
-    color: #777;
-
-    font-size: 15px;
-}
-
-
-/* =========================================================
-   STATES
-   ========================================================= */
-
-.loading,
-.empty,
-.error {
-
-    grid-column: 1 / -1;
-
-    text-align: center;
-
-    padding: 70px 10px;
-
-    font-size: 21px;
-
-    color: #777;
-}
-
-.error {
-    color: #c77;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .header {
-        height: 88px;
-    }
-
-    .logo-ix {
-        font-size: 37px;
-    }
-
-    .logo-wear {
-        font-size: 27px;
-    }
-
-    main {
-        padding:
-            29px 14px 60px;
-    }
-
-    .catalog-title {
-        margin-bottom: 48px;
-    }
-
-    .catalog-title h1 {
-        font-size: 20px;
-        letter-spacing: 3px;
-    }
-
-    .catalog-subtitle {
-        font-size: 18px;
-    }
-
-    .title-decoration {
-        width: 42px;
-    }
-
-    #products {
-        column-gap: 25px;
-        row-gap: 72px;
-    }
-
-    .frame {
-        aspect-ratio: .70 / 1;
-    }
-
-    .crown {
-        transform:
-            translateX(-50%)
-            scale(.72);
-    }
-
-    .flower {
-        transform: scale(.72);
-    }
-
-    .flower.tr {
-        transform:
-            scaleX(-1)
-            scale(.72);
-    }
-
-    .flower.bl {
-        transform:
-            scaleY(-1)
-            scale(.72);
-    }
-
-    .flower.br {
-        transform:
-            scale(-1)
-            scale(.72);
-    }
-
-    .curl {
-        transform:
-            scale(.72)
-            rotate(-45deg);
-    }
-
-    .curl.right {
-        transform:
-            scale(.72)
-            rotate(135deg);
-    }
-
-    .image-area {
-        top: 9%;
-        left: 10%;
-        right: 10%;
-        bottom: 10%;
-    }
-
-    .frame-brand {
-        min-width: 90px;
-        height: 29px;
-
-        bottom: -21px;
-
-        padding: 0 10px;
-    }
-
-    .brand-ix {
-        font-size: 14px;
-    }
-
-    .brand-wear {
-        font-size: 13px;
-    }
-
-    .bottom-ornament {
-        transform:
-            translateX(-50%)
-            scale(.7);
-
-        bottom: -38px;
-    }
-
-    .info {
-        padding-top: 35px;
-    }
-
-    .name {
-        font-size: 17px;
-    }
-
-    .price {
-        font-size: 15px;
-        letter-spacing: 1px;
-    }
-
-    .description {
-        font-size: 12px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    main {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    #products {
-        column-gap: 18px;
-    }
-
-    .logo-ix {
-        font-size: 34px;
-    }
-
-    .logo-wear {
-        font-size: 24px;
-    }
-
-    .name {
-        font-size: 15px;
-    }
-
-    .price {
-        font-size: 14px;
-    }
-}
-
-</style>
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-<header class="header">
+    <header class="header">
 
-    <div class="logo">
-        <span class="logo-ix">IX</span>
-        <span class="logo-wear">wear</span>
-    </div>
+        <div class="logo">
 
-</header>
+            <span class="logo-ix">
+                IX
+            </span>
 
+            <span class="logo-wear">
+                wear
+            </span>
 
-<main>
+        </div>
 
+    </header>
 
-<!-- =======================================================
-     TITLE
-     ======================================================= -->
 
-<section class="catalog-title">
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
 
-    <div class="title-line">
+    <main>
 
-        <span class="title-decoration"></span>
+        <section class="catalog-title">
 
-        <h1>COLLECTION</h1>
+            <div class="title-line">
 
-        <span class="title-decoration right"></span>
+                <span class="title-decoration"></span>
 
-    </div>
+                <h1>
+                    COLLECTION
+                </h1>
 
-    <div class="catalog-subtitle">
-        CHOOSE YOUR STYLE
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     PRODUCTS
-     ======================================================= -->
-
-<div id="products">
-
-    <div class="loading">
-        Loading collection...
-    </div>
-
-</div>
-
-
-</main>
-
-
-<script>
-
-/* =========================================================
-   TELEGRAM
-   ========================================================= */
-
-const tg = window.Telegram.WebApp;
-
-tg.ready();
-tg.expand();
-
-
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-
-const container =
-    document.getElementById("products");
-
-
-/* =========================================================
-   ESCAPE HTML
-   ========================================================= */
-
-function escapeHtml(text) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        String(text);
-
-    return div.innerHTML;
-}
-
-
-/* =========================================================
-   BRAND
-   ========================================================= */
-
-function brandHTML() {
-
-    return `
-        <span class="brand-ix">IX</span>
-        <span class="brand-wear">wear</span>
-    `;
-}
-
-
-/* =========================================================
-   LOAD PRODUCTS
-   ========================================================= */
-
-async function loadProducts() {
-
-    try {
-
-        const cacheBuster =
-            Date.now() +
-            "_" +
-            Math.random()
-                .toString(36)
-                .substring(2);
-
-        const response =
-            await fetch(
-                "products.json?cache=" +
-                cacheBuster,
-                {
-                    method: "GET",
-
-                    cache: "no-store",
-
-                    headers: {
-                        "Cache-Control":
-                            "no-cache",
-
-                        "Pragma":
-                            "no-cache"
-                    }
-                }
-            );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "HTTP " +
-                response.status
-            );
-        }
-
-
-        const products =
-            await response.json();
-
-
-        if (!Array.isArray(products)) {
-
-            throw new Error(
-                "products.json имеет неправильный формат"
-            );
-        }
-
-
-        if (products.length === 0) {
-
-            container.innerHTML = `
-                <div class="empty">
-                    Collection is empty
-                </div>
-            `;
-
-            return;
-        }
-
-
-        let html = "";
-
-
-        products.forEach(
-            (product, index) => {
-
-                const name =
-                    escapeHtml(
-                        product.name || ""
-                    );
-
-                const price =
-                    escapeHtml(
-                        product.price || ""
-                    );
-
-                const description =
-                    escapeHtml(
-                        product.description || ""
-                    );
-
-
-                const imageUrl =
-                    product.image
-                    ? product.image +
-                        (
-                            product.image.includes("?")
-                            ? "&"
-                            : "?"
-                        ) +
-                        "v=" +
-                        Date.now()
-                    : "";
-
-
-                html += `
-
-                <article
-                    class="product"
-                    style="
-                        animation-delay:
-                        ${index * .06}s;
-                    "
-                >
-
-                    <div class="frame">
-
-
-                        <!-- PHOTO -->
-
-                        <div class="image-area">
-
-                            ${
-                                imageUrl
-                                ? `
-                                    <img
-                                        src="${imageUrl}"
-                                        alt="${name}"
-                                        loading="lazy"
-                                        onerror="
-                                            this.style.display='none';
-                                        "
-                                    >
-                                `
-                                : ""
-                            }
-
-                        </div>
-
-
-                        <!-- TOP CROWN -->
-
-                        <div class="crown"></div>
-
-
-                        <!-- CORNER FLOWERS -->
-
-                        <div class="flower tl">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-
-                        <div class="flower tr">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-
-                        <div class="flower bl">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-
-                        <div class="flower br">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-
-                        <!-- SIDE CURLS -->
-
-                        <div class="curl left"></div>
-
-                        <div class="curl right"></div>
-
-
-                        <!-- BOTTOM ORNAMENT -->
-
-                        <div class="bottom-ornament"></div>
-
-
-                        <!-- BRAND -->
-
-                        <div class="frame-brand">
-
-                            ${brandHTML()}
-
-                        </div>
-
-
-                    </div>
-
-
-                    <!-- PRODUCT INFO -->
-
-                    <div class="info">
-
-                        <div class="name">
-                            ${name}
-                        </div>
-
-                        <div class="price">
-                            ${price}
-                        </div>
-
-                        ${
-                            description
-                            ? `
-                                <div class="description">
-                                    ${description}
-                                </div>
-                            `
-                            : ""
-                        }
-
-                    </div>
-
-                </article>
-
-                `;
-            }
-        );
-
-
-        container.innerHTML =
-            html;
-
-
-    } catch (error) {
-
-        console.error(
-            "Ошибка загрузки каталога:",
-            error
-        );
-
-
-        container.innerHTML = `
-
-            <div class="error">
-
-                Could not load collection.
-
-                <br><br>
-
-                ${escapeHtml(
-                    error.message
-                )}
+                <span
+                    class="title-decoration right"
+                ></span>
 
             </div>
 
-        `;
-    }
-}
+            <div class="catalog-subtitle">
+                CHOOSE YOUR STYLE
+            </div>
+
+        </section>
 
 
-/* =========================================================
-   START
-   ========================================================= */
+        <div id="products">
 
-loadProducts();
+            <div class="loading">
+                Loading collection...
+            </div>
+
+        </div>
+
+    </main>
 
 
-/* =========================================================
-   AUTO UPDATE
-   ========================================================= */
+    <script>
 
-setInterval(
-    loadProducts,
-    3000
-);
+        /* =====================================================
+           TELEGRAM
+           ===================================================== */
 
-</script>
+        const tg =
+            window.Telegram.WebApp;
+
+        tg.ready();
+
+        tg.expand();
+
+
+        /* =====================================================
+           CONTAINER
+           ===================================================== */
+
+        const container =
+            document.getElementById(
+                "products"
+            );
+
+
+        /* =====================================================
+           ESCAPE HTML
+           ===================================================== */
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.textContent =
+                String(text);
+
+            return div.innerHTML;
+        }
+
+
+        /* =====================================================
+           IXWEAR BRAND
+           ===================================================== */
+
+        function brandHTML() {
+
+            return `
+                <span class="brand-ix">
+                    IX
+                </span>
+
+                <span class="brand-wear">
+                    wear
+                </span>
+            `;
+        }
+
+
+        /* =====================================================
+           LOAD PRODUCTS
+           ===================================================== */
+
+        async function loadProducts() {
+
+            try {
+
+                const cacheBuster =
+                    Date.now() +
+                    "_" +
+                    Math.random()
+                        .toString(36)
+                        .substring(2);
+
+
+                const response =
+                    await fetch(
+                        "products.json?cache=" +
+                        cacheBuster,
+                        {
+                            method: "GET",
+
+                            cache: "no-store",
+
+                            headers: {
+                                "Cache-Control":
+                                    "no-cache",
+
+                                "Pragma":
+                                    "no-cache"
+                            }
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "HTTP " +
+                        response.status
+                    );
+                }
+
+
+                const products =
+                    await response.json();
+
+
+                if (
+                    !Array.isArray(
+                        products
+                    )
+                ) {
+
+                    throw new Error(
+                        "products.json имеет неправильный формат"
+                    );
+                }
+
+
+                if (
+                    products.length === 0
+                ) {
+
+                    container.innerHTML = `
+
+                        <div class="empty">
+                            Collection is empty
+                        </div>
+
+                    `;
+
+                    return;
+                }
+
+
+                let html = "";
+
+
+                /* =================================================
+                   CREATE PRODUCTS
+                   ================================================= */
+
+                products.forEach(
+                    (product, index) => {
+
+                        const name =
+                            escapeHtml(
+                                product.name || ""
+                            );
+
+
+                        const price =
+                            escapeHtml(
+                                product.price || ""
+                            );
+
+
+                        const description =
+                            escapeHtml(
+                                product.description || ""
+                            );
+
+
+                        const imageUrl =
+                            product.image
+                                ? product.image +
+                                  (
+                                      product.image.includes("?")
+                                      ? "&"
+                                      : "?"
+                                  ) +
+                                  "v=" +
+                                  Date.now()
+                                : "";
+
+
+                        html += `
+
+                            <article
+                                class="product"
+                                style="
+                                    animation-delay:
+                                    ${index * 0.06}s;
+                                "
+                            >
+
+                                <div class="frame">
+
+
+                                    <!-- =================================
+                                         PRODUCT PHOTO
+                                         ================================= -->
+
+                                    <div class="image-area">
+
+                                        ${
+                                            imageUrl
+                                            ? `
+
+                                                <img
+                                                    class="product-image"
+
+                                                    src="${imageUrl}"
+
+                                                    alt="${name}"
+
+                                                    loading="lazy"
+
+                                                    onerror="
+                                                        this.style.display='none';
+                                                    "
+                                                >
+
+                                            `
+                                            : ""
+                                        }
+
+                                    </div>
+
+
+                                    <!-- =================================
+                                         REAL PNG ART FRAME
+                                         ================================= -->
+
+                                    <img
+                                        class="art-frame"
+
+                                        src="frame.png"
+
+                                        alt=""
+
+                                        draggable="false"
+                                    >
+
+
+                                    <!-- =================================
+                                         IXWEAR
+                                         ================================= -->
+
+                                    <div class="frame-brand">
+
+                                        ${brandHTML()}
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- =====================================
+                                     PRODUCT INFORMATION
+                                     ===================================== -->
+
+                                <div class="info">
+
+                                    <div class="name">
+
+                                        ${name}
+
+                                    </div>
+
+
+                                    <div class="price">
+
+                                        ${price}
+
+                                    </div>
+
+
+                                    ${
+                                        description
+                                        ? `
+
+                                            <div class="description">
+
+                                                ${description}
+
+                                            </div>
+
+                                        `
+                                        : ""
+                                    }
+
+                                </div>
+
+
+                            </article>
+
+                        `;
+                    }
+                );
+
+
+                container.innerHTML =
+                    html;
+
+
+            } catch (error) {
+
+                console.error(
+                    "Ошибка загрузки каталога:",
+                    error
+                );
+
+
+                container.innerHTML = `
+
+                    <div class="error">
+
+                        Could not load collection.
+
+                        <br><br>
+
+                        ${escapeHtml(
+                            error.message
+                        )}
+
+                    </div>
+
+                `;
+            }
+        }
+
+
+        /* =====================================================
+           START
+           ===================================================== */
+
+        loadProducts();
+
+
+        /* =====================================================
+           AUTO UPDATE
+           ===================================================== */
+
+        setInterval(
+            loadProducts,
+            3000
+        );
+
+    </script>
 
 </body>
 </html>
