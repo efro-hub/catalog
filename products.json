@@ -1,12 +1,5 @@
 [
   {
-    "id": 6,
-    "name": "попытка 6",
-    "price": "500",
-    "description": "роман",
-    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADMhlrG03rKUh-.jpg"
-  },
-  {
     "id": 5,
     "name": "рома",
     "price": "123",
