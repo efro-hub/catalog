@@ -1,5 +1,12 @@
 [
   {
+    "id": 12,
+    "name": "рома",
+    "price": "123",
+    "description": "",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADJxlrG03rKUh-.jpg"
+  },
+  {
     "id": 10,
     "name": "так и быть 2 нормальных типа",
     "price": "2",
