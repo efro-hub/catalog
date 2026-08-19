@@ -2,10 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        content="width=device-width, initial-scale=1.0"
     >
 
     <title>Каталог товаров</title>
@@ -20,199 +19,252 @@
         body {
             margin: 0;
             padding: 16px;
-
-            background: var(--tg-theme-bg-color, #111111);
-            color: var(--tg-theme-text-color, #ffffff);
-
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Arial,
-                sans-serif;
+            background: #ffffff;
+            color: #111111;
+            font-family: Arial, sans-serif;
         }
 
-        .header {
-            margin-bottom: 20px;
+        h1 {
+            margin: 5px 0 20px;
+            font-size: 24px;
         }
 
-        .header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
-
-        .header p {
-            margin: 5px 0 0;
-            color: var(--tg-theme-hint-color, #999999);
-            font-size: 14px;
-        }
-
-        .catalog {
+        #products {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
 
         .product {
+            border: 1px solid #eeeeee;
+            border-radius: 14px;
             overflow: hidden;
-
-            background:
-                var(
-                    --tg-theme-secondary-bg-color,
-                    #1c1c1c
-                );
-
-            border-radius: 16px;
+            background: #ffffff;
         }
 
-        .product-image {
+        .product img {
             width: 100%;
             aspect-ratio: 1 / 1;
-
             object-fit: cover;
-
             display: block;
         }
 
-        .product-info {
-            padding: 11px;
+        .info {
+            padding: 12px;
         }
 
-        .product-name {
+        .name {
             font-size: 16px;
-            font-weight: 600;
-
+            font-weight: bold;
             margin-bottom: 6px;
         }
 
-        .product-price {
+        .price {
             font-size: 17px;
-            font-weight: 700;
+            font-weight: bold;
+            margin-bottom: 6px;
         }
 
-        .product-description {
-            margin-top: 6px;
-
-            color:
-                var(
-                    --tg-theme-hint-color,
-                    #999999
-                );
-
+        .description {
             font-size: 13px;
-            line-height: 1.35;
+            color: #777777;
+            line-height: 1.3;
         }
 
         .empty {
             grid-column: 1 / -1;
-
             text-align: center;
-
-            padding: 60px 20px;
-
-            color:
-                var(
-                    --tg-theme-hint-color,
-                    #999999
-                );
+            padding: 50px 10px;
+            color: #777777;
         }
 
-        @media (max-width: 360px) {
-            .catalog {
-                grid-template-columns: 1fr;
-            }
+        .error {
+            grid-column: 1 / -1;
+            padding: 20px;
+            color: #cc0000;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="header">
-        <h1>Каталог товаров</h1>
+    <h1>Каталог товаров</h1>
 
-        <p>
-            Выберите интересующий товар
-        </p>
-    </div>
-
-
-    <div
-        id="catalog"
-        class="catalog"
-    >
-
-        <!--
-            ТУТ ПОКА ТЕСТОВЫЕ ТОВАРЫ.
-
-            Когда подключим бота,
-            они будут загружаться автоматически.
-        -->
-
-
-        <div class="product">
-
-            <img
-                class="product-image"
-                src="https://placehold.co/600x600/222/fff?text=Товар"
-                alt="Товар"
-            >
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Тестовый товар
-                </div>
-
-                <div class="product-price">
-                    500 ₽
-                </div>
-
-                <div class="product-description">
-                    Здесь будет описание товара.
-                </div>
-
-            </div>
-
+    <div id="products">
+        <div class="empty">
+            Загрузка товаров...
         </div>
-
-
-        <div class="product">
-
-            <img
-                class="product-image"
-                src="https://placehold.co/600x600/222/fff?text=Товар"
-                alt="Товар"
-            >
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Второй товар
-                </div>
-
-                <div class="product-price">
-                    900 ₽
-                </div>
-
-                <div class="product-description">
-                    Описание второго товара.
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
 
 
     <script>
 
-        const tg =
-            window.Telegram.WebApp;
+        const tg = window.Telegram.WebApp;
 
         tg.ready();
-
         tg.expand();
+
+
+        async function loadProducts() {
+
+            const container =
+                document.getElementById("products");
+
+
+            try {
+
+                /*
+                 * Берём products.json
+                 * прямо из этого же GitHub Pages.
+                 *
+                 * ?time нужен, чтобы Telegram
+                 * не показывал старую версию.
+                 */
+
+                const url =
+                    "products.json?time=" +
+                    Date.now();
+
+
+                const response =
+                    await fetch(url);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "HTTP " + response.status
+                    );
+
+                }
+
+
+                const products =
+                    await response.json();
+
+
+                container.innerHTML = "";
+
+
+                if (
+                    !Array.isArray(products) ||
+                    products.length === 0
+                ) {
+
+                    container.innerHTML = `
+                        <div class="empty">
+                            Каталог пока пуст
+                        </div>
+                    `;
+
+                    return;
+                }
+
+
+                products.forEach(product => {
+
+                    const card =
+                        document.createElement("div");
+
+                    card.className =
+                        "product";
+
+
+                    const image =
+                        product.image || "";
+
+
+                    card.innerHTML = `
+
+                        ${
+                            image
+                            ? `
+                                <img
+                                    src="${image}"
+                                    alt=""
+                                    onerror="
+                                        this.style.display='none'
+                                    "
+                                >
+                              `
+                            : ""
+                        }
+
+                        <div class="info">
+
+                            <div class="name">
+                                ${escapeHtml(
+                                    product.name || ""
+                                )}
+                            </div>
+
+                            <div class="price">
+                                ${escapeHtml(
+                                    product.price || ""
+                                )}
+                            </div>
+
+                            ${
+                                product.description
+                                ? `
+                                    <div class="description">
+                                        ${escapeHtml(
+                                            product.description
+                                        )}
+                                    </div>
+                                  `
+                                : ""
+                            }
+
+                        </div>
+                    `;
+
+
+                    container.appendChild(card);
+
+                });
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                container.innerHTML = `
+
+                    <div class="error">
+
+                        Не удалось загрузить каталог.
+
+                        <br><br>
+
+                        ${escapeHtml(
+                            error.message
+                        )}
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = text;
+
+            return div.innerHTML;
+
+        }
+
+
+        loadProducts();
 
     </script>
 
