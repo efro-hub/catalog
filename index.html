@@ -1,1623 +1,1565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
 
-    <meta
-        http-equiv="Cache-Control"
-        content="no-cache, no-store, must-revalidate"
-    >
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+<title>IXwear</title>
 
-    <title>IXwear</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+<style>
 
-    <style>
+/* =========================================================
+   BASE
+   ========================================================= */
 
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 
-            background: #080808;
-            color: #fff;
-        }
+    background: #090909;
+    color: #fff;
+}
 
-        body {
-            overflow-x: hidden;
-            font-family: "Cormorant Garamond", serif;
-        }
+body {
+    overflow-x: hidden;
+    font-family: "Cormorant Garamond", serif;
+}
 
 
-        /* =====================================================
-           HEADER
-           ===================================================== */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-        .header {
-            width: 100%;
-            height: 105px;
+.header {
+    width: 100%;
+    height: 95px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            background:
-                radial-gradient(
-                    ellipse at center,
-                    #171717 0%,
-                    #0d0d0d 55%,
-                    #080808 100%
-                );
+    background:
+        radial-gradient(
+            ellipse at center,
+            #191919 0%,
+            #0d0d0d 55%,
+            #080808 100%
+        );
 
-            border-bottom: 1px solid #252525;
+    border-bottom: 1px solid #222;
 
-            border-radius:
-                0 0 26px 26px;
-        }
+    border-radius:
+        0 0 25px 25px;
+}
 
+.logo {
+    display: flex;
+    align-items: baseline;
 
-        /* =====================================================
-           IXWEAR LOGO
-           ===================================================== */
+    line-height: 1;
 
-        .logo {
-            display: flex;
-            align-items: baseline;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.9);
+}
 
-            white-space: nowrap;
+.logo-ix {
+    font-family: "Cinzel", serif;
 
-            line-height: 1;
+    font-size: 42px;
+    font-weight: 600;
 
-            text-shadow:
-                0 2px 8px rgba(0,0,0,.9);
-        }
+    letter-spacing: -2px;
 
-        .logo-ix {
-            font-family: "Cinzel", serif;
+    color: #f3f3f3;
+}
 
-            font-size: 43px;
-            font-weight: 600;
+.logo-wear {
+    margin-left: 5px;
 
-            letter-spacing: -2px;
+    font-family: "Cormorant Garamond", serif;
 
-            color: #f1f1f1;
-        }
+    font-size: 30px;
+    font-weight: 500;
 
-        .logo-wear {
-            margin-left: 4px;
+    letter-spacing: 1px;
 
-            font-family: "Cormorant Garamond", serif;
+    color: #bdbdbd;
+}
 
-            font-size: 31px;
-            font-weight: 500;
 
-            letter-spacing: 1px;
+/* =========================================================
+   MAIN
+   ========================================================= */
 
-            color: #bdbdbd;
-        }
+main {
+    width: 100%;
+    max-width: 1100px;
 
+    margin: 0 auto;
 
-        /* =====================================================
-           MAIN
-           ===================================================== */
+    padding:
+        35px 30px 80px;
+}
 
-        main {
-            width: 100%;
-            max-width: 1100px;
 
-            margin: 0 auto;
+/* =========================================================
+   TITLE
+   ========================================================= */
 
-            padding:
-                35px 30px 80px;
-        }
+.catalog-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
 
+.title-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
 
-        /* =====================================================
-           COLLECTION TITLE
-           ===================================================== */
+.title-decoration {
+    width: 65px;
+    height: 20px;
+    position: relative;
+}
 
-        .catalog-title {
-            text-align: center;
+.title-decoration::before {
+    content: "❧";
 
-            margin-bottom: 50px;
-        }
+    position: absolute;
 
-        .title-line {
-            display: flex;
+    left: 0;
+    top: -8px;
 
-            align-items: center;
-            justify-content: center;
+    font-size: 24px;
 
-            gap: 18px;
-        }
+    color: #737373;
 
-        .title-decoration {
-            width: 70px;
-            height: 20px;
+    transform: rotate(180deg);
+}
 
-            position: relative;
-        }
+.title-decoration::after {
+    content: "◇";
 
-        .title-decoration::before {
-            content: "❧";
+    position: absolute;
 
-            position: absolute;
+    right: 0;
+    top: -5px;
 
-            left: 0;
-            top: -8px;
+    font-size: 14px;
 
-            font-size: 24px;
+    color: #555;
+}
 
-            color: #737373;
+.title-decoration.right {
+    transform: scaleX(-1);
+}
 
-            transform: rotate(180deg);
-        }
+.catalog-title h1 {
+    margin: 0;
 
-        .title-decoration::after {
-            content: "◇";
+    font-family: "Cinzel", serif;
 
-            position: absolute;
+    font-size: 29px;
+    font-weight: 500;
 
-            right: 0;
-            top: -5px;
+    letter-spacing: 5px;
 
-            font-size: 14px;
+    color: #e9e9e9;
+}
 
-            color: #555;
-        }
+.catalog-subtitle {
+    margin-top: 9px;
 
-        .title-decoration.right {
-            transform: scaleX(-1);
-        }
+    font-size: 21px;
 
-        .catalog-title h1 {
-            margin: 0;
+    letter-spacing: 1px;
 
-            font-family: "Cinzel", serif;
+    color: #999;
+}
 
-            font-size: 29px;
-            font-weight: 500;
 
-            letter-spacing: 5px;
+/* =========================================================
+   PRODUCTS
+   ========================================================= */
 
-            color: #e8e8e8;
-        }
+#products {
+    display: grid;
 
-        .catalog-subtitle {
-            margin-top: 9px;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-            font-family: "Cormorant Garamond", serif;
+    column-gap: 55px;
+    row-gap: 80px;
+}
 
-            font-size: 21px;
+.product {
+    min-width: 0;
 
-            letter-spacing: 1px;
+    text-align: center;
 
-            color: #999;
-        }
+    animation:
+        productAppear .6s ease both;
+}
 
+@keyframes productAppear {
 
-        /* =====================================================
-           PRODUCTS
-           ===================================================== */
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(.97);
+    }
 
-        #products {
-            display: grid;
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
 
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
 
-            column-gap: 55px;
-            row-gap: 80px;
-        }
+/* =========================================================
+   ART FRAME
+   ========================================================= */
 
-        .product {
-            min-width: 0;
+.frame {
+    position: relative;
 
-            text-align: center;
+    width: 100%;
 
-            animation:
-                productAppear .55s ease both;
-        }
+    aspect-ratio: .73 / 1;
 
-        @keyframes productAppear {
+    background: #050505;
 
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
+    isolation: isolate;
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    overflow: visible;
 
-        }
+    /*
+       Главное отличие:
+       это НЕ прямоугольная border-рамка.
+       Создаём сложный силуэт через несколько слоёв.
+    */
 
+    filter:
+        drop-shadow(0 18px 18px rgba(0,0,0,.65));
+}
 
-        /* =====================================================
-           LUXURY ANTIQUE FRAME
-           ===================================================== */
 
-        .frame {
+/* =========================================================
+   MASSIVE OUTER BAROQUE SHAPE
+   ========================================================= */
 
-            position: relative;
+.frame::before {
 
-            width: 100%;
+    content: "";
 
-            aspect-ratio:
-                0.76 / 1;
+    position: absolute;
 
-            background:
-                #030303;
+    z-index: -4;
 
-            overflow: visible;
+    inset: -22px;
 
-            isolation: isolate;
+    background:
 
-            /* thick white carved frame */
-            border: 14px solid transparent;
+        /* верхняя корона */
+        radial-gradient(
+            ellipse at 50% 0%,
+            #ffffff 0%,
+            #e5e5e5 12%,
+            transparent 25%
+        ),
 
-            border-image:
-                linear-gradient(
-                    135deg,
+        /* левая верхняя лепнина */
+        radial-gradient(
+            ellipse at 0% 10%,
+            #ffffff 0%,
+            #bdbdbd 17%,
+            transparent 30%
+        ),
 
-                    #777 0%,
-                    #ffffff 8%,
-                    #d8d8d8 16%,
-                    #ffffff 25%,
+        /* правая верхняя */
+        radial-gradient(
+            ellipse at 100% 10%,
+            #ffffff 0%,
+            #bdbdbd 17%,
+            transparent 30%
+        ),
 
-                    #9b9b9b 36%,
-                    #f8f8f8 47%,
+        /* нижняя лепнина */
+        radial-gradient(
+            ellipse at 50% 100%,
+            #eeeeee 0%,
+            #aaa 15%,
+            transparent 29%
+        ),
 
-                    #b1b1b1 59%,
-                    #ffffff 71%,
+        /* основное тело */
+        linear-gradient(
+            135deg,
+            #777 0%,
+            #ffffff 8%,
+            #d4d4d4 18%,
+            #fafafa 31%,
+            #b5b5b5 45%,
+            #ffffff 58%,
+            #c4c4c4 70%,
+            #ffffff 84%,
+            #777 100%
+        );
 
-                    #a1a1a1 82%,
-                    #ffffff 93%,
-                    #777 100%
-                ) 1;
+    clip-path: polygon(
 
-            box-shadow:
+        13% 3%,
+        23% 5%,
+        30% 1%,
+        38% 5%,
+        50% 0%,
+        62% 5%,
+        70% 1%,
+        77% 5%,
+        87% 3%,
 
-                0 0 0 2px #242424,
+        94% 12%,
+        98% 20%,
+        94% 28%,
 
-                0 0 0 5px #dadada,
+        98% 38%,
+        95% 50%,
+        98% 62%,
 
-                0 0 0 8px #5d5d5d,
+        94% 72%,
+        98% 82%,
+        90% 89%,
 
-                0 0 0 10px #151515,
+        82% 95%,
+        72% 92%,
+        63% 98%,
+        50% 94%,
+        38% 98%,
+        28% 92%,
+        18% 95%,
+        10% 89%,
 
-                0 18px 38px
-                rgba(0,0,0,.9);
-        }
+        2% 82%,
+        6% 72%,
+        2% 62%,
 
+        5% 50%,
+        2% 38%,
+        6% 28%,
 
-        /* =====================================================
-           CARVED INNER BORDER
-           ===================================================== */
+        2% 20%,
+        6% 12%
+    );
 
-        .frame::before {
+    box-shadow:
+        0 0 0 4px #444,
+        inset 0 0 20px rgba(0,0,0,.45);
+}
 
-            content: "";
 
-            position: absolute;
+/* =========================================================
+   INNER DARK SHADOW
+   ========================================================= */
 
-            inset: -7px;
+.frame::after {
 
-            z-index: 4;
+    content: "";
 
-            pointer-events: none;
+    position: absolute;
 
-            border:
+    z-index: -3;
 
-                3px solid #f4f4f4;
+    inset: -8px;
 
-            box-shadow:
+    background:
+        linear-gradient(
+            145deg,
+            #333,
+            #eeeeee 13%,
+            #777 25%,
+            #f8f8f8 40%,
+            #666 55%,
+            #eeeeee 70%,
+            #444 87%,
+            #d8d8d8
+        );
 
-                inset 0 0 0 2px #777,
+    clip-path: polygon(
 
-                inset 0 0 0 5px #ffffff,
+        10% 4%,
+        25% 7%,
+        37% 3%,
+        50% 6%,
+        63% 3%,
+        75% 7%,
+        90% 4%,
 
-                inset 0 0 0 7px #9b9b9b,
+        95% 20%,
+        92% 35%,
+        96% 50%,
+        92% 65%,
+        95% 80%,
 
-                0 0 5px rgba(0,0,0,.8);
-        }
+        88% 94%,
+        73% 91%,
+        62% 96%,
+        50% 92%,
+        38% 96%,
+        27% 91%,
+        12% 94%,
 
+        5% 80%,
+        8% 65%,
+        4% 50%,
+        8% 35%,
+        5% 20%
+    );
 
-        /* =====================================================
-           INNER GOLDLESS CARVED LINE
-           ===================================================== */
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,.8);
+}
 
-        .frame::after {
 
-            content: "";
+/* =========================================================
+   PHOTO WINDOW
+   ========================================================= */
 
-            position: absolute;
+.image-area {
 
-            inset: 9px;
+    position: absolute;
 
-            z-index: 6;
+    top: 8%;
+    left: 9%;
+    right: 9%;
+    bottom: 9%;
 
-            pointer-events: none;
+    z-index: 2;
 
-            border:
+    background:
+        radial-gradient(
+            ellipse at center,
+            #161616 0%,
+            #080808 62%,
+            #020202 100%
+        );
 
-                2px solid #d8d8d8;
+    overflow: hidden;
 
-            box-shadow:
+    /*
+       Фото тоже получает слегка художественный силуэт.
+    */
 
-                inset 0 0 0 2px #454545,
+    clip-path: polygon(
 
-                inset 0 0 0 4px #eeeeee,
+        3% 4%,
+        15% 2%,
+        27% 4%,
+        40% 2%,
+        50% 4%,
+        60% 2%,
+        73% 4%,
+        85% 2%,
+        97% 4%,
 
-                inset 0 0 0 6px #202020;
-        }
+        98% 20%,
+        96% 35%,
+        98% 50%,
+        96% 65%,
+        98% 80%,
 
+        97% 96%,
+        85% 98%,
+        73% 96%,
+        60% 98%,
+        50% 96%,
+        40% 98%,
+        27% 96%,
+        15% 98%,
+        3% 96%,
 
-        /* =====================================================
-           IMAGE AREA
-           ===================================================== */
+        2% 80%,
+        4% 65%,
+        2% 50%,
+        4% 35%,
+        2% 20%
+    );
 
-        .image-area {
+    box-shadow:
+        inset 0 0 0 2px rgba(255,255,255,.2),
+        inset 0 0 25px rgba(0,0,0,.8);
+}
 
-            position: absolute;
+.image-area::after {
 
-            top: 26px;
-            right: 27px;
-            bottom: 52px;
-            left: 27px;
+    content: "";
 
-            background:
-                radial-gradient(
-                    ellipse at center,
+    position: absolute;
 
-                    #141414 0%,
-                    #080808 55%,
-                    #020202 100%
-                );
+    inset: 0;
 
-            overflow: hidden;
+    pointer-events: none;
 
-            z-index: 3;
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,.8),
+        inset 0 0 0 2px rgba(255,255,255,.2);
+}
 
-            display: flex;
+.product img {
 
-            align-items: center;
-            justify-content: center;
-        }
+    width: 100%;
+    height: 100%;
 
-        .image-area::before {
+    object-fit: contain;
 
-            content: "";
+    display: block;
 
-            position: absolute;
+    position: relative;
 
-            inset: 0;
+    z-index: 2;
+}
 
-            background:
 
-                radial-gradient(
-                    ellipse at center,
+/* =========================================================
+   BAROQUE DECORATIVE ELEMENTS
+   ========================================================= */
 
-                    rgba(255,255,255,.035),
-                    transparent 68%
-                );
+.art {
 
-            pointer-events: none;
-        }
+    position: absolute;
 
-        .image-area::after {
+    z-index: 15;
 
-            content: "";
+    pointer-events: none;
+}
 
-            position: absolute;
 
-            inset: 0;
+/* =========================================================
+   TOP CROWN
+   ========================================================= */
 
-            border:
-                1px solid rgba(255,255,255,.12);
+.crown {
 
-            pointer-events: none;
-        }
+    position: absolute;
 
-        .product img {
+    width: 125px;
+    height: 75px;
 
-            width: 100%;
-            height: 100%;
+    top: -40px;
+    left: 50%;
 
-            object-fit: contain;
+    transform: translateX(-50%);
 
-            display: block;
+    z-index: 20;
 
-            position: relative;
+    pointer-events: none;
+}
 
-            z-index: 3;
-        }
+.crown::before {
 
+    content: "❦";
 
-        /* =====================================================
-           BAROQUE CORNERS
-           ===================================================== */
+    position: absolute;
 
-        .ornament {
+    left: 50%;
+    top: -8px;
 
-            position: absolute;
+    transform:
+        translateX(-50%)
+        scaleX(1.5);
 
-            width: 105px;
-            height: 105px;
+    font-family: Georgia, serif;
 
-            z-index: 30;
+    font-size: 65px;
 
-            pointer-events: none;
-        }
+    color: #eeeeee;
 
+    text-shadow:
+        1px 2px 2px #777,
+        -1px -1px 1px #fff,
+        0 5px 8px rgba(0,0,0,.7);
+}
 
-        /* =====================================================
-           MAIN BAROQUE CURL
-           ===================================================== */
+.crown::after {
 
-        .ornament::before {
+    content: "◆";
 
-            content: "";
+    position: absolute;
 
-            position: absolute;
+    left: 50%;
+    bottom: -2px;
 
-            width: 82px;
-            height: 82px;
+    transform: translateX(-50%);
 
-            left: 8px;
-            top: 8px;
+    font-size: 20px;
 
-            border-radius:
+    color: #999;
 
-                75% 15% 75% 15%;
+    text-shadow:
+        0 2px 2px #444;
+}
 
-            background:
 
-                radial-gradient(
-                    ellipse at 30% 30%,
+/* =========================================================
+   CORNER FLOWERS
+   ========================================================= */
 
-                    #ffffff 0%,
-                    #eeeeee 18%,
-                    #aaaaaa 34%,
-                    #ffffff 45%,
-                    #cfcfcf 60%,
-                    #777777 78%,
-                    #eeeeee 100%
-                );
+.flower {
 
-            transform:
+    position: absolute;
 
-                rotate(45deg);
+    width: 82px;
+    height: 82px;
 
-            box-shadow:
+    z-index: 30;
 
-                0 5px 9px
-                rgba(0,0,0,.85),
+    pointer-events: none;
+}
 
-                inset 3px 3px 4px
-                rgba(255,255,255,.85),
 
-                inset -4px -4px 5px
-                rgba(0,0,0,.38);
-        }
+/* flower center */
 
+.flower::after {
 
-        /* =====================================================
-           BAROQUE SECOND CURL
-           ===================================================== */
+    content: "";
 
-        .ornament::after {
+    position: absolute;
 
-            content: "";
+    width: 25px;
+    height: 25px;
 
-            position: absolute;
+    left: 50%;
+    top: 50%;
 
-            width: 58px;
-            height: 58px;
+    transform:
+        translate(-50%,-50%);
 
-            left: 24px;
-            top: 24px;
+    border-radius: 50%;
 
-            border:
+    background:
+        radial-gradient(
+            circle,
+            #fff 0 18%,
+            #cfcfcf 20% 42%,
+            #777 44% 62%,
+            #eee 64% 78%,
+            #666 80%
+        );
 
-                8px solid #d7d7d7;
+    box-shadow:
+        0 3px 7px rgba(0,0,0,.8);
+}
 
-            border-left-color:
-                #ffffff;
 
-            border-top-color:
-                #8d8d8d;
+/* petals */
 
-            border-radius:
-                50%;
+.flower span {
 
-            box-shadow:
+    position: absolute;
 
-                0 4px 7px
-                rgba(0,0,0,.7),
+    width: 28px;
+    height: 42px;
 
-                inset 2px 2px 3px
-                rgba(255,255,255,.9);
-        }
+    left: 27px;
+    top: 0;
 
+    border-radius:
+        70% 30% 70% 30%;
 
-        /* =====================================================
-           CENTRAL FLOWER
-           ===================================================== */
+    background:
+        linear-gradient(
+            90deg,
+            #777,
+            #fff 28%,
+            #c7c7c7 50%,
+            #fff 70%,
+            #777
+        );
 
-        .ornament .flower {
+    box-shadow:
+        0 3px 5px rgba(0,0,0,.7);
+}
 
-            position: absolute;
+.flower span:nth-child(2) {
+    transform: rotate(90deg);
+    top: 20px;
+    left: 40px;
+}
 
-            width: 38px;
-            height: 38px;
+.flower span:nth-child(3) {
+    transform: rotate(180deg);
+    top: 40px;
+}
 
-            left: 34px;
-            top: 34px;
+.flower span:nth-child(4) {
+    transform: rotate(270deg);
+    top: 20px;
+    left: 5px;
+}
 
-            z-index: 10;
 
-            border-radius: 50%;
+/* =========================================================
+   FLOWER POSITIONS
+   ========================================================= */
 
-            background:
+.flower.tl {
+    top: -31px;
+    left: -31px;
+}
 
-                radial-gradient(
-                    circle,
+.flower.tr {
+    top: -31px;
+    right: -31px;
+    transform: scaleX(-1);
+}
 
-                    #ffffff 0%,
-                    #d9d9d9 28%,
-                    #8b8b8b 45%,
-                    #f7f7f7 62%,
-                    #999999 78%,
-                    #ffffff 100%
-                );
+.flower.bl {
+    bottom: -31px;
+    left: -31px;
+    transform: scaleY(-1);
+}
 
-            box-shadow:
+.flower.br {
+    bottom: -31px;
+    right: -31px;
+    transform: scale(-1);
+}
 
-                0 3px 7px
-                rgba(0,0,0,.8),
 
-                inset 2px 2px 3px
-                rgba(255,255,255,.9);
-        }
+/* =========================================================
+   SIDE CURLS
+   ========================================================= */
 
+.curl {
 
-        /* =====================================================
-           FLOWER PETALS
-           ===================================================== */
+    position: absolute;
 
-        .ornament .petal {
+    width: 90px;
+    height: 90px;
 
-            position: absolute;
+    z-index: 12;
 
-            width: 25px;
-            height: 40px;
+    pointer-events: none;
 
-            left: 41px;
-            top: 5px;
+    border:
+        8px solid #d9d9d9;
 
-            z-index: 8;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
 
-            border-radius:
+    border-radius: 50%;
 
-                80% 20% 80% 20%;
+    box-shadow:
+        2px 2px 4px rgba(0,0,0,.65),
+        inset -1px -1px 2px #888;
+}
 
-            background:
+.curl.left {
+    left: -40px;
+    top: 37%;
 
-                linear-gradient(
-                    90deg,
+    transform:
+        rotate(-45deg);
+}
 
-                    #888 0%,
-                    #ffffff 28%,
-                    #d5d5d5 52%,
-                    #ffffff 72%,
-                    #777 100%
-                );
+.curl.right {
+    right: -40px;
+    top: 37%;
 
-            box-shadow:
+    transform:
+        rotate(135deg);
+}
 
-                0 3px 5px
-                rgba(0,0,0,.7);
-        }
 
-        .ornament .petal:nth-child(2) {
+/* =========================================================
+   BOTTOM ORNAMENT
+   ========================================================= */
 
-            transform:
-                rotate(90deg);
+.bottom-ornament {
 
-            top: 41px;
-            left: 61px;
-        }
+    position: absolute;
 
-        .ornament .petal:nth-child(3) {
+    bottom: -43px;
 
-            transform:
-                rotate(180deg);
+    left: 50%;
 
-            top: 61px;
-            left: 41px;
-        }
+    transform:
+        translateX(-50%);
 
-        .ornament .petal:nth-child(4) {
+    width: 160px;
+    height: 55px;
 
-            transform:
-                rotate(270deg);
+    z-index: 25;
 
-            top: 41px;
-            left: 5px;
-        }
+    pointer-events: none;
+}
 
+.bottom-ornament::before {
 
-        /* =====================================================
-           SMALL CARVED DOT
-           ===================================================== */
+    content: "❧   ❦   ❧";
 
-        .ornament .flower::after {
+    position: absolute;
 
-            content: "";
+    width: 100%;
 
-            position: absolute;
+    text-align: center;
 
-            width: 9px;
-            height: 9px;
+    font-family: Georgia, serif;
 
-            left: 50%;
-            top: 50%;
+    font-size: 37px;
 
-            transform:
-                translate(-50%, -50%);
+    color: #eeeeee;
 
-            border-radius: 50%;
+    text-shadow:
+        1px 2px 2px #666,
+        0 4px 6px rgba(0,0,0,.7);
+}
 
-            background:
-                #ffffff;
 
-            box-shadow:
+/* =========================================================
+   IXWEAR PLAQUE
+   ========================================================= */
 
-                0 0 6px
-                rgba(255,255,255,.8);
-        }
+.frame-brand {
 
+    position: absolute;
 
-        /* =====================================================
-           CORNER POSITIONS
-           ===================================================== */
+    left: 50%;
+    bottom: -30px;
 
-        .ornament.tl {
+    transform:
+        translateX(-50%);
 
-            top: -48px;
-            left: -48px;
-        }
+    z-index: 40;
 
-        .ornament.tr {
+    min-width: 120px;
+    height: 35px;
 
-            top: -48px;
-            right: -48px;
+    padding: 0 17px;
 
-            transform:
-                scaleX(-1);
-        }
+    display: flex;
 
-        .ornament.bl {
+    align-items: center;
+    justify-content: center;
 
-            bottom: -48px;
-            left: -48px;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #dedede 30%,
+            #999 55%,
+            #f5f5f5 80%,
+            #888
+        );
 
-            transform:
-                scaleY(-1);
-        }
+    border:
+        1px solid #555;
 
-        .ornament.br {
+    box-shadow:
+        0 4px 8px rgba(0,0,0,.8);
 
-            bottom: -48px;
-            right: -48px;
+    color: #111;
 
-            transform:
-                scale(-1);
-        }
+    white-space: nowrap;
+}
 
+.brand-ix {
 
-        /* =====================================================
-           EXTRA BAROQUE DECORATION
-           ===================================================== */
+    font-family: "Cinzel", serif;
 
-        .ornament .petal::after {
+    font-size: 18px;
+    font-weight: 700;
 
-            content: "";
+    letter-spacing: -1px;
+}
 
-            position: absolute;
+.brand-wear {
 
-            width: 8px;
-            height: 8px;
+    margin-left: 3px;
 
-            right: -4px;
-            top: 4px;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-            border-radius: 50%;
+    font-size: 17px;
 
-            background:
-                #f5f5f5;
+    font-weight: 600;
 
-            box-shadow:
-                0 1px 3px
-                rgba(0,0,0,.7);
-        }
+    letter-spacing: 1px;
+}
 
 
-        /* =====================================================
-           IXWEAR BLACK PLAQUE
-           ===================================================== */
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
 
-        .frame-brand {
+.info {
 
-            position: absolute;
+    padding-top: 52px;
 
-            left: 50%;
-            bottom: -43px;
+    text-align: center;
+}
 
-            transform:
-                translateX(-50%);
+.name {
 
-            width: 165px;
-            height: 54px;
+    font-size: 24px;
 
-            display: flex;
+    line-height: 1.15;
 
-            align-items: center;
-            justify-content: center;
+    color: #eee;
 
-            z-index: 50;
+    font-weight: 500;
+}
 
-            background:
+.price {
 
-                linear-gradient(
-                    180deg,
+    margin-top: 6px;
 
-                    #050505 0%,
-                    #171717 30%,
-                    #020202 55%,
-                    #111111 100%
-                );
+    font-family: "Cinzel", serif;
 
-            color:
-                #050505;
+    font-size: 21px;
 
-            border:
-                3px solid #eeeeee;
+    letter-spacing: 2px;
 
-            box-shadow:
+    color: #fff;
+}
 
-                0 5px 12px
-                rgba(0,0,0,.9),
+.description {
 
-                inset 0 0 0 2px #555,
+    margin-top: 6px;
 
-                inset 0 0 0 4px #111;
-        }
+    color: #777;
 
+    font-size: 15px;
+}
 
-        /* silver edge */
 
-        .frame-brand::before {
+/* =========================================================
+   STATES
+   ========================================================= */
 
-            content: "";
+.loading,
+.empty,
+.error {
 
-            position: absolute;
+    grid-column: 1 / -1;
 
-            inset: 5px;
+    text-align: center;
 
-            border:
-                1px solid #aaa;
+    padding: 70px 10px;
 
-            pointer-events: none;
-        }
+    font-size: 21px;
 
+    color: #777;
+}
 
-        /* IXwear text */
+.error {
+    color: #c77;
+}
 
-        .brand-ix {
 
-            font-family:
-                "Cinzel",
-                serif;
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-            font-size: 22px;
+@media (max-width: 600px) {
 
-            font-weight: 700;
+    .header {
+        height: 88px;
+    }
 
-            letter-spacing: -1px;
+    .logo-ix {
+        font-size: 37px;
+    }
 
-            color: #ffffff;
+    .logo-wear {
+        font-size: 27px;
+    }
 
-            text-shadow:
-                0 1px 2px #000;
-        }
+    main {
+        padding:
+            29px 14px 60px;
+    }
 
-        .brand-wear {
+    .catalog-title {
+        margin-bottom: 48px;
+    }
 
-            margin-left: 4px;
+    .catalog-title h1 {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+    .catalog-subtitle {
+        font-size: 18px;
+    }
 
-            font-size: 21px;
+    .title-decoration {
+        width: 42px;
+    }
 
-            font-weight: 600;
+    #products {
+        column-gap: 25px;
+        row-gap: 72px;
+    }
 
-            letter-spacing: 1px;
+    .frame {
+        aspect-ratio: .70 / 1;
+    }
 
-            color: #ffffff;
-        }
+    .crown {
+        transform:
+            translateX(-50%)
+            scale(.72);
+    }
 
+    .flower {
+        transform: scale(.72);
+    }
 
-        /* =====================================================
-           PRODUCT INFO
-           ===================================================== */
+    .flower.tr {
+        transform:
+            scaleX(-1)
+            scale(.72);
+    }
 
-        .info {
+    .flower.bl {
+        transform:
+            scaleY(-1)
+            scale(.72);
+    }
 
-            padding-top: 58px;
+    .flower.br {
+        transform:
+            scale(-1)
+            scale(.72);
+    }
 
-            text-align: center;
-        }
+    .curl {
+        transform:
+            scale(.72)
+            rotate(-45deg);
+    }
 
-        .name {
+    .curl.right {
+        transform:
+            scale(.72)
+            rotate(135deg);
+    }
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+    .image-area {
+        top: 9%;
+        left: 10%;
+        right: 10%;
+        bottom: 10%;
+    }
 
-            font-size: 24px;
+    .frame-brand {
+        min-width: 90px;
+        height: 29px;
 
-            line-height: 1.15;
+        bottom: -21px;
 
-            color: #eeeeee;
+        padding: 0 10px;
+    }
 
-            font-weight: 500;
-        }
+    .brand-ix {
+        font-size: 14px;
+    }
 
-        .price {
+    .brand-wear {
+        font-size: 13px;
+    }
 
-            margin-top: 6px;
+    .bottom-ornament {
+        transform:
+            translateX(-50%)
+            scale(.7);
 
-            font-family:
-                "Cinzel",
-                serif;
+        bottom: -38px;
+    }
 
-            font-size: 21px;
+    .info {
+        padding-top: 35px;
+    }
 
-            letter-spacing: 2px;
+    .name {
+        font-size: 17px;
+    }
 
-            color: #ffffff;
+    .price {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
 
-            font-weight: 500;
-        }
+    .description {
+        font-size: 12px;
+    }
+}
 
-        .description {
 
-            margin-top: 6px;
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
 
-            color: #777;
+@media (max-width: 380px) {
 
-            font-size: 15px;
-        }
+    main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
+    #products {
+        column-gap: 18px;
+    }
 
-        /* =====================================================
-           LOADING / ERROR
-           ===================================================== */
+    .logo-ix {
+        font-size: 34px;
+    }
 
-        .loading,
-        .empty,
-        .error {
+    .logo-wear {
+        font-size: 24px;
+    }
 
-            grid-column: 1 / -1;
+    .name {
+        font-size: 15px;
+    }
 
-            text-align: center;
+    .price {
+        font-size: 14px;
+    }
+}
 
-            padding: 70px 10px;
-
-            font-size: 21px;
-
-            color: #777;
-        }
-
-        .error {
-            color: #c77;
-        }
-
-
-        /* =====================================================
-           MOBILE
-           ===================================================== */
-
-        @media (max-width: 600px) {
-
-            .header {
-                height: 92px;
-
-                border-radius:
-                    0 0 22px 22px;
-            }
-
-            .logo-ix {
-                font-size: 38px;
-            }
-
-            .logo-wear {
-                font-size: 27px;
-            }
-
-            main {
-                padding:
-                    29px 15px 60px;
-            }
-
-            .catalog-title {
-                margin-bottom: 42px;
-            }
-
-            .catalog-title h1 {
-                font-size: 20px;
-
-                letter-spacing: 3px;
-            }
-
-            .catalog-subtitle {
-                font-size: 18px;
-            }
-
-            .title-decoration {
-                width: 43px;
-            }
-
-
-            /* GRID */
-
-            #products {
-
-                column-gap: 25px;
-
-                row-gap: 70px;
-            }
-
-
-            /* FRAME */
-
-            .frame {
-
-                border-width: 8px;
-
-                aspect-ratio:
-                    .76 / 1;
-
-                box-shadow:
-
-                    0 0 0 2px #222,
-
-                    0 0 0 4px #d8d8d8,
-
-                    0 0 0 6px #555,
-
-                    0 0 0 8px #151515,
-
-                    0 12px 27px
-                    rgba(0,0,0,.9);
-            }
-
-            .frame::before {
-                inset: -5px;
-            }
-
-            .frame::after {
-                inset: 6px;
-            }
-
-
-            /* IMAGE */
-
-            .image-area {
-
-                top: 17px;
-                right: 17px;
-                bottom: 35px;
-                left: 17px;
-            }
-
-
-            /* ORNAMENT */
-
-            .ornament {
-
-                width: 68px;
-                height: 68px;
-            }
-
-            .ornament::before {
-
-                width: 53px;
-                height: 53px;
-
-                left: 7px;
-                top: 7px;
-            }
-
-            .ornament::after {
-
-                width: 40px;
-                height: 40px;
-
-                left: 17px;
-                top: 17px;
-
-                border-width: 6px;
-            }
-
-            .ornament .flower {
-
-                width: 25px;
-                height: 25px;
-
-                left: 21px;
-                top: 21px;
-            }
-
-            .ornament .petal {
-
-                width: 15px;
-                height: 24px;
-
-                left: 26px;
-                top: 3px;
-            }
-
-            .ornament .petal:nth-child(2) {
-
-                top: 26px;
-                left: 42px;
-            }
-
-            .ornament .petal:nth-child(3) {
-
-                top: 42px;
-                left: 26px;
-            }
-
-            .ornament .petal:nth-child(4) {
-
-                top: 26px;
-                left: 3px;
-            }
-
-
-            /* POSITIONS */
-
-            .ornament.tl {
-
-                top: -30px;
-                left: -30px;
-            }
-
-            .ornament.tr {
-
-                top: -30px;
-                right: -30px;
-            }
-
-            .ornament.bl {
-
-                bottom: -30px;
-                left: -30px;
-            }
-
-            .ornament.br {
-
-                bottom: -30px;
-                right: -30px;
-            }
-
-
-            /* PLAQUE */
-
-            .frame-brand {
-
-                width: 100px;
-                height: 34px;
-
-                bottom: -24px;
-
-                border-width: 1px;
-            }
-
-            .frame-brand::before {
-                inset: 3px;
-            }
-
-            .brand-ix {
-                font-size: 15px;
-            }
-
-            .brand-wear {
-                font-size: 15px;
-            }
-
-
-            /* INFO */
-
-            .info {
-                padding-top: 34px;
-            }
-
-            .name {
-                font-size: 17px;
-            }
-
-            .price {
-                font-size: 15px;
-
-                letter-spacing: 1px;
-            }
-
-            .description {
-                font-size: 12px;
-            }
-        }
-
-
-        /* =====================================================
-           VERY SMALL PHONES
-           ===================================================== */
-
-        @media (max-width: 380px) {
-
-            main {
-                padding-left: 11px;
-                padding-right: 11px;
-            }
-
-            .logo-ix {
-                font-size: 34px;
-            }
-
-            .logo-wear {
-                font-size: 24px;
-            }
-
-            #products {
-                column-gap: 19px;
-            }
-
-            .name {
-                font-size: 15px;
-            }
-
-            .price {
-                font-size: 14px;
-            }
-        }
-
-    </style>
+</style>
 </head>
 
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
 
-    <header class="header">
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
 
-        <div class="logo">
-            <span class="logo-ix">IX</span>
-            <span class="logo-wear">wear</span>
-        </div>
+<header class="header">
 
-    </header>
+    <div class="logo">
+        <span class="logo-ix">IX</span>
+        <span class="logo-wear">wear</span>
+    </div>
 
+</header>
 
-    <!-- =====================================================
-         MAIN
-         ===================================================== -->
 
-    <main>
+<main>
 
-        <section class="catalog-title">
 
-            <div class="title-line">
+<!-- =======================================================
+     TITLE
+     ======================================================= -->
 
-                <span class="title-decoration"></span>
+<section class="catalog-title">
 
-                <h1>
-                    COLLECTION
-                </h1>
+    <div class="title-line">
 
-                <span class="title-decoration right"></span>
+        <span class="title-decoration"></span>
 
-            </div>
+        <h1>COLLECTION</h1>
 
-            <div class="catalog-subtitle">
-                CHOOSE YOUR STYLE
-            </div>
+        <span class="title-decoration right"></span>
 
-        </section>
+    </div>
 
+    <div class="catalog-subtitle">
+        CHOOSE YOUR STYLE
+    </div>
 
-        <div id="products">
+</section>
 
-            <div class="loading">
-                Loading collection...
-            </div>
 
-        </div>
+<!-- =======================================================
+     PRODUCTS
+     ======================================================= -->
 
-    </main>
+<div id="products">
 
+    <div class="loading">
+        Loading collection...
+    </div>
 
-    <script>
+</div>
 
-        /* =====================================================
-           TELEGRAM
-           ===================================================== */
 
-        const tg =
-            window.Telegram.WebApp;
+</main>
 
-        tg.ready();
-        tg.expand();
 
+<script>
 
-        /* =====================================================
-           CONTAINER
-           ===================================================== */
+/* =========================================================
+   TELEGRAM
+   ========================================================= */
 
-        const container =
-            document.getElementById("products");
+const tg = window.Telegram.WebApp;
 
+tg.ready();
+tg.expand();
 
-        /* =====================================================
-           ESCAPE HTML
-           ===================================================== */
 
-        function escapeHtml(text) {
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
-            const div =
-                document.createElement("div");
+const container =
+    document.getElementById("products");
 
-            div.textContent =
-                String(text);
 
-            return div.innerHTML;
-        }
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
 
+function escapeHtml(text) {
 
-        /* =====================================================
-           IXWEAR BRAND
-           ===================================================== */
+    const div =
+        document.createElement("div");
 
-        function brandHTML() {
+    div.textContent =
+        String(text);
 
-            return `
-                <span class="brand-ix">IX</span>
-                <span class="brand-wear">wear</span>
-            `;
-        }
+    return div.innerHTML;
+}
 
 
-        /* =====================================================
-           LOAD PRODUCTS
-           ===================================================== */
+/* =========================================================
+   BRAND
+   ========================================================= */
 
-        async function loadProducts() {
+function brandHTML() {
 
-            try {
+    return `
+        <span class="brand-ix">IX</span>
+        <span class="brand-wear">wear</span>
+    `;
+}
 
-                const cacheBuster =
-                    Date.now() +
-                    "_" +
-                    Math.random()
-                        .toString(36)
-                        .substring(2);
 
+/* =========================================================
+   LOAD PRODUCTS
+   ========================================================= */
 
-                const response =
-                    await fetch(
-                        "products.json?cache=" +
-                        cacheBuster,
-                        {
-                            method: "GET",
+async function loadProducts() {
 
-                            cache: "no-store",
+    try {
 
-                            headers: {
-                                "Cache-Control":
-                                    "no-cache",
+        const cacheBuster =
+            Date.now() +
+            "_" +
+            Math.random()
+                .toString(36)
+                .substring(2);
 
-                                "Pragma":
-                                    "no-cache"
-                            }
-                        }
-                    );
+        const response =
+            await fetch(
+                "products.json?cache=" +
+                cacheBuster,
+                {
+                    method: "GET",
 
+                    cache: "no-store",
 
-                if (!response.ok) {
+                    headers: {
+                        "Cache-Control":
+                            "no-cache",
 
-                    throw new Error(
-                        "HTTP " +
-                        response.status
-                    );
-                }
-
-
-                const products =
-                    await response.json();
-
-
-                if (!Array.isArray(products)) {
-
-                    throw new Error(
-                        "products.json имеет неправильный формат"
-                    );
-                }
-
-
-                if (products.length === 0) {
-
-                    container.innerHTML = `
-                        <div class="empty">
-                            Collection is empty
-                        </div>
-                    `;
-
-                    return;
-                }
-
-
-                let html = "";
-
-
-                products.forEach(
-                    (product, index) => {
-
-                        const name =
-                            escapeHtml(
-                                product.name || ""
-                            );
-
-
-                        const price =
-                            escapeHtml(
-                                product.price || ""
-                            );
-
-
-                        const description =
-                            escapeHtml(
-                                product.description || ""
-                            );
-
-
-                        const imageUrl =
-                            product.image
-                                ? product.image +
-                                  (
-                                      product.image.includes("?")
-                                      ? "&"
-                                      : "?"
-                                  ) +
-                                  "v=" +
-                                  Date.now()
-                                : "";
-
-
-                        html += `
-
-                            <article
-                                class="product"
-                                style="
-                                    animation-delay:
-                                    ${index * 0.06}s;
-                                "
-                            >
-
-                                <div class="frame">
-
-                                    <div class="frame-inner"></div>
-
-
-                                    <!-- PRODUCT -->
-
-                                    <div class="image-area">
-
-                                        ${
-                                            imageUrl
-                                            ? `
-                                                <img
-                                                    src="${imageUrl}"
-                                                    alt="${name}"
-                                                    loading="lazy"
-                                                    onerror="
-                                                        this.style.display='none';
-                                                    "
-                                                >
-                                            `
-                                            : ""
-                                        }
-
-                                    </div>
-
-
-                                    <!-- TOP LEFT -->
-
-                                    <div class="ornament tl">
-
-                                        <div class="flower"></div>
-
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-
-                                    </div>
-
-
-                                    <!-- TOP RIGHT -->
-
-                                    <div class="ornament tr">
-
-                                        <div class="flower"></div>
-
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-
-                                    </div>
-
-
-                                    <!-- BOTTOM LEFT -->
-
-                                    <div class="ornament bl">
-
-                                        <div class="flower"></div>
-
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-
-                                    </div>
-
-
-                                    <!-- BOTTOM RIGHT -->
-
-                                    <div class="ornament br">
-
-                                        <div class="flower"></div>
-
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-                                        <div class="petal"></div>
-
-                                    </div>
-
-
-                                    <!-- IXWEAR -->
-
-                                    <div class="frame-brand">
-
-                                        ${brandHTML()}
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- PRODUCT INFO -->
-
-                                <div class="info">
-
-                                    <div class="name">
-                                        ${name}
-                                    </div>
-
-                                    <div class="price">
-                                        ${price}
-                                    </div>
-
-                                    ${
-                                        description
-                                        ? `
-                                            <div class="description">
-                                                ${description}
-                                            </div>
-                                        `
-                                        : ""
-                                    }
-
-                                </div>
-
-                            </article>
-
-                        `;
+                        "Pragma":
+                            "no-cache"
                     }
-                );
+                }
+            );
 
 
-                container.innerHTML =
-                    html;
+        if (!response.ok) {
+
+            throw new Error(
+                "HTTP " +
+                response.status
+            );
+        }
 
 
-            } catch (error) {
-
-                console.error(
-                    "Ошибка загрузки каталога:",
-                    error
-                );
+        const products =
+            await response.json();
 
 
-                container.innerHTML = `
+        if (!Array.isArray(products)) {
 
-                    <div class="error">
+            throw new Error(
+                "products.json имеет неправильный формат"
+            );
+        }
 
-                        Could not load collection.
 
-                        <br><br>
+        if (products.length === 0) {
 
-                        ${escapeHtml(
-                            error.message
-                        )}
+            container.innerHTML = `
+                <div class="empty">
+                    Collection is empty
+                </div>
+            `;
+
+            return;
+        }
+
+
+        let html = "";
+
+
+        products.forEach(
+            (product, index) => {
+
+                const name =
+                    escapeHtml(
+                        product.name || ""
+                    );
+
+                const price =
+                    escapeHtml(
+                        product.price || ""
+                    );
+
+                const description =
+                    escapeHtml(
+                        product.description || ""
+                    );
+
+
+                const imageUrl =
+                    product.image
+                    ? product.image +
+                        (
+                            product.image.includes("?")
+                            ? "&"
+                            : "?"
+                        ) +
+                        "v=" +
+                        Date.now()
+                    : "";
+
+
+                html += `
+
+                <article
+                    class="product"
+                    style="
+                        animation-delay:
+                        ${index * .06}s;
+                    "
+                >
+
+                    <div class="frame">
+
+
+                        <!-- PHOTO -->
+
+                        <div class="image-area">
+
+                            ${
+                                imageUrl
+                                ? `
+                                    <img
+                                        src="${imageUrl}"
+                                        alt="${name}"
+                                        loading="lazy"
+                                        onerror="
+                                            this.style.display='none';
+                                        "
+                                    >
+                                `
+                                : ""
+                            }
+
+                        </div>
+
+
+                        <!-- TOP CROWN -->
+
+                        <div class="crown"></div>
+
+
+                        <!-- CORNER FLOWERS -->
+
+                        <div class="flower tl">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="flower tr">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="flower bl">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="flower br">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <!-- SIDE CURLS -->
+
+                        <div class="curl left"></div>
+
+                        <div class="curl right"></div>
+
+
+                        <!-- BOTTOM ORNAMENT -->
+
+                        <div class="bottom-ornament"></div>
+
+
+                        <!-- BRAND -->
+
+                        <div class="frame-brand">
+
+                            ${brandHTML()}
+
+                        </div>
+
 
                     </div>
 
+
+                    <!-- PRODUCT INFO -->
+
+                    <div class="info">
+
+                        <div class="name">
+                            ${name}
+                        </div>
+
+                        <div class="price">
+                            ${price}
+                        </div>
+
+                        ${
+                            description
+                            ? `
+                                <div class="description">
+                                    ${description}
+                                </div>
+                            `
+                            : ""
+                        }
+
+                    </div>
+
+                </article>
+
                 `;
             }
-        }
-
-
-        /* =====================================================
-           START
-           ===================================================== */
-
-        loadProducts();
-
-
-        /* =====================================================
-           AUTO UPDATE
-           ===================================================== */
-
-        setInterval(
-            loadProducts,
-            3000
         );
 
-    </script>
+
+        container.innerHTML =
+            html;
+
+
+    } catch (error) {
+
+        console.error(
+            "Ошибка загрузки каталога:",
+            error
+        );
+
+
+        container.innerHTML = `
+
+            <div class="error">
+
+                Could not load collection.
+
+                <br><br>
+
+                ${escapeHtml(
+                    error.message
+                )}
+
+            </div>
+
+        `;
+    }
+}
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+loadProducts();
+
+
+/* =========================================================
+   AUTO UPDATE
+   ========================================================= */
+
+setInterval(
+    loadProducts,
+    3000
+);
+
+</script>
 
 </body>
 </html>
