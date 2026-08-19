@@ -1,5 +1,12 @@
 [
   {
+    "id": 6,
+    "name": "12",
+    "price": "1044048",
+    "description": "",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADNBlrG03rKUh-.jpg"
+  },
+  {
     "id": 5,
     "name": "под",
     "price": "123",
