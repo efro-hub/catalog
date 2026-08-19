@@ -2,9 +2,25 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        http-equiv="Cache-Control"
+        content="no-cache, no-store, must-revalidate"
+    >
+
+    <meta
+        http-equiv="Pragma"
+        content="no-cache"
+    >
+
+    <meta
+        http-equiv="Expires"
+        content="0"
     >
 
     <title>Каталог товаров</title>
@@ -12,6 +28,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -19,72 +36,125 @@
         body {
             margin: 0;
             padding: 16px;
+
             background: #ffffff;
             color: #111111;
+
             font-family: Arial, sans-serif;
         }
 
         h1 {
             margin: 5px 0 20px;
+
             font-size: 24px;
         }
 
         #products {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
             gap: 12px;
         }
 
         .product {
-            border: 1px solid #eeeeee;
+
+            border:
+                1px solid #eeeeee;
+
             border-radius: 14px;
+
             overflow: hidden;
+
             background: #ffffff;
         }
 
         .product img {
+
             width: 100%;
+
             aspect-ratio: 1 / 1;
+
             object-fit: cover;
+
             display: block;
+
+            background: #f5f5f5;
         }
 
         .info {
+
             padding: 12px;
         }
 
         .name {
+
             font-size: 16px;
+
             font-weight: bold;
+
             margin-bottom: 6px;
+
+            word-break: break-word;
         }
 
         .price {
+
             font-size: 17px;
+
             font-weight: bold;
+
             margin-bottom: 6px;
         }
 
         .description {
+
             font-size: 13px;
+
             color: #777777;
+
             line-height: 1.3;
+
+            word-break: break-word;
         }
 
         .empty {
+
             grid-column: 1 / -1;
+
             text-align: center;
+
             padding: 50px 10px;
+
             color: #777777;
         }
 
         .error {
+
             grid-column: 1 / -1;
+
             padding: 20px;
+
             color: #cc0000;
+
             text-align: center;
         }
+
+        .loading {
+
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 50px 10px;
+
+            color: #777777;
+        }
+
     </style>
+
 </head>
 
 <body>
@@ -92,51 +162,104 @@
     <h1>Каталог товаров</h1>
 
     <div id="products">
-        <div class="empty">
+
+        <div class="loading">
             Загрузка товаров...
         </div>
+
     </div>
 
 
     <script>
 
+        // =====================================================
+        // TELEGRAM
+        // =====================================================
+
         const tg = window.Telegram.WebApp;
 
         tg.ready();
+
         tg.expand();
 
 
+        // =====================================================
+        // КОНТЕЙНЕР
+        // =====================================================
+
+        const container =
+            document.getElementById("products");
+
+
+        // =====================================================
+        // ЭКРАНИРОВАНИЕ ТЕКСТА
+        // =====================================================
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                String(text);
+
+            return div.innerHTML;
+        }
+
+
+        // =====================================================
+        // ЗАГРУЗКА ТОВАРОВ
+        // =====================================================
+
         async function loadProducts() {
-
-            const container =
-                document.getElementById("products");
-
 
             try {
 
                 /*
-                 * Берём products.json
-                 * прямо из этого же GitHub Pages.
+                 * Каждый запрос получает новый URL.
                  *
-                 * ?time нужен, чтобы Telegram
-                 * не показывал старую версию.
+                 * Это не даёт браузеру/Telegram
+                 * использовать старый products.json.
                  */
 
+                const cacheBuster =
+                    Date.now() +
+                    "_" +
+                    Math.random()
+                        .toString(36)
+                        .substring(2);
+
+
                 const url =
-                    "products.json?time=" +
-                    Date.now();
+                    "products.json?cache=" +
+                    cacheBuster;
 
 
                 const response =
-                    await fetch(url);
+                    await fetch(
+                        url,
+                        {
+                            method: "GET",
+
+                            cache: "no-store",
+
+                            headers: {
+                                "Cache-Control":
+                                    "no-cache",
+
+                                "Pragma":
+                                    "no-cache"
+                            }
+                        }
+                    );
 
 
                 if (!response.ok) {
 
                     throw new Error(
-                        "HTTP " + response.status
+                        "HTTP " +
+                        response.status
                     );
-
                 }
 
 
@@ -144,91 +267,176 @@
                     await response.json();
 
 
-                container.innerHTML = "";
-
+                // =================================================
+                // ПРОВЕРКА
+                // =================================================
 
                 if (
-                    !Array.isArray(products) ||
+                    !Array.isArray(products)
+                ) {
+
+                    throw new Error(
+                        "products.json имеет неправильный формат"
+                    );
+                }
+
+
+                // =================================================
+                // ПУСТО
+                // =================================================
+
+                if (
                     products.length === 0
                 ) {
 
                     container.innerHTML = `
+
                         <div class="empty">
+
                             Каталог пока пуст
+
                         </div>
+
                     `;
 
                     return;
                 }
 
 
-                products.forEach(product => {
+                // =================================================
+                // СОЗДАЁМ HTML
+                // =================================================
 
-                    const card =
-                        document.createElement("div");
-
-                    card.className =
-                        "product";
+                let html = "";
 
 
-                    const image =
-                        product.image || "";
+                products.forEach(
+                    (product, index) => {
+
+                        const name =
+                            escapeHtml(
+                                product.name || ""
+                            );
 
 
-                    card.innerHTML = `
+                        const price =
+                            escapeHtml(
+                                product.price || ""
+                            );
 
-                        ${
-                            image
-                            ? `
+
+                        const description =
+                            escapeHtml(
+                                product.description || ""
+                            );
+
+
+                        let imageHtml = "";
+
+
+                        if (
+                            product.image
+                        ) {
+
+                            /*
+                             * Добавляем timestamp
+                             * и к картинке тоже,
+                             * чтобы новая фотография
+                             * не бралась из кэша.
+                             */
+
+                            const imageUrl =
+                                product.image +
+                                (
+                                    product.image.includes("?")
+                                    ? "&"
+                                    : "?"
+                                ) +
+                                "v=" +
+                                Date.now();
+
+
+                            imageHtml = `
+
                                 <img
-                                    src="${image}"
-                                    alt=""
+
+                                    src="${imageUrl}"
+
+                                    alt="${name}"
+
+                                    loading="lazy"
+
                                     onerror="
-                                        this.style.display='none'
+                                        this.style.display='none';
                                     "
+
                                 >
-                              `
-                            : ""
+
+                            `;
                         }
 
-                        <div class="info">
 
-                            <div class="name">
-                                ${escapeHtml(
-                                    product.name || ""
-                                )}
-                            </div>
+                        html += `
 
-                            <div class="price">
-                                ${escapeHtml(
-                                    product.price || ""
-                                )}
-                            </div>
+                            <div class="product">
 
-                            ${
-                                product.description
-                                ? `
-                                    <div class="description">
-                                        ${escapeHtml(
-                                            product.description
-                                        )}
+                                ${imageHtml}
+
+                                <div class="info">
+
+                                    <div class="name">
+
+                                        ${name}
+
                                     </div>
-                                  `
-                                : ""
-                            }
-
-                        </div>
-                    `;
 
 
-                    container.appendChild(card);
+                                    <div class="price">
 
-                });
+                                        ${price}
+
+                                    </div>
+
+
+                                    ${
+                                        description
+                                        ? `
+
+                                            <div
+                                                class="description"
+                                            >
+
+                                                ${description}
+
+                                            </div>
+
+                                        `
+                                        : ""
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        `;
+                    }
+                );
+
+
+                // =================================================
+                // ВЫВОДИМ
+                // =================================================
+
+                container.innerHTML =
+                    html;
 
 
             } catch (error) {
 
-                console.error(error);
+                console.error(
+                    "Ошибка загрузки каталога:",
+                    error
+                );
 
 
                 container.innerHTML = `
@@ -246,25 +454,34 @@
                     </div>
 
                 `;
-
             }
-
         }
 
 
-        function escapeHtml(text) {
-
-            const div =
-                document.createElement("div");
-
-            div.textContent = text;
-
-            return div.innerHTML;
-
-        }
-
+        // =====================================================
+        // ПЕРВАЯ ЗАГРУЗКА
+        // =====================================================
 
         loadProducts();
+
+
+        // =====================================================
+        // АВТООБНОВЛЕНИЕ
+        // =====================================================
+
+        /*
+         * Проверяем GitHub каждые 3 секунды.
+         *
+         * Поэтому если ты добавил товар через бота,
+         * новый товар появится в уже открытом
+         * Mini App максимум через 3 секунды.
+         */
+
+        setInterval(
+            loadProducts,
+            3000
+        );
+
 
     </script>
 
