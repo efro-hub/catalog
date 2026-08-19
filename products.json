@@ -1,5 +1,12 @@
 [
   {
+    "id": 7,
+    "name": "звезды",
+    "price": "333",
+    "description": "",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADNBlrG03rKUh-.jpg"
+  },
+  {
     "id": 6,
     "name": "попытка 6",
     "price": "500",
