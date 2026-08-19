@@ -1,5 +1,12 @@
 [
   {
+    "id": 10,
+    "name": "так и быть 2 нормальных типа",
+    "price": "2",
+    "description": "норм типы",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADkhlrG03rKUh-.jpg"
+  },
+  {
     "id": 9,
     "name": "крутой тип",
     "price": "99999999999",
