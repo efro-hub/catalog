@@ -1,5 +1,12 @@
 [
   {
+    "id": 14,
+    "name": "лох",
+    "price": "123",
+    "description": "проверка",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQAD3yNrG2P0aUh-.jpg"
+  },
+  {
     "id": 13,
     "name": "Додик",
     "price": "0",
