@@ -1,5 +1,12 @@
 [
   {
+    "id": 15,
+    "name": "я богатый хуй",
+    "price": "300",
+    "description": "работает",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQAD7CNrG2P0aUh-.jpg"
+  },
+  {
     "id": 14,
     "name": "лох",
     "price": "123",
