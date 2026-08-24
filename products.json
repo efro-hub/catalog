@@ -1,23 +1,9 @@
 [
   {
-    "id": 15,
-    "name": "я богатый хуй",
-    "price": "300",
-    "description": "работает",
-    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQAD7CNrG2P0aUh-.jpg"
-  },
-  {
-    "id": 14,
-    "name": "лох",
-    "price": "123",
-    "description": "проверка",
-    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQAD3yNrG2P0aUh-.jpg"
-  },
-  {
-    "id": 13,
-    "name": "Додик",
-    "price": "0",
-    "description": "пробитая жопа",
-    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADARprG03rKUh-.jpg"
+    "id": 1,
+    "name": "Stone Island Heat Reactive Hooded Jacket",
+    "price": "2650 ₽",
+    "description": "1",
+    "image": "https://raw.githubusercontent.com/efro-hub/catalog/main/images/product_AQADVBxrGxkBaUh-.jpg"
   }
 ]
